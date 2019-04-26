@@ -148,7 +148,7 @@ def split_groundtruth(groundtruth, artistmap, splits, track_splits):
 
     log.debug("GT currently has %s tracks", len(groundtruth))
     log.debug("going to remove these tags")
-    log.debug(tags_to_remove)
+    log.debug(sorted(list(tags_to_remove)))
     num_removed_tags = len(tags_to_remove)
 
     groundtruth = remove_tags_from_groundtruth(groundtruth, tags_to_remove, tag_to_tracks)
@@ -189,7 +189,7 @@ def split_groundtruth(groundtruth, artistmap, splits, track_splits):
     tags_to_remove = union_tags - intersection_tags
     log.debug("need to remove %s tags which don't appear in all splits", len(tags_to_remove))
     log.debug("going to remove these tags")
-    log.debug(tags_to_remove)
+    log.debug(sorted(list(tags_to_remove)))
     num_removed_tags += len(tags_to_remove)
 
     train = remove_tags_from_groundtruth(train, tags_to_remove, tag_to_tracks)
