@@ -75,8 +75,8 @@ def one_iteration(trialnumber, artistmap, groundtruthfile):
         groundtruth = {}
         groundtruth_meta = {}
         for l in r:
-            groundtruth_meta[l[0]] = [l[1], l[2], l[3]] # artistid, albumid, path, TODO duration
-            groundtruth[l[0]] = set(l[4:]) 
+            groundtruth_meta[l[0]] = [l[1], l[2], l[3], l[4]] # artistid, albumid, path, duration
+            groundtruth[l[0]] = set(l[5:]) 
 
     train, test, validation = split_groundtruth(groundtruth, artistmap, artist_splits, track_splits)
 
