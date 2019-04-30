@@ -1,46 +1,7 @@
 import argparse
-import csv
 import pandas as pd
 import os
-
-
-def get_id(value):
-    return int(value.split('_')[1])
-
-
-def read_file(tsv_file):
-    tracks = {}
-    tags = {
-        'genre': {},
-        'mood/theme': {},
-        'instrument': {}
-    }
-
-    with open(tsv_file) as fp:
-        reader = csv.reader(fp, delimiter='\t')
-        next(reader, None)  # skip header
-        for row in reader:
-            tracks[get_id(row[0])] = {
-                'artist_id': get_id(row[1]),
-                'album_id': get_id(row[2]),
-                'path': row[3],
-                'duration': float(row[4]),
-
-                'tags': row[5:],
-                'genre': [],
-                'mood/theme': [],
-                'instrument': []
-            }
-
-            for tag_str in row[5:]:
-                category, tag = tag_str.split('---')
-
-                if tag not in tags[category]:
-                    tags[category][tag] = set()
-
-                tags[category][tag].add(get_id(row[0]))
-
-    return tracks, tags
+import commons
 
 
 def compute_statistics(tracks, tags, directory):
@@ -76,5 +37,5 @@ if __name__ == '__main__':
     parser.add_argument('directory', help='Directory for computed statistics')
     args = parser.parse_args()
 
-    tracks, tags = read_file(args.tsv_file)
+    tracks, tags, _ = commons.read_file(args.tsv_file)
     compute_statistics(tracks, tags, args.directory)

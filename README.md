@@ -21,7 +21,14 @@ pip install -r scripts/requirements.txt
 
 * Compute statistics
 ```bash
-python statistics.py data/base_with_durations.tsv stats_base
+python scripts/statistics.py data/base_with_durations.tsv stats_base
+python scripts/statistics.py data/base_filtered_by_durations.tsv stats_filtered_by_durations
+```
+
+* Merge tags and recompute statistics
+```bash
+python scripts/merge_tags.py data/base_filtered_by_durations.tsv data/tag_map.json data/base_with_merged_tags.tsv
+python scripts/statistics.py data/base_with_merged_tags.tsv stats_merged
 ```
 
 * Run baseline

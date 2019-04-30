@@ -1,0 +1,11 @@
+{
+  "genre": {
+    "eletronica": "electronic"
+  },
+  "mood/theme": {
+    "sadness": "sad"
+  },
+  "instrument": {
+    "guitarra": "guitar"
+  }
+}
