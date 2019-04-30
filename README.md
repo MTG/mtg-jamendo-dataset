@@ -19,6 +19,8 @@ source venv/bin/activate
 pip install -r scripts/requirements.txt
 ```
 
+### Reproduce post-processing
+
 * Compute statistics
 ```bash
 python scripts/statistics.py data/base_with_durations.tsv stats_base
@@ -31,4 +33,11 @@ python scripts/merge_tags.py data/base_filtered_by_durations.tsv data/tag_map.js
 python scripts/statistics.py data/base_with_merged_tags.tsv stats_merged
 ```
 
-* Run baseline
+* Filter out tags with low number of unique artists and recompute statistics
+```bash
+python scripts/filter.py data/base_with_merged_tags.tsv 50 data/base_filtered_by_artists.tsv --stats-directory stats_filtered_by_artists
+```
+
+### Reproduce experiments
+
+TODO
