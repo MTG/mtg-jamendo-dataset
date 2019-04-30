@@ -43,7 +43,7 @@ def read_file(tsv_file):
     return tracks, tags
 
 
-def compute_statistics(tags, directory):
+def compute_statistics(tracks, tags, directory):
     try:
         os.mkdir(directory)
     except FileExistsError:
@@ -51,10 +51,18 @@ def compute_statistics(tags, directory):
 
     for category in tags:
         data = []
-        for tag, tracks in tags[category].items():
-            data.append([tag, len(tracks)])
-        data = pd.DataFrame(data, columns=['tag', 'tracks'])
-        data = data.sort_values(by=['tracks'], ascending=False)
+        for tag, tag_tracks in tags[category].items():
+            row = [tag]
+
+            for collection in ['artist', 'album']:
+                collection_ids = {tracks[track_id][collection + "_id"] for track_id in tag_tracks}
+                row.append(len(collection_ids))
+
+            row.append(len(tag_tracks))
+            data.append(row)
+
+        data = pd.DataFrame(data, columns=['tag', 'artists', 'albums', 'tracks'])
+        data = data.sort_values(by=['artists'], ascending=False)
         data = data.reset_index(drop=True)
         data.to_csv(os.path.join(directory, category.replace('/', '_') + '.csv'), sep='\t', index=False)
         print('Total tags for {}: {}'.format(category, len(data)))
@@ -69,4 +77,4 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     tracks, tags = read_file(args.tsv_file)
-    compute_statistics(tags, args.directory)
+    compute_statistics(tracks, tags, args.directory)
