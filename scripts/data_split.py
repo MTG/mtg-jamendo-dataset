@@ -11,9 +11,12 @@ import util
 
 log = logging.Logger('lookup')
 ch = logging.StreamHandler()
-ch.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+#ch.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+ch.setFormatter(logging.Formatter('%(message)s'))
 fh = logging.FileHandler("make_split.log")
-fh.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+#fh.setFormatter(logging.Formatter('%(asctime)s - %(levelname)s - %(message)s'))
+fh.setFormatter(logging.Formatter('%(message)s'))
+
 log.setLevel(logging.DEBUG)
 log.addHandler(ch)
 log.addHandler(fh)
@@ -26,14 +29,14 @@ VALIDATION = "validation"
 # Splits, 70%, 15%, 15%
 TRAIN_PERCT = 0.6
 TEST_PERCT = 0.2
-validation_PERCT = 0.2
+VALIDATION_PERCT = 0.2
 
 def _split_artists(artistids):
     random.shuffle(artistids)
     art_len = len(artistids)
     train_count = int(math.ceil(art_len * TRAIN_PERCT))
     test_count = int(math.ceil(art_len * TEST_PERCT))
-    validation_count = int(math.ceil(art_len * validation_PERCT))
+    validation_count = int(math.ceil(art_len * VALIDATION_PERCT))
 
     train_items = artistids[:train_count]
     artistids = artistids[train_count:]
@@ -54,31 +57,50 @@ def _split_artists(artistids):
     return splits
 
 
-def one_iteration(trialnumber, artistmap, groundtruthfile):
-    # Randomly split artists into sections
-    tracks = list(set(artistmap.values()))
-    artist_to_tracks = collections.defaultdict(list)
-    for track, artist in artistmap.items():
-        artist_to_tracks[artist].append(track)
-
-    log.debug("Splitting by artists")
-    artist_splits = _split_artists(tracks)
-    track_splits = {}
-    for artist, group in artist_splits.items():
-        for t in artist_to_tracks[artist]:
-            track_splits[t] = group
-
+def _load_groundtruth(groundtruthfile):
     log.debug("Loading groundtruth")
     with open(groundtruthfile) as fp:
         r = csv.reader(fp, delimiter="\t")
         header = r.next()
         groundtruth = {}
         groundtruth_meta = {}
+        track_to_artist = {}
         for l in r:
-            groundtruth_meta[l[0]] = [l[1], l[2], l[3], l[4]] # artistid, albumid, path, duration
-            groundtruth[l[0]] = set(l[5:]) 
+            track = l[0]
+            artist = l[1]
+            track_to_artist[track] = artist      
+            # artistid, albumid, path, duration
+            groundtruth_meta[track] = [l[1], l[2], l[3], l[4]]
+            # tags
+            groundtruth[track] = set(l[5:])
+        
+        artist_to_tracks = collections.defaultdict(list)
+        for t, a in track_to_artist.items():
+            artist_to_tracks[a].append(t)
+    
+    return groundtruth, groundtruth_meta, track_to_artist, artist_to_tracks, header
 
-    train, test, validation = split_groundtruth(groundtruth, artistmap, artist_splits, track_splits)
+
+def _tags_by_category(tags):
+    tags_genres = [k for k in tags if k.startswith("genre---")]
+    tags_moods = [k for k in tags if k.startswith("mood/theme---")]
+    tags_instruments = [k for k in tags if k.startswith("instrument---")]
+    return tags_genres, tags_moods, tags_instruments
+
+
+def one_iteration(trialnumber, groundtruthfile):
+    groundtruth, groundtruth_meta, track_to_artist, artist_to_tracks, header = _load_groundtruth(groundtruthfile)
+
+    # Randomly split artists into sections
+    log.debug("Splitting by artists")
+    artists = artist_to_tracks.keys()
+    artist_splits = _split_artists(artists)
+    track_splits = {}
+    for artist, group in artist_splits.items():
+        for t in artist_to_tracks[artist]:
+            track_splits[t] = group
+
+    train, test, validation = split_groundtruth(groundtruth, track_to_artist, artist_splits, track_splits)
 
     gt_dir = os.path.dirname(groundtruthfile)
     gt_file = os.path.basename(groundtruthfile)
@@ -99,57 +121,76 @@ def one_iteration(trialnumber, artistmap, groundtruthfile):
                 w.writerow(row)
 
 
-def split_groundtruth(groundtruth, artistmap, splits, track_splits):
+def discard_tags_by_count(tag_split_artists, tag_split_tracks):
+    # TODO make hardcoded thresholds configurable
 
-    tag_count_artist = {TRAIN: collections.Counter(), TEST: collections.Counter(), VALIDATION: collections.Counter()}
-    tag_count_track = {TRAIN: collections.Counter(), TEST: collections.Counter(), VALIDATION: collections.Counter()}
+    # Tags below the minimum artist count for train/test/validation
+    discard_tags_artist = tag_split_artists
+    for t in discard_tags_artist.keys():
+        if (len(discard_tags_artist[t][TRAIN]) >= 10 and 
+                len(discard_tags_artist[t][TEST]) >= 5 and 
+                len(discard_tags_artist[t][VALIDATION]) >= 5):
+            del discard_tags_artist[t]
 
-    # Helper dict saying which track have each tag
-    tag_to_tracks = collections.defaultdict(list)
+    # Tags below the minimum track count for train/test/validation
+    discard_tags_track = tag_split_tracks
+    for t in discard_tags_track.keys():
+        if (len(discard_tags_track[t][TRAIN]) >= 40 and 
+                len(discard_tags_track[t][TEST]) >= 20 and 
+                len(discard_tags_track[t][VALIDATION]) >= 20):
+            del discard_tags_track[t]
 
-    seen_artists = set()
+    log.debug("Tags with insufficient artist counts: %s", discard_tags_artist.keys())
+    log.debug("Tags with insufficient track counts: %s", discard_tags_track.keys())
+
+    tags_to_remove = set(discard_tags_artist.keys() + discard_tags_track.keys())
+    return tags_to_remove
+
+
+def split_groundtruth(groundtruth, track_to_artist, artist_splits, track_splits):
+
     log.debug("Making mapping of tag counts")
-    for trackid, tags in groundtruth.items():
-        artistid = artistmap[trackid]
-        group = splits[artistid] # Is this train/test/validation
 
+    # Mapping from tags to tracks and artists
+    tag_to_tracks = collections.defaultdict(list)
+    tag_to_artists = collections.defaultdict(set)
+
+    tag_split_artists = collections.defaultdict(lambda: { TRAIN: set(), TEST: set(), VALIDATION: set() })
+    tag_split_tracks = collections.defaultdict(lambda: { TRAIN: [], TEST: [], VALIDATION: [] })
+
+    for trackid, tags in groundtruth.items():
+        artistid = track_to_artist[trackid]
+        group = artist_splits[artistid]
         for t in tags:
             tag_to_tracks[t].append(trackid)
-            tag_count_track[group][t] += 1 # How many tracks each tag has
+            tag_to_artists[t].add(artistid)
+            tag_split_artists[t][group].add(artistid)
+            tag_split_tracks[t][group].append(trackid)
 
-        # How many artists each tag has
-        if artistid not in seen_artists:
-            seen_artists.add(artistid)
-            for t in tags:
-                tag_count_artist[group][t] += 1
-
-    log.debug("Number of unique tags: %s", len(tag_to_tracks))
     original_number_tags = len(tag_to_tracks)
+    original_genres, original_moods, original_instruments = _tags_by_category(tag_to_tracks.keys())
 
-    low_artist_train = check_tags_for_count(tag_count_artist[TRAIN], "artist train", 10)
-    low_artist_test = check_tags_for_count(tag_count_artist[TEST], "artist test", 5)
-    low_artist_validation = check_tags_for_count(tag_count_artist[VALIDATION], "artist validation", 5)
+    log.debug("-" * 80)
+    for t in tag_to_tracks.keys():
+        log.debug("Tag: %s\tartist counts: %s - %s - %s\ttrack counts: %s - %s - %s", t, 
+                      len(tag_split_artists[t][TRAIN]), 
+                      len(tag_split_artists[t][TEST]),
+                      len(tag_split_artists[t][VALIDATION]),
+                      len(tag_split_tracks[t][TRAIN]), 
+                      len(tag_split_tracks[t][TEST]),
+                      len(tag_split_tracks[t][VALIDATION]))
+    log.debug("-" * 80)
 
-    low_track_train = check_tags_for_count(tag_count_track[TRAIN], "track train", 40)
-    low_track_test = check_tags_for_count(tag_count_track[TEST], "track test", 20)
-    low_track_validation = check_tags_for_count(tag_count_track[VALIDATION], "track validation", 20)
-
-    tags_to_remove = set()
-    tags_to_remove.update(set(low_artist_test.keys()))
-    tags_to_remove.update(set(low_artist_train.keys()))
-    tags_to_remove.update(set(low_artist_validation.keys()))
-    tags_to_remove.update(set(low_track_test.keys()))
-    tags_to_remove.update(set(low_track_train.keys()))
-    tags_to_remove.update(set(low_track_validation.keys()))
+    tags_to_remove = discard_tags_by_count(tag_split_artists, tag_split_tracks)
 
     # Remove these labels from all items in the ground truth
     # Remove all items in the groundtruth which now have no labels
-    # Do the count but for tracks - make sure that a label is applied to at least 20/20/30 tracks
 
     log.debug("GT currently has %s tracks", len(groundtruth))
-    log.debug("going to remove these tags")
-    log.debug(sorted(list(tags_to_remove)))
+    log.debug("Number of unique tags: %s", len(tag_to_tracks))
+    log.debug("Going to remove these tags: %s", sorted(list(tags_to_remove)))
     num_removed_tags = len(tags_to_remove)
+    remove_genres, remove_moods, remove_instruments = _tags_by_category(tags_to_remove)
 
     groundtruth = remove_tags_from_groundtruth(groundtruth, tags_to_remove, tag_to_tracks)
 
@@ -157,7 +198,8 @@ def split_groundtruth(groundtruth, artistmap, splits, track_splits):
 
 
     log.debug("Building train/test/validation splits of tracks")
-    # Take the intersection of all labels in train/test/validation. These are the labels that we're going to use
+    # Take the intersection of all labels in train/test/validation. 
+    # These are the labels that we're going to use
     # Filter any label which is not these from the ground truth
 
     train = {}
@@ -188,8 +230,8 @@ def split_groundtruth(groundtruth, artistmap, splits, track_splits):
     log.debug("%s tags in intersection of train-test-validation", len(intersection_tags))
     tags_to_remove = union_tags - intersection_tags
     log.debug("need to remove %s tags which don't appear in all splits", len(tags_to_remove))
-    log.debug("going to remove these tags")
-    log.debug(sorted(list(tags_to_remove)))
+    log.debug("going to remove these tags: %s", sorted(list(tags_to_remove)))
+
     num_removed_tags += len(tags_to_remove)
 
     train = remove_tags_from_groundtruth(train, tags_to_remove, tag_to_tracks)
@@ -199,7 +241,10 @@ def split_groundtruth(groundtruth, artistmap, splits, track_splits):
     log.debug("after filtering\ntrain: %s\ntest: %s\nvalidation: %s", len(train), len(test), len(validation))
 
     final_number_tags = original_number_tags - num_removed_tags
-    log.debug("Keeping %s tags (%s%%)", final_number_tags, final_number_tags*100.0/original_number_tags)
+    log.debug("Keeping %s tags (%s%%):", final_number_tags, final_number_tags*100.0/original_number_tags)
+    log.debug("%s genres out of %s", len(original_genres) - len(remove_genres), len(original_genres))
+    log.debug("%s mood/themes out of %s", len(original_moods) - len(remove_moods), len(original_moods))
+    log.debug("%s instruments out of %s", len(original_instruments) - len(remove_instruments), len(original_instruments))
 
     return train, test, validation
 
@@ -242,26 +287,9 @@ def remove_tags_from_groundtruth(groundtruth, tags, tag_to_tracks):
     return groundtruth
 
 
-def check_tags_for_count(tag_counts, group, minimum):
-    # Find if there are any labels which have a count of less than a theshold
-    log.debug("Finding tag counts for %s less than %s", group, minimum)
-    less_than_minimum = dict([(k, v) for k, v in tag_counts.most_common() if v < minimum])
-    log.debug(" .. found %s", len(less_than_minimum))
-
-    return less_than_minimum
 
 def main(trialnumber, groundtruthfile):
-    track_to_artist = {}
-    log.debug("Loading artist map")
-    with open(groundtruthfile) as fp:
-        r = csv.reader(fp, delimiter="\t")
-        next(r) # skip header
-        for l in r:
-            track = l[0]
-            artist = l[1]
-            track_to_artist[track] = artist
-
-    one_iteration(trialnumber, track_to_artist, groundtruthfile)
+    one_iteration(trialnumber, groundtruthfile)
 
 
 if __name__ == "__main__":
