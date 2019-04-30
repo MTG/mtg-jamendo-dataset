@@ -16,12 +16,12 @@ Metadata, scripts and baselines for MTG Jamendo dataset for auto-tagging.
 ```bash
 virtualenv venv
 source venv/bin/activate
-pip install -r srcipts/requirements.txt
+pip install -r scripts/requirements.txt
 ```
 
 * Compute statistics
 ```bash
-python statistics.py data/base_with_durations.csv stats_base
+python statistics.py data/base_with_durations.tsv stats_base
 ```
 
 * Run baseline

@@ -64,7 +64,7 @@ def compute_statistics(tracks, tags, directory):
         data = pd.DataFrame(data, columns=['tag', 'artists', 'albums', 'tracks'])
         data = data.sort_values(by=['artists'], ascending=False)
         data = data.reset_index(drop=True)
-        data.to_csv(os.path.join(directory, category.replace('/', '_') + '.csv'), sep='\t', index=False)
+        data.to_csv(os.path.join(directory, category.replace('/', '_') + '.tsv'), sep='\t', index=False)
         print('Total tags for {}: {}'.format(category, len(data)))
 
 
