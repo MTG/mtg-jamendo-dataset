@@ -4,11 +4,11 @@ Metadata, scripts and baselines for MTG Jamendo dataset for auto-tagging.
 ## Structure
 
 - `data`
-  - `base.csv` (56650) - master file without durations (only artist/album cross-referencing)
-  - `base_with_durations.csv` (56639) - with durations (removed corrupt)
-  - `base_filtered_by_durations.csv`(55701) - with durations more than 30s
+  - `base.csv` (56650) - master file without track durations (only artist/album cross-referencing)
+  - `base_with_durations.csv` (56639) - with durations (removed corrupt audio files)
+  - `base_filtered_by_durations.csv`(55701) - with track durations more than 30s
   - `base_with_merged_tags.csv`(55701) - with tags merged according to `tag_map.json`
-  - `base_filtered_by_artists.csv`(55609) - with tags that have more than 50 unique artists
+  - `base_filtered_by_artists.csv`(55609) - with tags that have at least 50 unique artists
 
 - `stats_base` statistics for `base_filtered_by_durations.csv`
 
