@@ -1,2 +1,2 @@
-rm -r trial-*
+rm -r split-*
 rm make_split.log

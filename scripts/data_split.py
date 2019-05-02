@@ -6,6 +6,8 @@ import sys
 import math
 import logging
 import os
+import copy
+import itertools
 
 import util
 
@@ -26,24 +28,20 @@ TRAIN = "train"
 TEST = "test"
 VALIDATION = "validation"
 
-# Splits, 70%, 15%, 15%
-TRAIN_PERCT = 0.6
-TEST_PERCT = 0.2
-VALIDATION_PERCT = 0.2
+config = {}
+
 
 def _split_artists(artistids):
     random.shuffle(artistids)
     art_len = len(artistids)
-    train_count = int(math.ceil(art_len * TRAIN_PERCT))
-    test_count = int(math.ceil(art_len * TEST_PERCT))
-    validation_count = int(math.ceil(art_len * VALIDATION_PERCT))
+    train_count = int(math.ceil(art_len * config['split_ratio'][TRAIN] / 100.))
+    test_count = int(math.ceil(art_len * config['split_ratio'][TEST] / 100.))
+    validation_count = int(math.ceil(art_len * config['split_ratio'][VALIDATION] / 100.))
 
     train_items = artistids[:train_count]
-    artistids = artistids[train_count:]
-    test_items = artistids[:test_count]
-    artistids = artistids[test_count:]
-    validation_items = artistids[:validation_count]
-
+    test_items = artistids[train_count:train_count+test_count]
+    validation_items = artistids[train_count+test_count:
+                                 train_count+test_count+validation_count]
     log.debug("%s artists, %s train, %s test, %s validation", art_len, train_count, test_count, validation_count)
 
     splits = {}
@@ -61,7 +59,7 @@ def _load_groundtruth(groundtruthfile):
     log.debug("Loading groundtruth")
     with open(groundtruthfile) as fp:
         r = csv.reader(fp, delimiter="\t")
-        header = r.next()
+        header = next(r)
         groundtruth = {}
         groundtruth_meta = {}
         track_to_artist = {}
@@ -88,73 +86,107 @@ def _tags_by_category(tags):
     return tags_genres, tags_moods, tags_instruments
 
 
-def one_iteration(trialnumber, groundtruthfile):
+def run_trials(groundtruthfile):
     groundtruth, groundtruth_meta, track_to_artist, artist_to_tracks, header = _load_groundtruth(groundtruthfile)
 
-    # Randomly split artists into sections
-    log.debug("Splitting by artists")
+    tag_to_tracks = collections.defaultdict(list)
+    for trackid, tags in groundtruth.items():
+        for t in tags:
+            tag_to_tracks[t].append(trackid)
+
     artists = artist_to_tracks.keys()
-    artist_splits = _split_artists(artists)
-    track_splits = {}
-    for artist, group in artist_splits.items():
-        for t in artist_to_tracks[artist]:
-            track_splits[t] = group
 
-    train, test, validation = split_groundtruth(groundtruth, track_to_artist, artist_splits, track_splits)
+    solutions = []
+    total_tags = len(tag_to_tracks)
 
-    gt_dir = os.path.dirname(groundtruthfile)
-    gt_file = os.path.basename(groundtruthfile)
-    gt_name, gt_ext = os.path.splitext(gt_file)
+    for trialnumber in range(config['trials']):
+        # Randomly split artists into sections
+        log.debug("Trial %s", trialnumber)
+        log.debug("Splitting by artists")
+        artist_splits = _split_artists(list(artists))
+        train, test, validation, discarded_tags = split_groundtruth(dict(groundtruth), track_to_artist, artist_to_tracks, tag_to_tracks, artist_splits, trialnumber)
+        solutions.append((len(discarded_tags), discarded_tags, train, test, validation))
 
-    #trialdir = os.path.join(gt_dir, "trial-%s" %trialnumber)
-    trialdir = "trial-%s" % trialnumber
-    util.mkdir_p(trialdir)
+        # Only keep the best solutions (this saves memory load)
+        solutions = sorted(solutions)
+        if len(solutions) > config['splits']:
+            best_discarded = solutions[config['splits']][0]
+            solutions = [s for s in solutions if s[0] <= best_discarded]
 
-    for part, data in [("train", train), ("test", test), ("validation", validation)]:
-        out_file = os.path.join(trialdir, "%s-%s%s" % (gt_name, part, gt_ext))
-        log.debug("Writing part %s to file %s", part, out_file)
-        with open(out_file, "w") as fp:
-            w = csv.writer(fp, delimiter="\t")
-            w.writerow(header)
-            for trackid, tags in data.items():
-                row = [trackid] + groundtruth_meta[trackid] + list(tags)
-                w.writerow(row)
+    log.debug("")
+    log.debug("-" * 10 + " Best trials " + "-" * 10)
+    for s in solutions:
+        log.debug("- Discarded %s out of %s tags: %s", s[0], total_tags, sorted(list(s[1])))
+
+    # We want all subsets to have the same tags. Select the best set of splits
+    # that minimized the amout of discarded tracks.
+    selections = list(itertools.combinations(solutions, config['splits']))
+    selections = [(set([t for s in selection for t in s[1]]), selection) for selection in selections]
+    selections = [(len(tags), sorted(list(tags)), selection) for tags, selection in selections]
+    _, discarded_tags, best_selection = sorted(selections)[0]
+
+    log.debug("")
+    log.debug("-" * 10 + " Best solution: " + "-" * 10)
+    log.debug("Discarded %s tags: %s", len(discarded_tags), discarded_tags)
+
+    for i in range(len(best_selection)):
+        _, _, train, test, validation = best_selection[i]
+        train = remove_tags_from_groundtruth(train, discarded_tags, tag_to_tracks)
+        test = remove_tags_from_groundtruth(test, discarded_tags, tag_to_tracks)
+        validation = remove_tags_from_groundtruth(validation, discarded_tags, tag_to_tracks)
+
+        gt_dir = os.path.dirname(groundtruthfile)
+        gt_file = os.path.basename(groundtruthfile)
+        gt_name, gt_ext = os.path.splitext(gt_file)
+
+        splitdir = "split-%s" % i
+        util.mkdir_p(splitdir)
+
+        for part, data in [("train", train), ("test", test), ("validation", validation)]:
+            out_file = os.path.join(splitdir, "%s-%s%s" % (gt_name, part, gt_ext))
+            log.debug("Writing part %s to file %s", part, out_file)
+            with open(out_file, "w") as fp:
+                w = csv.writer(fp, delimiter="\t")
+                w.writerow(header)
+                for trackid, tags in data.items():
+                    row = [trackid] + groundtruth_meta[trackid] + list(tags)
+                    w.writerow(row)
 
 
 def discard_tags_by_count(tag_split_artists, tag_split_tracks):
-    # TODO make hardcoded thresholds configurable
-
     # Tags below the minimum artist count for train/test/validation
     discard_tags_artist = tag_split_artists
-    for t in discard_tags_artist.keys():
-        if (len(discard_tags_artist[t][TRAIN]) >= 10 and 
-                len(discard_tags_artist[t][TEST]) >= 5 and 
-                len(discard_tags_artist[t][VALIDATION]) >= 5):
+    for t in list(discard_tags_artist.keys()):
+        if (len(discard_tags_artist[t][TRAIN]) >= config['artist_threshold'][TRAIN] and 
+            len(discard_tags_artist[t][TEST]) >= config['artist_threshold'][TEST] and 
+            len(discard_tags_artist[t][VALIDATION]) >= config['artist_threshold'][VALIDATION]):
             del discard_tags_artist[t]
 
     # Tags below the minimum track count for train/test/validation
     discard_tags_track = tag_split_tracks
-    for t in discard_tags_track.keys():
-        if (len(discard_tags_track[t][TRAIN]) >= 40 and 
-                len(discard_tags_track[t][TEST]) >= 20 and 
-                len(discard_tags_track[t][VALIDATION]) >= 20):
+    for t in list(discard_tags_track.keys()):
+        if (len(discard_tags_track[t][TRAIN]) >= config['track_threshold'][TRAIN] and 
+            len(discard_tags_track[t][TEST]) >= config['track_threshold'][TEST] and 
+            len(discard_tags_track[t][VALIDATION]) >= config['track_threshold'][VALIDATION]):
             del discard_tags_track[t]
 
     log.debug("Tags with insufficient artist counts: %s", discard_tags_artist.keys())
     log.debug("Tags with insufficient track counts: %s", discard_tags_track.keys())
 
-    tags_to_remove = set(discard_tags_artist.keys() + discard_tags_track.keys())
+    tags_to_remove = set(list(discard_tags_artist.keys()) + list(discard_tags_track.keys()))
     return tags_to_remove
 
 
-def split_groundtruth(groundtruth, track_to_artist, artist_splits, track_splits):
+def split_groundtruth(groundtruth, track_to_artist, artist_to_tracks, tag_to_tracks, artist_splits, trialnumber):
 
     log.debug("Making mapping of tag counts")
+        
+    track_splits = {}
+    for artist, group in artist_splits.items():
+        for t in artist_to_tracks[artist]:
+            track_splits[t] = group
 
     # Mapping from tags to tracks and artists
-    tag_to_tracks = collections.defaultdict(list)
-    tag_to_artists = collections.defaultdict(set)
-
     tag_split_artists = collections.defaultdict(lambda: { TRAIN: set(), TEST: set(), VALIDATION: set() })
     tag_split_tracks = collections.defaultdict(lambda: { TRAIN: [], TEST: [], VALIDATION: [] })
 
@@ -162,8 +194,6 @@ def split_groundtruth(groundtruth, track_to_artist, artist_splits, track_splits)
         artistid = track_to_artist[trackid]
         group = artist_splits[artistid]
         for t in tags:
-            tag_to_tracks[t].append(trackid)
-            tag_to_artists[t].add(artistid)
             tag_split_artists[t][group].add(artistid)
             tag_split_tracks[t][group].append(trackid)
 
@@ -182,6 +212,7 @@ def split_groundtruth(groundtruth, track_to_artist, artist_splits, track_splits)
     log.debug("-" * 80)
 
     tags_to_remove = discard_tags_by_count(tag_split_artists, tag_split_tracks)
+    discarded_tags = tags_to_remove
 
     # Remove these labels from all items in the ground truth
     # Remove all items in the groundtruth which now have no labels
@@ -229,6 +260,7 @@ def split_groundtruth(groundtruth, track_to_artist, artist_splits, track_splits)
     log.debug("%s tags in union of train-test-validation", len(union_tags))
     log.debug("%s tags in intersection of train-test-validation", len(intersection_tags))
     tags_to_remove = union_tags - intersection_tags
+    discarded_tags = discarded_tags | tags_to_remove
     log.debug("need to remove %s tags which don't appear in all splits", len(tags_to_remove))
     log.debug("going to remove these tags: %s", sorted(list(tags_to_remove)))
 
@@ -246,7 +278,11 @@ def split_groundtruth(groundtruth, track_to_artist, artist_splits, track_splits)
     log.debug("%s mood/themes out of %s", len(original_moods) - len(remove_moods), len(original_moods))
     log.debug("%s instruments out of %s", len(original_instruments) - len(remove_instruments), len(original_instruments))
 
-    return train, test, validation
+    log.debug("Trial %s: Keeping %s tags out of %s; discarded %s tags: %s", 
+              trialnumber, final_number_tags, original_number_tags, 
+              len(discarded_tags), sorted(list(discarded_tags)))
+
+    return train, test, validation, discarded_tags
 
 
 def _get_all_tags_in_gt(groundtruth):
@@ -261,6 +297,8 @@ def remove_tags_from_groundtruth(groundtruth, tags, tag_to_tracks):
     which tracks to remove tags from. If a track has no more tags, remove it
     from the groundtruth
     """
+    # We don't want to change the original dict as it is used in all interations
+    groundtruth = copy.deepcopy(groundtruth)
 
     log.debug("Removing %s tags from groundtruth", len(tags))
 
@@ -288,8 +326,8 @@ def remove_tags_from_groundtruth(groundtruth, tags, tag_to_tracks):
 
 
 
-def main(trialnumber, groundtruthfile):
-    one_iteration(trialnumber, groundtruthfile)
+def main(groundtruthfile):
+    run_trials(groundtruthfile)
 
 
 if __name__ == "__main__":
@@ -299,9 +337,42 @@ artist filtering to make sure that tracks from the same artist all
 fall into the same split.
     """
     parser = argparse.ArgumentParser(description=desc, formatter_class=argparse.RawDescriptionHelpFormatter)
-    parser.add_argument("trialnumber", help="A unique number to use as a trial")
     parser.add_argument("groundtruthfile", help="Metadata ground-truth file")
+    parser.add_argument('--splits', default=5,
+                        help='Required number of splits (default 5)')
+    parser.add_argument('--trials', default=500,
+                        help='Number of random split attempts to select best splits (default 500)')
+    parser.add_argument('--split-ratio', default="60-20-20",
+                        help='Train/test/validation split ratio (default "60-20-20")')
+    parser.add_argument('--artist-threshold', default="10-5-5",
+                        help='Minimum amount of artists that each tag should have in train/test/validation splits (default "10-5-5")')
+    parser.add_argument('--track-threshold', default="40-20-20",
+                        help='Minimum amount of tracks that each tag should have in train/test/validation splits (default "40-20-20")')
 
     args = parser.parse_args()
 
-    main(args.trialnumber, args.groundtruthfile)
+    config = {}
+
+    train_perct, test_perct, validation_perct = [int(x) for x in args.split_ratio.split('-')]
+    if train_perct + test_perct + validation_perct != 100:
+        print("Split ratios should sum to 100")
+        sys.exit(1)
+    
+    config['split_ratio'] = { TRAIN: train_perct, 
+                              TEST: test_perct, 
+                              VALIDATION: validation_perct }
+
+    art_train, art_test, art_valid = [int(x) for x in args.artist_threshold.split('-')]
+    config['artist_threshold'] = { TRAIN: art_train, 
+                              TEST: art_test, 
+                              VALIDATION: art_valid }
+    
+    track_train, track_test, track_valid = [int(x) for x in args.track_threshold.split('-')]
+    config['track_threshold'] = { TRAIN: track_train, 
+                              TEST: track_test, 
+                              VALIDATION: track_valid }
+
+    config['splits'] = int(args.splits)
+    config['trials'] = int(args.trials)
+
+    main(args.groundtruthfile)
