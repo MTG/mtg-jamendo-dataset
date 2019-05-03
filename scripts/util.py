@@ -2,6 +2,7 @@ import os
 import errno
 import time
 import datetime
+import json
 
 
 def chunks(l, n):
@@ -47,3 +48,8 @@ def guess_csv_delimiter(data):
         return TAB
     else:
         return COMMA
+
+
+def read_json(json_file):
+    with open(json_file) as fp:
+        return json.load(fp)

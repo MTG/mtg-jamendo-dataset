@@ -1,5 +1,6 @@
 import argparse
 import commons
+import util
 
 
 def merge_tags(tracks, tag_map_all):
@@ -20,6 +21,6 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     tracks, tags, extra = commons.read_file(args.tsv_file)
-    tag_map = commons.read_json(args.map_file)
+    tag_map = util.read_json(args.map_file)
     merge_tags(tracks, tag_map)
     commons.write_file(tracks, args.output_file, extra)

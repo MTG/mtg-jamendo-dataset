@@ -1,5 +1,4 @@
 import csv
-import json
 
 CATEGORIES = ['genre', 'mood/theme', 'instrument']
 
@@ -9,39 +8,45 @@ def get_id(value):
 
 
 def read_file(tsv_file):
-    tracks = {}
-    tags = {category: {} for category in CATEGORIES}
+    """
+    Processes input annotations file into easy to use Python dictionaries
+    :param str tsv_file: name of input file
+    :return: Tuple of tracks {track_id: {track_data}}, tags {'genre': {'rock': tracks}} and extras that should be passed to
+    write_file()
+    """
+    tracks = {}  # maps track_id to all track data
+    tags = {category: {} for category in CATEGORIES}  # contains sets of track_ids for each tag
 
     artist_ids = set()
     albums_ids = set()
 
     with open(tsv_file) as fp:
-        reader = csv.reader(fp, delimiter='\t')
-        next(reader, None)  # skip header
+        reader = csv.DictReader(fp, delimiter='\t', restkey='TAGS')
         for row in reader:
-            track_id = get_id(row[0])
+            track_id = get_id(row['TRACK_ID'])
             tracks[track_id] = {
-                'artist_id': get_id(row[1]),
-                'album_id': get_id(row[2]),
-                'path': row[3],
-                'duration': float(row[4]),
-                'tags': row[5:],  # raw tags, not sure if will be used
+                'artist_id': get_id(row['ARTIST_ID']),
+                'album_id': get_id(row['ALBUM_ID']),
+                'path': row['PATH'],
+                'duration': float(row['DURATION']),
+                'tags': [row['TAGS']] if type(row['TAGS']) is str else row['TAGS'],  # raw tags
             }
-            tracks[track_id].update({category: set() for category in CATEGORIES})
 
-            artist_ids.add(get_id(row[1]))
-            albums_ids.add(get_id(row[2]))
+            tracks[track_id].update({category: set() for category in CATEGORIES})  # add tag categories
 
-            for tag_str in row[5:]:
-                category, tag = tag_str.split('---')
+            artist_ids.add(tracks[track_id]['artist_id'])
+            albums_ids.add(tracks[track_id]['album_id'])
 
-                if tag not in tags[category]:
-                    tags[category][tag] = set()
-
-                tags[category][tag].add(track_id)
-
+            for tag_str in row['TAGS']:  # process raw tags into categories
+                category, tag = tag_str.split('---')  # raw tags look like 'genre---rock'
                 tracks[track_id][category].add(tag)
 
+                # overall mapping of tags to track_ids
+                if tag not in tags[category]:
+                    tags[category][tag] = set()  # encounter new tag
+                tags[category][tag].add(track_id)
+
+    # data for formatting the output file
     extra = {
         'track_id_length': get_length(tracks.keys()),
         'artist_id_length': get_length(artist_ids),
@@ -51,10 +56,21 @@ def read_file(tsv_file):
 
 
 def get_length(values):
+    """
+    Computes length in digits of maximum value in a collection of numbers
+    :param values: collection
+    :return: length in digits
+    """
     return len(str(max(values)))
 
 
 def write_file(tracks, tsv_file, extra):
+    """
+    Writes the track annotations to tsv file
+    :param tracks: dictionary {track_id: {track_data}}
+    :param str tsv_file: name of output file
+    :param extra: third return value of of read_file()
+    """
     rows = []
     for track_id, track in tracks.items():
         row = [
@@ -73,10 +89,4 @@ def write_file(tracks, tsv_file, extra):
     with open(tsv_file, 'w') as fp:
         writer = csv.writer(fp, delimiter='\t')
         writer.writerow(['TRACK_ID', 'ARTIST_ID', 'ALBUM_ID', 'PATH', 'DURATION', 'TAGS'])
-        for row in rows:
-            writer.writerow(row)
-
-
-def read_json(json_file):
-    with open(json_file) as fp:
-        return json.load(fp)
+        writer.writerows(rows)
