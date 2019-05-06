@@ -10,7 +10,7 @@ def filter_tags(tracks, tags, artist_threshold, directory=None):
 
     tags_new_all = {}
     for category in tags:
-        stats = statistics.get_statistics(category, tracks, tags)
+        stats, total = statistics.get_statistics(category, tracks, tags)
         stats_filtered = stats[stats['artists'] >= artist_threshold]
         if directory is not None:
             statistics.write_statistics(category, stats_filtered, directory)

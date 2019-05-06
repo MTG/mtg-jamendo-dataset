@@ -7,20 +7,25 @@ import util
 
 def get_statistics(category, tracks, tags):
     data = []
+    total = {'track': set(), 'artist': set(), 'album': set()}
     for tag, tag_tracks in tags[category].items():
         row = [tag]
 
         for collection in ['artist', 'album']:
             collection_ids = {tracks[track_id][collection + "_id"] for track_id in tag_tracks}
+            total[collection] |= collection_ids
             row.append(len(collection_ids))
 
+        total['track'] |= tag_tracks
         row.append(len(tag_tracks))
         data.append(row)
 
     data = pd.DataFrame(data, columns=['tag', 'artists', 'albums', 'tracks'])
     data = data.sort_values(by=['artists'], ascending=False)
     data = data.reset_index(drop=True)
-    return data
+
+    total_stats = {category: len(collection_ids) for category, collection_ids in total.items()}
+    return data, total_stats
 
 
 def write_statistics(category, data, directory):
@@ -31,9 +36,9 @@ def compute_statistics(tracks, tags, directory):
     util.mkdir_p(directory)
 
     for category in tags:
-        data = get_statistics(category, tracks, tags)
+        data, total = get_statistics(category, tracks, tags)
         write_statistics(category, data, directory)
-        print('Total tags for {}: {}'.format(category, len(data)))
+        print('Total tags for {}: {} tags, {}'.format(category, len(data), total))
 
 
 if __name__ == '__main__':
