@@ -1,5 +1,6 @@
 import argparse
 import pandas as pd
+import numpy as np
 import os
 import commons
 import util
@@ -41,6 +42,11 @@ def compute_statistics(tracks, tags, directory):
         print('Total tags for {}: {} tags, {}'.format(category, len(data), total))
 
 
+def compute_duration_stats(tracks):
+    data = np.array([track['duration'] for track in tracks.values()])
+    print('Mean: {}, median: {}'.format(data.mean(), np.median(data)))
+
+
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Computes data statistics, such as number of unique tracks, albums '
                                                  'and artists per tag')
@@ -50,4 +56,5 @@ if __name__ == '__main__':
     args = parser.parse_args()
 
     tracks, tags, _ = commons.read_file(args.tsv_file)
+    compute_duration_stats(tracks)
     compute_statistics(tracks, tags, args.directory)

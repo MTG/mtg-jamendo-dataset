@@ -41,6 +41,8 @@ def read_file(tsv_file):
 
                 tracks[track_id][category].add(tag)
 
+    print("Total: {} tracks, {} albums. {} artists".format(len(tracks), len(albums_ids), len(artist_ids)))
+
     extra = {
         'track_id_length': get_length(tracks.keys()),
         'artist_id_length': get_length(artist_ids),

@@ -42,6 +42,11 @@ python scripts/statistics.py data/with_merged_tags.tsv stats/with_merged_tags
 python scripts/filter.py data/with_merged_tags.tsv 50 data/filtered_by_artists.tsv --stats-directory stats/filtered_by_artists
 ```
 
+* Filter out less frequent tags
+```bash
+python scripts/filter_topn.py data/filtered_by_artists.tsv 50 data/top50_tags.tsv --stats-directory stats/top50_tags
+```
+
 ### Reproduce experiments
 
 TODO
