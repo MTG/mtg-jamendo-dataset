@@ -2,7 +2,7 @@ import argparse
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
-from matplotlib import rcParams
+from matplotlib import rcParams, font_manager
 import os
 
 
@@ -45,7 +45,10 @@ def visualize2(directory, n):
 
     fig = plt.figure(figsize=(12, 2.5))
     plt.style.use('seaborn-whitegrid')
+
+    font_manager._rebuild()
     rcParams['font.family'] = 'serif'
+    rcParams['font.serif'] = 'Times'
     plt.grid(False)
     plt.ylabel('# of tracks')
     plt.xlim([-1, 60])
