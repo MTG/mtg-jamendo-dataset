@@ -3,7 +3,7 @@ Metadata, scripts and baselines for MTG-Jamendo dataset for auto-tagging.
 
 ## License
 
-This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+This work is licensed under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 
 ## Structure
 
@@ -41,6 +41,51 @@ virtualenv venv
 source venv/bin/activate
 pip install -r scripts/requirements.txt
 ```
+
+### Loading data in python
+Assuming you are working in `scripts` folder
+```python
+import commons
+
+input_file = '../data/autotagging.tsv'
+tracks, tags, extra = commons.read_file(input_file)
+```
+`tracks` is a dictionary with `track_id` as key and track data as value:
+```python
+{
+    1376256: {
+    'artist_id': 490499,
+    'album_id': 161779,
+    'path': '56/1376256.mp3',
+    'duration': 166.0,
+    'tags': [
+        'genre---easylistening',
+        'genre---downtempo',
+        'genre---chillout',
+        'mood/theme---commercial',
+        'mood/theme---corporate',
+        'instrument---piano'
+        ],
+    'genre': {'chillout', 'downtempo', 'easylistening'},
+    'mood/theme': {'commercial', 'corporate'},
+    'instrument': {'piano'}
+    }
+    ...
+}
+```
+`tags` contains mapping of tags to `track_id`:
+```python
+{
+    'genre': {
+        'easylistening': {1376256, 1376257, ...},
+        'downtempo': {1376256, 1376257, ...},
+        ...
+    },
+    'mood/theme': {...},
+    'instrument': {...}
+}
+```
+`extra` has information that is useful to format output file, so pass it to `write_file` if you are using it, otherwise you can just ignore it
 
 ### Reproduce postprocessing & statistics
 
