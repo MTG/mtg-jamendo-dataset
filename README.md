@@ -21,14 +21,13 @@ Pre-processing
 
 Subsets
 - `autotagging_top50tags.tsv` (54380) - only top 50 tags according to tag frequency in terms of tracks
-- `autotagging_moodtheme.tsv`(18486)- only tracks with mood/theme tags, and only those tags
+- `autotagging_moodtheme.tsv` (18486) - only tracks with mood/theme tags, and only those tags
 
 Splits
-
 - `splits` folder contains training/validation/testing sets for `autotagging.tsv` and subsets
 
-<small>Note: by removing artist effect and ensuring that splits work for all subsets, number of tags and tracks have 
-been discarded</small>
+Note: by removing artist effect and ensuring that splits work for all subsets, number of tags and tracks have 
+been discarded
 
 
 ### Statistics in `stats`
