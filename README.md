@@ -18,7 +18,11 @@ Pre-processing
 - `autotagging.tsv` = `raw_30sec_cleantags_50artists.tsv` - base file for autotagging (after all postprocessing)
 
 Subsets
-- `autotagging_top50tags.tsv` - only top 50 tags according to tracks
+- `autotagging_top50tags.tsv` - only top 50 tags according to tag frequency in terms of tracks
+
+Splits
+- `splits` folder contains training/validation/testing sets for `autotagging.tsv`
+
 
 ### Statistics in `stats`
 
