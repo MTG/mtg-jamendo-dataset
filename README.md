@@ -3,7 +3,9 @@ Metadata, scripts and baselines for MTG-Jamendo dataset for auto-tagging.
 
 ## License
 
-This work is licensed under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+* The code in this repository is licensed under [Apache 2.0](LICENSE) 
+* The metadata is licensed under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+* The audio files are licensed under Creative Commons licenses, see individual licenses for details
 
 ## Structure
 
@@ -18,10 +20,15 @@ Pre-processing
 - `autotagging.tsv` = `raw_30sec_cleantags_50artists.tsv` - base file for autotagging (after all postprocessing)
 
 Subsets
-- `autotagging_top50tags.tsv` - only top 50 tags according to tag frequency in terms of tracks
+- `autotagging_top50tags.tsv` (54380) - only top 50 tags according to tag frequency in terms of tracks
+- `autotagging_moodtheme.tsv`(18486)- only tracks with mood/theme tags, and only those tags
 
 Splits
-- `splits` folder contains training/validation/testing sets for `autotagging.tsv`
+
+- `splits` folder contains training/validation/testing sets for `autotagging.tsv` and subsets
+
+<small>Note: by removing artist effect and ensuring that splits work for all subsets, number of tags and tracks have 
+been discarded</small>
 
 
 ### Statistics in `stats`
