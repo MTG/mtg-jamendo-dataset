@@ -54,9 +54,15 @@ def melspectrogram(audio,
     return pool['mel'].T
 
 
-def analyze(audio_file, npy_file):  
-    # The default values correspond to Choi's VGG model.
-    audio = load_audio(audio_file, segment_duration=29.1)
+def analyze(audio_file, npy_file, full_audio):
+    if full_audio:
+      # Analyze full audio duration.
+      segment_duration=None
+    else:
+      # Duration for the Choi's VGG model.
+      segment_duration=29.1
+
+    audio = load_audio(audio_file, segment_duration=segment_duration)
     mel = melspectrogram(audio)
     numpy.save(npy_file, mel, allow_pickle=False)
     return
@@ -69,7 +75,8 @@ Computes a mel-spectrogram for an audio file. Results are stored to a NumPy arra
 
     parser.add_argument('audio_file', help='input audio file')
     parser.add_argument('npy_file', help='output NPY file to store mel-spectrogram')
+    parser.add_argument('--full', dest='full_audio', help='analyze full audio instead of a centered 29.1s segment', action='store_true')
     args = parser.parse_args()
 
-    analyze(args.audio_file, args.npy_file)
+    analyze(args.audio_file, args.npy_file, args.full_audio)
 
