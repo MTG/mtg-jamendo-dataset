@@ -3,7 +3,9 @@ Metadata, scripts and baselines for MTG-Jamendo dataset for auto-tagging.
 
 ## License
 
-This work is licensed under a [Creative Commons Attribution-NonCommercial-ShareAlike 4.0 International License](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+* The code in this repository is licensed under [Apache 2.0](LICENSE) 
+* The metadata is licensed under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+* The audio files are licensed under Creative Commons licenses, see individual licenses for details
 
 ## Structure
 
@@ -18,7 +20,15 @@ Pre-processing
 - `autotagging.tsv` = `raw_30sec_cleantags_50artists.tsv` - base file for autotagging (after all postprocessing)
 
 Subsets
-- `autotagging_top50tags.tsv` - only top 50 tags according to tracks
+- `autotagging_top50tags.tsv` (54380) - only top 50 tags according to tag frequency in terms of tracks
+- `autotagging_moodtheme.tsv` (18486) - only tracks with mood/theme tags, and only those tags
+
+Splits
+- `splits` folder contains training/validation/testing sets for `autotagging.tsv` and subsets
+
+Note: by removing artist effect and ensuring that splits work for all subsets, number of tags and tracks have 
+been discarded
+
 
 ### Statistics in `stats`
 
@@ -37,6 +47,51 @@ virtualenv venv
 source venv/bin/activate
 pip install -r scripts/requirements.txt
 ```
+
+### Loading data in python
+Assuming you are working in `scripts` folder
+```python
+import commons
+
+input_file = '../data/autotagging.tsv'
+tracks, tags, extra = commons.read_file(input_file)
+```
+`tracks` is a dictionary with `track_id` as key and track data as value:
+```python
+{
+    1376256: {
+    'artist_id': 490499,
+    'album_id': 161779,
+    'path': '56/1376256.mp3',
+    'duration': 166.0,
+    'tags': [
+        'genre---easylistening',
+        'genre---downtempo',
+        'genre---chillout',
+        'mood/theme---commercial',
+        'mood/theme---corporate',
+        'instrument---piano'
+        ],
+    'genre': {'chillout', 'downtempo', 'easylistening'},
+    'mood/theme': {'commercial', 'corporate'},
+    'instrument': {'piano'}
+    }
+    ...
+}
+```
+`tags` contains mapping of tags to `track_id`:
+```python
+{
+    'genre': {
+        'easylistening': {1376256, 1376257, ...},
+        'downtempo': {1376256, 1376257, ...},
+        ...
+    },
+    'mood/theme': {...},
+    'instrument': {...}
+}
+```
+`extra` has information that is useful to format output file, so pass it to `write_file` if you are using it, otherwise you can just ignore it
 
 ### Reproduce postprocessing & statistics
 
@@ -64,11 +119,16 @@ python scripts/filter_fewartists.py data/raw_30s_cleantags.tsv 50 data/raw_30s_c
 python scripts/visualize_tags stats/autotagging 20  # generates top20.pdf figure
 ```
 
+### Subsets
 * Create subset with only top50 tags by number of tracks
 ```bash
 python scripts/filter_toptags.py data/autotagging.tsv 50 data/autotagging_top50tags.tsv --stats-directory stats/autotagging_top50tags
 ```
 
+* Create subset with only mood/theme tags
+```bash
+python scripts/filter_category data/autotagging.tsv mood/theme data/autotagging_moodtheme.tsv
+```
 ### Reproduce experiments
 
 TODO

@@ -22,10 +22,6 @@ def filter_tags(tracks, tags, tag_threshold, directory=None):
 
     tracks_to_delete = []
     for track_id, track in tracks.items():
-        if track_id == 953:
-            print(stats_filtered)
-            print(tags_top)
-            print(track)
 
         total_tags = 0
         for category in commons.CATEGORIES:
@@ -33,9 +29,6 @@ def filter_tags(tracks, tags, tag_threshold, directory=None):
             total_tags += len(track[category])
         if total_tags == 0:
             tracks_to_delete.append(track_id)
-
-        if track_id == 953:
-            print(track)
 
     for track in tracks_to_delete:
         tracks.pop(track)
