@@ -30,6 +30,18 @@ Note: by removing artist effect and ensuring that splits work for all subsets, n
 been discarded
 
 
+### Downloading dataset
+The dataset is hosted online:
+- [mtg-jamendo-raw_30s]() - all available audio (`raw_30s.tsv`)
+- [mtg-jamendo-raw_30s-spectrograms]() - mel-spectrograms (`raw_30s.tsv`)
+- [mtg-jamendo-autotagging-moodtheme](https://essentia.upf.edu/documentation/datasets/mtg-jamendo-autotagging-moodtheme/) (152 GB) - audio for the mood/theme subset (`autotagging_moodtheme.tsv`)
+- [mtg-jamendo-autotagging-moodtheme-spectrograms]() - mel-spectrograms (`autotagging_moodtheme.tsv`)
+
+Use `scripts/download/download_wget.sh` for a direct download. The script will store the dataset inside the folder it is executed from. Make sure to have a sufficient amount of space.
+
+Execute `scripts/download/extract_all.sh` inside the downloaded folder with the dataset to unpack all tar archives. The script will unpack and delete each tar file one by one.
+
+
 ### Statistics in `stats`
 
 Statistics of number of tracks, albums and artists per tag sorted by artists
