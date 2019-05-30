@@ -41,14 +41,13 @@ The dataset is hosted online:
 
 Use `scripts/download/download_wget.sh <dataset URL> <download path>` to download these URLs. Make sure to have a sufficient amount of disk space at the download location.
 
-Execute `scripts/download/extract_all.sh` inside the downloaded folder with the dataset to unpack all tar archives. The script will unpack and delete each tar file one by one.
+Execute `scripts/download/extract_all.sh <dataset path>` to unpack all tar archives in the downloaded folder. The script will unpack and delete each tar file one by one.
 
 For example, to download and unpack the mood/theme audio subset:
 ```bash
 mkdir /path/to/download
 ./download_wget.sh https://essentia.upf.edu/documentation/datasets/mtg-jamendo-autotagging-moodtheme/ /path/to/download
-cd /path/to/download
-./extract_all.sh
+./extract_all.sh /path/to/download/mtg-jamendo-autotagging-moodtheme/
 ```
 
 
