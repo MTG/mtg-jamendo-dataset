@@ -31,15 +31,25 @@ been discarded
 
 
 ### Downloading dataset
+All audio is distributed in 320kbps MP3 format. In addition we provide precomputed mel-spectrograms which are distributed as NumPy Arrays in NPY format. The audio files and the NPY files are split into folders packed into TAR archives.
+
 The dataset is hosted online:
 - [mtg-jamendo-raw_30s]() - all available audio (`raw_30s.tsv`)
 - [mtg-jamendo-raw_30s-spectrograms]() - mel-spectrograms (`raw_30s.tsv`)
 - [mtg-jamendo-autotagging-moodtheme](https://essentia.upf.edu/documentation/datasets/mtg-jamendo-autotagging-moodtheme/) (152 GB) - audio for the mood/theme subset (`autotagging_moodtheme.tsv`)
 - [mtg-jamendo-autotagging-moodtheme-spectrograms]() - mel-spectrograms (`autotagging_moodtheme.tsv`)
 
-Use `scripts/download/download_wget.sh` for a direct download. The script will store the dataset inside the folder it is executed from. Make sure to have a sufficient amount of space.
+Use `scripts/download/download_wget.sh <dataset URL> <download path>` to download these URLs. Make sure to have a sufficient amount of disk space at the download location.
 
 Execute `scripts/download/extract_all.sh` inside the downloaded folder with the dataset to unpack all tar archives. The script will unpack and delete each tar file one by one.
+
+For example, to download and unpack the mood/theme audio subset:
+```bash
+mkdir /path/to/download
+./download_wget.sh https://essentia.upf.edu/documentation/datasets/mtg-jamendo-autotagging-moodtheme/ /path/to/download
+cd /path/to/download
+./extract_all.sh
+```
 
 
 ### Statistics in `stats`
