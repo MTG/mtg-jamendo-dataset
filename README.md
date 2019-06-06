@@ -33,7 +33,58 @@ been discarded
 ### Statistics in `stats`
 
 Statistics of number of tracks, albums and artists per tag sorted by artists
-Each directory has statistics for metadata file with the same name
+Each directory has statistics for metadata file with the same name.
+
+
+### Downloading the dataset
+All audio is distributed in 320kbps MP3 format. In addition we provide precomputed mel-spectrograms which are distributed as NumPy Arrays in NPY format. The audio files and the NPY files are split into folders packed into TAR archives. The dataset is hosted [online at MTG UPF](https://essentia.upf.edu/documentation/datasets/mtg-jamendo/).
+
+We provide the following data subsets:
+- `raw_30s/audio` - all available audio for `raw_30s.tsv` (508 GB)
+- `raw_30s/melspecs` - mel-spectrograms for `raw_30s.tsv` (229 GB)
+- `autotagging-moodtheme/audio` - audio for the mood/theme subset `autotagging_moodtheme.tsv` (152 GB)
+- `autotagging-moodtheme/melspecs` - mel-spectrograms for the `autotagging_moodtheme.tsv` subset (68 GB)
+
+For faster downloads, we host a copy of the dataset on Google Drive. We provide a script to download and validate all files in the dataset. See its help message for more information:
+
+```bash
+python3 scripts/download/download_gdrive.py -h
+```
+```
+usage: download_gdrive.py [-h] [--dataset {raw_30s,autotagging_moodtheme}]
+                          [--type {audio,melspecs}] [--unpack] [--remove]
+                          outputdir
+
+Download the MTG-Jamendo dataset from Google Drive
+
+positional arguments:
+  outputdir             directory to store the dataset
+
+optional arguments:
+  -h, --help            show this help message and exit
+  --dataset {raw_30s,autotagging_moodtheme}
+                        dataset to download (default: raw_30s)
+  --type {audio,melspecs}
+                        type of data to download (audio or mel-spectrograms)
+                        (default: audio)
+  --unpack              unpack tar archives (default: False)
+  --remove              remove tar archives while unpacking one by one (use to
+                        save disk space) (default: False)
+
+```
+
+For example, to download audio for the `autotagging_moodtheme.tsv` subset, unpack and validate all tar archives:
+
+```
+mkdir /path/to/download
+python3 scripts/download/download_gdrive.py --dataset autotagging_moodtheme --type audio /path/to/download --unpack --remove
+```
+
+
+Unpacking process is run after tar archive downloads are complete and validated. In the case of download errors, re-run the script to download missing files.
+
+Due to the large size of the dataset, it can be useful to include the `--remove` flag to save disk space: in this case, tar archive are unpacked and immediately removed one by one.
+
 
 ## Using the dataset
 
