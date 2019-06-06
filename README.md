@@ -5,7 +5,7 @@ Metadata, scripts and baselines for MTG-Jamendo dataset for auto-tagging.
 
 * The code in this repository is licensed under [Apache 2.0](LICENSE) 
 * The metadata is licensed under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
-* The audio files are licensed under Creative Commons licenses, see individual licenses for details
+* The audio files are licensed under Creative Commons licenses, see individual licenses for details in `audio_licenses.txt`.
 
 ## Structure
 
@@ -17,17 +17,18 @@ Pre-processing
 - `raw_30s_cleantags.tsv`(55701) - with tags merged according to `tag_map.json`
 - `raw_30s_cleantags_50artists.tsv`(55609) - with tags that have at least 50 unique artists
 - `tag_map.json` - map of tags that we merged
-- `autotagging.tsv` = `raw_30sec_cleantags_50artists.tsv` - base file for autotagging (after all postprocessing)
+- `autotagging.tsv` = `raw_30sec_cleantags_50artists.tsv` - base file for autotagging (after all postprocessing, 195 tags)
 
 Subsets
 - `autotagging_top50tags.tsv` (54380) - only top 50 tags according to tag frequency in terms of tracks
-- `autotagging_moodtheme.tsv` (18486) - only tracks with mood/theme tags, and only those tags
+- `autotagging_moodtheme.tsv` (18486) - only tracks with mood/theme tags (57 tags), and only those tags
 
 Splits
 - `splits` folder contains training/validation/testing sets for `autotagging.tsv` and subsets
 
-Note: by removing artist effect and ensuring that splits work for all subsets, number of tags and tracks have 
-been discarded
+Note: A few tags are discarded in the splits to guarantee the same
+list of tags across all splits. For `autotagging.tsv`, this results in 55525 tracks annotated by 87 genre tags, 40 instrument tags, and 56 mood/theme tags available in the splits.
+
 
 ### Statistics in `stats`
 
@@ -182,6 +183,16 @@ python scripts/filter_category data/autotagging.tsv mood/theme data/autotagging_
 ### Reproduce experiments
 
 TODO
+
+
+## Citing the dataset
+
+Please consider citing the following publication when using the dataset:
+
+[1] Bogdanov, D., Won M., Tovstogan P., Porter A., & Serra X. (2019).  [The MTG-Jamendo Dataset for Automatic Music Tagging](http://mtg.upf.edu/node/3957). Machine Learning for Music Discovery Workshop, International Conference on Machine Learning (ICML 2019).
+
+An expanded version of the paper describing the dataset and the baselines will be announced later.
+
 
 ## Acknowledgments
 
