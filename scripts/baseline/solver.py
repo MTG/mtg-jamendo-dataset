@@ -38,7 +38,9 @@ class Solver(object):
             self.num_class = 56
         elif config.subset == 'top50':
             self.num_class = 50
-        self.model_fn = os.path.join('model_'+config.subset, 'best_model.pth')
+        self.model_fn = os.path.join('model_'+config.subset+'_'+str(config.split), 'best_model.pth')
+        self.roc_auc_fn = 'roc_auc_'+config.subset+'_'+str(config.split)+'.npy'
+        self.pr_auc_fn = 'pr_auc_'+config.subset+'_'+str(config.split)+'.npy'
 
         # Build model
         self.build_model()
@@ -172,7 +174,7 @@ class Solver(object):
 
         for i in range(self.num_class):
             print('%s \t\t %.4f , %.4f' % (self.tag_list[i], roc_auc_all[i], pr_auc_all[i]))
-        return roc_aucs, pr_aucs
+        return roc_aucs, pr_aucs, roc_auc_all, pr_auc_all
 
     def _schedule(self, current_optimizer, drop_counter):
         if current_optimizer == 'adam' and drop_counter == 60:
@@ -221,9 +223,9 @@ class Solver(object):
 
             # print log
             if (ctr) % self.log_step == 0:
-                print("[%s] Epoch [%d/%d], Iter [%d/%d] valid loss: %.4f Elapsed: %s" %
+                print("[%s] Iter [%d/%d] valid loss: %.4f Elapsed: %s" %
                         (datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
-                        epoch+1, self.n_epochs, ctr, len(self.data_loader), loss.item(),
+                        ctr, len(self.data_loader), loss.item(),
                         datetime.timedelta(seconds=time.time()-start_t)))
 
             # append prediction
@@ -235,4 +237,9 @@ class Solver(object):
                 gt_array.append(list(np.array(gt)))
 
         # get auc
-        roc_auc, pr_auc = self.get_auc(prd_array, gt_array)
+        roc_auc, pr_auc, roc_auc_all, pr_auc_all = self.get_auc(prd_array, gt_array)
+
+        # save aucs
+        np.save(open(self.roc_auc_fn, 'wb'), roc_auc_all)
+        np.save(open(self.pr_auc_fn, 'wb'), pr_auc_all)
+
