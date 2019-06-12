@@ -168,15 +168,15 @@ python scripts/filter_fewartists.py data/raw_30s_cleantags.tsv 50 data/raw_30s_c
 python scripts/visualize_tags.py stats/autotagging 20  # generates top20.pdf figure
 ```
 
-### Subsets
+### Recreate subsets
 * Create subset with only top50 tags by number of tracks
 ```bash
-python scripts/filter_toptags.py data/autotagging.tsv 50 data/autotagging_top50tags.tsv --stats-directory stats/autotagging_top50tags
+python scripts/filter_toptags.py data/autotagging.tsv 50 data/autotagging_top50tags.tsv --stats-directory stats/autotagging_top50tags --tag-list data/top50tags.txt
 ```
 
 * Create subset with only mood/theme tags
 ```bash
-python scripts/filter_category data/autotagging.tsv mood/theme data/autotagging_moodtheme.tsv
+python scripts/filter_category.py data/autotagging.tsv mood/theme data/autotagging_moodtheme.tsv
 ```
 ### Reproduce experiments
 

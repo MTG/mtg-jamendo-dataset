@@ -22,7 +22,7 @@ def get_statistics(category, tracks, tags):
         data.append(row)
 
     data = pd.DataFrame(data, columns=['tag', 'artists', 'albums', 'tracks'])
-    data = data.sort_values(by=['artists'], ascending=False)
+    data = data.sort_values(by=['artists', 'albums', 'tracks', 'tag'], ascending=[False, False, False, True])
     data = data.reset_index(drop=True)
 
     total_stats = {category: len(collection_ids) for category, collection_ids in total.items()}

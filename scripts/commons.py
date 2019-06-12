@@ -1,6 +1,6 @@
 import csv
 
-CATEGORIES = ['genre', 'mood/theme', 'instrument']
+CATEGORIES = ['genre', 'instrument', 'mood/theme']
 
 
 def get_id(value):
@@ -66,9 +66,11 @@ def write_file(tracks, tsv_file, extra):
             track['duration']
         ]
 
+        tags = []
         for category in CATEGORIES:
-            row += [category + '---' + tag for tag in track[category]]
+            tags += [category + '---' + tag for tag in track[category]]
 
+        row += sorted(tags)
         rows.append(row)
 
     with open(tsv_file, 'w') as fp:
