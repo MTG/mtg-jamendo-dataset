@@ -1,5 +1,9 @@
 # The MTG-Jamendo Dataset
-Metadata, scripts and baselines for MTG-Jamendo dataset for auto-tagging.
+
+We present the MTG-Jamendo Dataset, a new open dataset for music auto-tagging. It is built using music available at Jamendo under Creative Commons licenses and tags provided by content uploaders. The dataset contains over 55,000 full audio tracks with 195 tags from genre, instrument, and mood/theme categories. We provide elaborated data splits for researchers and report the performance of a simple baseline approach on five different sets of tags: genre, instrument, mood/theme, top-50, and overall.
+
+This repository contains metadata, scripts, instructions on how to download and use the dataset and reproduce baseline results.
+
 
 ## Structure
 
@@ -11,6 +15,7 @@ Pre-processing
 - `raw_30s_cleantags.tsv`(55,701) - with tags merged according to `tag_map.json`
 - `raw_30s_cleantags_50artists.tsv`(55,609) - with tags that have at least 50 unique artists
 - `tag_map.json` - map of tags that we merged
+- `top50tags.txt` - list of top 50 tags
 - `autotagging.tsv` = `raw_30sec_cleantags_50artists.tsv` - base file for autotagging (after all postprocessing, 195 tags)
 
 Subsets
