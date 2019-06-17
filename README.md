@@ -15,7 +15,7 @@ Pre-processing
 - `raw_30s_cleantags.tsv`(55,701) - with tags merged according to `tag_map.json`
 - `raw_30s_cleantags_50artists.tsv`(55,609) - with tags that have at least 50 unique artists
 - `tag_map.json` - map of tags that we merged
-- `top50tags.txt` - list of top 50 tags
+- `tags_top50.txt` - list of top 50 tags
 - `autotagging.tsv` = `raw_30sec_cleantags_50artists.tsv` - base file for autotagging (after all postprocessing, 195 tags)
 
 Subsets
@@ -207,7 +207,7 @@ An expanded version of the paper describing the dataset and the baselines will b
 
 This work was funded by the predoctoral grant MDM-2015-0502-17-2 from the Spanish Ministry of Economy and Competitiveness linked to the Maria de Maeztu Units of Excellence Programme (MDM-2015-0502). 
 
-This project has received funding from the European Union's Horizon 2020 research and innovation programme under the Marie Skłodowsa-Curie grant agreement No. 765068.
+This project has received funding from the European Union's Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No. 765068.
 
 This work has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 688382 "AudioCommons".
 
