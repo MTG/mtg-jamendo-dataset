@@ -1,6 +1,7 @@
 import csv
 
-CATEGORIES = ['genre', 'mood/theme', 'instrument']
+CATEGORIES = ['genre', 'instrument', 'mood/theme']
+TAG_HYPHEN = '---'
 
 
 def get_id(value):
@@ -32,7 +33,7 @@ def read_file(tsv_file):
             albums_ids.add(get_id(row[2]))
 
             for tag_str in row[5:]:
-                category, tag = tag_str.split('---')
+                category, tag = tag_str.split(TAG_HYPHEN)
 
                 if tag not in tags[category]:
                     tags[category][tag] = set()
@@ -66,9 +67,11 @@ def write_file(tracks, tsv_file, extra):
             track['duration']
         ]
 
+        tags = []
         for category in CATEGORIES:
-            row += [category + '---' + tag for tag in track[category]]
+            tags += [category + '---' + tag for tag in track[category]]
 
+        row += sorted(tags)
         rows.append(row)
 
     with open(tsv_file, 'w') as fp:

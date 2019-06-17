@@ -1,42 +1,57 @@
 # The MTG-Jamendo Dataset
-Metadata, scripts and baselines for MTG-Jamendo dataset for auto-tagging.
 
-## License
+We present the MTG-Jamendo Dataset, a new open dataset for music auto-tagging. It is built using music available at Jamendo under Creative Commons licenses and tags provided by content uploaders. The dataset contains over 55,000 full audio tracks with 195 tags from genre, instrument, and mood/theme categories. We provide elaborated data splits for researchers and report the performance of a simple baseline approach on five different sets of tags: genre, instrument, mood/theme, top-50, and overall.
 
-* The code in this repository is licensed under [Apache 2.0](LICENSE) 
-* The metadata is licensed under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
-* The audio files are licensed under Creative Commons licenses, see individual licenses for details
+This repository contains metadata, scripts, instructions on how to download and use the dataset and reproduce baseline results.
+
 
 ## Structure
 
 ### Metadata files in `data`
 
 Pre-processing
-- `raw.tsv` (56639) - raw file without postprocessing
-- `raw_30s.tsv`(55701) - tracks with duration more than 30s
-- `raw_30s_cleantags.tsv`(55701) - with tags merged according to `tag_map.json`
-- `raw_30s_cleantags_50artists.tsv`(55609) - with tags that have at least 50 unique artists
+- `raw.tsv` (56,639) - raw file without postprocessing
+- `raw_30s.tsv`(55,701) - tracks with duration more than 30s
+- `raw_30s_cleantags.tsv`(55,701) - with tags merged according to `tag_map.json`
+- `raw_30s_cleantags_50artists.tsv`(55,609) - with tags that have at least 50 unique artists
 - `tag_map.json` - map of tags that we merged
-- `autotagging.tsv` = `raw_30sec_cleantags_50artists.tsv` - base file for autotagging (after all postprocessing)
+- `tags_top50.txt` - list of top 50 tags
+- `autotagging.tsv` = `raw_30sec_cleantags_50artists.tsv` - base file for autotagging (after all postprocessing, 195 tags)
 
 Subsets
-- `autotagging_top50tags.tsv` (54380) - only top 50 tags according to tag frequency in terms of tracks
-- `autotagging_moodtheme.tsv` (18486) - only tracks with mood/theme tags, and only those tags
+- `autotagging_top50tags.tsv` (54,380) - only top 50 tags according to tag frequency in terms of tracks
+- `autotagging_genre.tsv` (55,215) - only tracks with genre tags (95 tags), and only those tags
+- `autotagging_instrument.tsv` (25,135) - instrument tags (41 tags)
+- `autotagging_moodtheme.tsv` (18,486) - mood/theme tags (59 tags)
 
 Splits
 - `splits` folder contains training/validation/testing sets for `autotagging.tsv` and subsets
 
-Note: by removing artist effect and ensuring that splits work for all subsets, number of tags and tracks have 
-been discarded
-
+Note: A few tags are discarded in the splits to guarantee the same list of tags across all splits. For `autotagging.tsv`, this results in **55,525 tracks** annotated by **87 genre tags, 40 instrument tags, and 56 mood/theme tags** available in the splits.
 
 ### Statistics in `stats`
 
-Statistics of number of tracks, albums and artists per tag sorted by artists
+Statistics of number of tracks, albums and artists per tag sorted by number of artists.
 Each directory has statistics for metadata file with the same name.
+Statistics for subsets based on categories are not kept seperated due to it already included in `autotagging`
 
+## Using the dataset
 
-### Downloading the dataset
+### Requirements
+
+* Python 3.6+
+* Virtualenv: `pip install virtualenv`
+* Create virtual environment and install requirements
+```bash
+virtualenv venv
+source venv/bin/activate
+pip install -r scripts/requirements.txt
+```
+
+Note: on OSX **venv** is recommended to avoid problems with matplotlib ([source](https://matplotlib.org/3.1.0/faq/osx_framework.html))
+
+### Downloading the data
+
 All audio is distributed in 320kbps MP3 format. In addition we provide precomputed mel-spectrograms which are distributed as NumPy Arrays in NPY format. The audio files and the NPY files are split into folders packed into TAR archives. The dataset is hosted [online at MTG UPF](https://essentia.upf.edu/documentation/datasets/mtg-jamendo/).
 
 We provide the following data subsets:
@@ -48,7 +63,7 @@ We provide the following data subsets:
 For faster downloads, we host a copy of the dataset on Google Drive. We provide a script to download and validate all files in the dataset. See its help message for more information:
 
 ```bash
-python3 scripts/download/download_gdrive.py -h
+python scripts/download/download_gdrive.py -h
 ```
 ```
 usage: download_gdrive.py [-h] [--dataset {raw_30s,autotagging_moodtheme}]
@@ -86,19 +101,6 @@ Unpacking process is run after tar archive downloads are complete and validated.
 Due to the large size of the dataset, it can be useful to include the `--remove` flag to save disk space: in this case, tar archive are unpacked and immediately removed one by one.
 
 
-## Using the dataset
-
-### Requirements
-
-* Python 3.6
-* Virtualenv: `pip install virtualenv`
-* Create virtual environment and install requirements
-```bash
-virtualenv venv
-source venv/bin/activate
-pip install -r scripts/requirements.txt
-```
-
 ### Loading data in python
 Assuming you are working in `scripts` folder
 ```python
@@ -107,6 +109,7 @@ import commons
 input_file = '../data/autotagging.tsv'
 tracks, tags, extra = commons.read_file(input_file)
 ```
+
 `tracks` is a dictionary with `track_id` as key and track data as value:
 ```python
 {
@@ -146,19 +149,19 @@ tracks, tags, extra = commons.read_file(input_file)
 
 ### Reproduce postprocessing & statistics
 
-* Compute statistics
+* Recompute statistics for `raw` and `raw_30s`
 ```bash
 python scripts/statistics.py data/raw.tsv stats/raw
 python scripts/statistics.py data/raw_30s.tsv stats/raw_30s
 ```
 
-* Clean tags and recompute statistics
+* Clean tags and recompute statistics (`raw_30s_cleantags`)
 ```bash
 python scripts/clean_tags.py data/raw_30s.tsv data/tag_map.json data/raw_30s_cleantags.tsv
 python scripts/statistics.py data/raw_30s_cleantags.tsv stats/raw_30s_cleantags
 ```
 
-* Filter out tags with low number of unique artists and recompute statistics
+* Filter out tags with low number of unique artists and recompute statistics (`raw_30s_cleantags_50artists`)
 ```bash
 python scripts/filter_fewartists.py data/raw_30s_cleantags.tsv 50 data/raw_30s_cleantags_50artists.tsv --stats-directory stats/raw_30s_cleantags_50artists
 ```
@@ -167,28 +170,45 @@ python scripts/filter_fewartists.py data/raw_30s_cleantags.tsv 50 data/raw_30s_c
 
 * Visualize top 20 tags per category
 ```bash
-python scripts/visualize_tags stats/autotagging 20  # generates top20.pdf figure
+python scripts/visualize_tags.py stats/autotagging 20  # generates top20.pdf figure
 ```
 
-### Subsets
+### Recreate subsets
 * Create subset with only top50 tags by number of tracks
 ```bash
-python scripts/filter_toptags.py data/autotagging.tsv 50 data/autotagging_top50tags.tsv --stats-directory stats/autotagging_top50tags
+python scripts/filter_toptags.py data/autotagging.tsv 50 data/autotagging_top50tags.tsv --stats-directory stats/autotagging_top50tags --tag-list data/tags_top50.txt
+python scripts/split_filter_subset.py data/splits autotagging autotagging_top50tags --subset-file data/tags_top50.txt
 ```
 
-* Create subset with only mood/theme tags
+* Create subset with only mood/theme tags (or other category: genre, instrument)
 ```bash
-python scripts/filter_category data/autotagging.tsv mood/theme data/autotagging_moodtheme.tsv
+python scripts/filter_category.py data/autotagging.tsv mood/theme data/autotagging_moodtheme.tsv
+python scripts/split_filter_subset.py data/splits autotagging autotagging_moodtheme --category mood/theme
 ```
 ### Reproduce experiments
 
 TODO
 
+
+## Citing the dataset
+
+Please consider citing the following publication when using the dataset:
+
+[1] Bogdanov, D., Won M., Tovstogan P., Porter A., & Serra X. (2019).  [The MTG-Jamendo Dataset for Automatic Music Tagging](http://mtg.upf.edu/node/3957). Machine Learning for Music Discovery Workshop, International Conference on Machine Learning (ICML 2019).
+
+An expanded version of the paper describing the dataset and the baselines will be announced later.
+
+## License
+
+* The code in this repository is licensed under [Apache 2.0](LICENSE) 
+* The metadata is licensed under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
+* The audio files are licensed under Creative Commons licenses, see individual licenses for details in `audio_licenses.txt`.
+
 ## Acknowledgments
 
 This work was funded by the predoctoral grant MDM-2015-0502-17-2 from the Spanish Ministry of Economy and Competitiveness linked to the Maria de Maeztu Units of Excellence Programme (MDM-2015-0502). 
 
-This project has received funding from the European Union's Horizon 2020 research and innovation programme under the Marie Skłodowsa-Curie grant agreement No. 765068.
+This project has received funding from the European Union's Horizon 2020 research and innovation programme under the Marie Skłodowska-Curie grant agreement No. 765068.
 
 This work has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 688382 "AudioCommons".
 
