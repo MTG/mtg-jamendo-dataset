@@ -8,12 +8,13 @@ def filter_tags(tracks, tags, tag_threshold, directory=None, tags_file=None):
     if directory is not None:
         util.mkdir_p(directory)
 
+    # TODO: refactor to properly handle and not disconnect category+tag
     tags_merged = {}
     tags_with_prefix = {}
     for category, category_tags in tags.items():
         tags_merged.update(category_tags)
         if tags_file is not None:
-            tags_with_prefix.update({tag: category + '--' + tag for tag in category_tags})
+            tags_with_prefix.update({tag: category + commons.TAG_HYPHEN + tag for tag in category_tags})
 
     stats, total = statistics.get_statistics('all', tracks, {'all': tags_merged})
     stats = stats.sort_values(by='tracks', ascending=False)

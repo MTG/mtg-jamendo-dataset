@@ -18,6 +18,7 @@ def filter_tags(tracks, tags, artist_threshold, directory=None):
         tags_new_all[category] = set(stats_filtered['tag'])
         print("- {} tags: {} -> {}".format(category, len(stats), len(stats_filtered)))
 
+    # TODO: replace with filter_subset
     tracks_to_delete = []
     for track_id, track in tracks.items():
         total_tags = 0

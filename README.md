@@ -176,7 +176,8 @@ python scripts/visualize_tags.py stats/autotagging 20  # generates top20.pdf fig
 ### Recreate subsets
 * Create subset with only top50 tags by number of tracks
 ```bash
-python scripts/filter_toptags.py data/autotagging.tsv 50 data/autotagging_top50tags.tsv --stats-directory stats/autotagging_top50tags --tag-list data/top50tags.txt
+python scripts/filter_toptags.py data/autotagging.tsv 50 data/autotagging_top50tags.tsv --stats-directory stats/autotagging_top50tags --tag-list data/tags_top50.txt
+python scripts/split_filter_subset.py data/splits autotagging autotagging_top50tags --subset-file data/tags_top50.txt
 ```
 
 * Create subset with only mood/theme tags
