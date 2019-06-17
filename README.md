@@ -20,7 +20,9 @@ Pre-processing
 
 Subsets
 - `autotagging_top50tags.tsv` (54,380) - only top 50 tags according to tag frequency in terms of tracks
-- `autotagging_moodtheme.tsv` (18,486) - only tracks with mood/theme tags (57 tags), and only those tags
+- `autotagging_genre.tsv` (55,215) - only tracks with genre tags (95 tags), and only those tags
+- `autotagging_instrument.tsv` (25,135) - instrument tags (41 tags)
+- `autotagging_moodtheme.tsv` (18,486) - mood/theme tags (59 tags)
 
 Splits
 - `splits` folder contains training/validation/testing sets for `autotagging.tsv` and subsets
@@ -29,11 +31,9 @@ Note: A few tags are discarded in the splits to guarantee the same list of tags 
 
 ### Statistics in `stats`
 
-Statistics of number of tracks, albums and artists per tag sorted by number of artists
+Statistics of number of tracks, albums and artists per tag sorted by number of artists.
 Each directory has statistics for metadata file with the same name.
-
-Note: `autotagging_moodtheme` statistics is essentially `autotagging/mood_theme`
-
+Statistics for subsets based on categories are not kept seperated due to it already included in `autotagging`
 
 ## Using the dataset
 
@@ -180,9 +180,10 @@ python scripts/filter_toptags.py data/autotagging.tsv 50 data/autotagging_top50t
 python scripts/split_filter_subset.py data/splits autotagging autotagging_top50tags --subset-file data/tags_top50.txt
 ```
 
-* Create subset with only mood/theme tags
+* Create subset with only mood/theme tags (or other category: genre, instrument)
 ```bash
 python scripts/filter_category.py data/autotagging.tsv mood/theme data/autotagging_moodtheme.tsv
+python scripts/split_filter_subset.py data/splits autotagging autotagging_moodtheme --category mood/theme
 ```
 ### Reproduce experiments
 
