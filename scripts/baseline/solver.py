@@ -32,13 +32,16 @@ class Solver(object):
             self.num_class = 183
         elif config.subset == 'genre':
             self.num_class = 87
+            self.tag_list = self.tag_list[:87]
         elif config.subset == 'instrument':
             self.num_class = 40
-        elif config.subset == 'mood':
+            self.tag_list = self.tag_list[87:127]
+        elif config.subset == 'moodtheme':
             self.num_class = 56
-        elif config.subset == 'top50':
+            self.tag_list = self.tag_list[127:]
+        elif config.subset == 'top50tags':
             self.num_class = 50
-        self.model_fn = os.path.join('model_'+config.subset+'_'+str(config.split), 'best_model.pth')
+        self.model_fn = os.path.join(self.model_save_path, 'best_model.pth')
         self.roc_auc_fn = 'roc_auc_'+config.subset+'_'+str(config.split)+'.npy'
         self.pr_auc_fn = 'pr_auc_'+config.subset+'_'+str(config.split)+'.npy'
 
@@ -151,11 +154,14 @@ class Solver(object):
                 gt_array.append(list(np.array(gt)))
 
         # get auc
-        roc_auc, pr_auc = self.get_auc(prd_array, gt_array)
+        roc_auc, pr_auc, _, _ = self.get_auc(prd_array, gt_array)
         return roc_auc, pr_auc
 
     def get_tag_list(self, config):
-        path = os.path.join(config.audio_path, 'split', config.subset, 'split-'+str(config.split), 'tag_list.npy')
+        if config.subset == 'top50tags':
+            path = 'tag_list_50.npy'
+        else:
+            path = 'tag_list.npy'
         tag_list = np.load(path)
         return tag_list
 
@@ -223,7 +229,7 @@ class Solver(object):
 
             # print log
             if (ctr) % self.log_step == 0:
-                print("[%s] Iter [%d/%d] valid loss: %.4f Elapsed: %s" %
+                print("[%s] Iter [%d/%d] test loss: %.4f Elapsed: %s" %
                         (datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                         ctr, len(self.data_loader), loss.item(),
                         datetime.timedelta(seconds=time.time()-start_t)))

@@ -8,7 +8,7 @@ class AudioFolder(data.Dataset):
     def __init__(self, root, subset, tr_val='train', split=0):
         self.trval = tr_val
         self.root = root
-        fn = os.path.join(root, 'split', subset, 'split-'+str(split), tr_val+'dict.pickle')
+        fn = '../../data/splits/split-%d/%s_%s_dict.pickle' % (split, subset, tr_val)
         self.get_dictionary(fn)
 
     def __getitem__(self, index):

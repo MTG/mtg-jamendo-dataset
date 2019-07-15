@@ -36,6 +36,7 @@ class CNN(nn.Module):
 
         # classifier
         self.dense = nn.Linear(64, num_class)
+        self.dropout = nn.Dropout(0.5)
 
     def forward(self, x):
         x = x.unsqueeze(1)
@@ -60,7 +61,7 @@ class CNN(nn.Module):
 
         # classifier
         x = x.view(x.size(0), -1)
-        x = nn.Dropout(0.5)(x)
+        x = self.dropout(x)
         logit = nn.Sigmoid()(self.dense(x))
 
         return logit
