@@ -1,9 +1,11 @@
 import argparse
+import os
+import util
+
 import pandas as pd
 import numpy as np
-import os
+
 import commons
-import util
 
 
 def get_statistics(category, tracks, tags):
@@ -50,9 +52,8 @@ def compute_duration_stats(tracks):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Computes data statistics, such as number of unique tracks, albums '
                                                  'and artists per tag')
-    parser.add_argument('tsv_file', help='TSV file with such columns: TRACK_ID, ARTIST_ID, ALBUM_ID, PATH, DURATION, '
-                                         'TAGS')
-    parser.add_argument('directory', help='Directory for computed statistics')
+    parser.add_argument('tsv_file', help=commons.METADATA_DESCRIPTION)
+    parser.add_argument('directory', help='directory for computed statistics')
     args = parser.parse_args()
 
     tracks, tags, _ = commons.read_file(args.tsv_file)

@@ -1,4 +1,5 @@
 import argparse
+
 import commons
 import util
 
@@ -14,10 +15,9 @@ def merge_tags(tracks, tag_map_all):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Merges tags according to the mapping')
-    parser.add_argument('tsv_file', help='TSV file with such columns: TRACK_ID, ARTIST_ID, ALBUM_ID, PATH, DURATION, '
-                                         'TAGS')
+    parser.add_argument('tsv_file', help=commons.METADATA_DESCRIPTION)
     parser.add_argument('map_file', help='JSON file: {"category": {"original_tag": "new_tag"}}')
-    parser.add_argument('output_file', help='Output tsv file')
+    parser.add_argument('output_file', help='output tsv file')
     args = parser.parse_args()
 
     tracks, tags, extra = commons.read_file(args.tsv_file)

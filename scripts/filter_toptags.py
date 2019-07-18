@@ -1,4 +1,5 @@
 import argparse
+
 import commons
 import statistics
 import util
@@ -44,8 +45,7 @@ def filter_tags(tracks, tags, tag_threshold, directory=None, tags_file=None):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Filters out less frequent tags according to the number of tracks')
-    parser.add_argument('tsv_file', help='TSV file with such columns: TRACK_ID, ARTIST_ID, ALBUM_ID, PATH, DURATION, '
-                                         'TAGS')
+    parser.add_argument('tsv_file', help=commons.METADATA_DESCRIPTION)
     parser.add_argument('tag_threshold', type=int, help='threshold number of tags')
     parser.add_argument('output_file', help='output tsv file')
     parser.add_argument('--stats-directory', default=None,
