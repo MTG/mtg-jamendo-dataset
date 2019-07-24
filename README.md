@@ -29,6 +29,8 @@ Splits
 
 Note: A few tags are discarded in the splits to guarantee the same list of tags across all splits. For `autotagging.tsv`, this results in **55,525 tracks** annotated by **87 genre tags, 40 instrument tags, and 56 mood/theme tags** available in the splits.
 
+Splits are generated from `autotagging.tsv`, containing all tags. For each split, the related subsets (top50, genre, instrument, mood/theme) are built filtering out unrelated tags and tracks without any tags.
+
 ### Statistics in `stats`
 
 Statistics of number of tracks, albums and artists per tag sorted by number of artists.
