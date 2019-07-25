@@ -33,8 +33,7 @@ def filter_subset(tracks, tags_subset):
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Filters out tags according to tag list and removes tracks with no '
                                                  'tags left')
-    parser.add_argument('tsv_file', help='TSV file with such columns: TRACK_ID, ARTIST_ID, ALBUM_ID, PATH, DURATION, '
-                                         'TAGS')
+    parser.add_argument('tsv_file', help=commons.METADATA_DESCRIPTION)
     parser.add_argument('tags_file', help='file with list of tag subset')
     parser.add_argument('output_file', help='output tsv file')
 

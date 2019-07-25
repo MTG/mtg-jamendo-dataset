@@ -1,9 +1,10 @@
 import argparse
+import os
+
 import pandas as pd
 import numpy as np
 import matplotlib.pyplot as plt
 from matplotlib import rcParams, font_manager
-import os
 
 
 def visualize(directory, n):

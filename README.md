@@ -214,4 +214,4 @@ This project has received funding from the European Union's Horizon 2020 researc
 
 This work has received funding from the European Union's Horizon 2020 research and innovation programme under grant agreement No 688382 "AudioCommons".
 
-<img src="img/eu.svg" height="64" hspace="20">
+<img src="https://upload.wikimedia.org/wikipedia/commons/b/b7/Flag_of_Europe.svg" height="64" hspace="20">

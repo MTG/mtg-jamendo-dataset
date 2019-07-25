@@ -2,16 +2,22 @@ import csv
 
 CATEGORIES = ['genre', 'instrument', 'mood/theme']
 TAG_HYPHEN = '---'
+METADATA_DESCRIPTION = 'TSV file with such columns: TRACK_ID, ARTIST_ID, ALBUM_ID, PATH, DURATION, TAGS'
 
 
 def get_id(value):
     return int(value.split('_')[1])
 
 
+def get_length(values):
+    return len(str(max(values)))
+
+
 def read_file(tsv_file):
     tracks = {}
     tags = {category: {} for category in CATEGORIES}
 
+    # For statistics
     artist_ids = set()
     albums_ids = set()
 
@@ -42,7 +48,7 @@ def read_file(tsv_file):
 
                 tracks[track_id][category].add(tag)
 
-    print("Reading: {} tracks, {} albums. {} artists".format(len(tracks), len(albums_ids), len(artist_ids)))
+    print("Reading: {} tracks, {} albums, {} artists".format(len(tracks), len(albums_ids), len(artist_ids)))
 
     extra = {
         'track_id_length': get_length(tracks.keys()),
@@ -50,10 +56,6 @@ def read_file(tsv_file):
         'album_id_length': get_length(albums_ids)
     }
     return tracks, tags, extra
-
-
-def get_length(values):
-    return len(str(max(values)))
 
 
 def write_file(tracks, tsv_file, extra):
