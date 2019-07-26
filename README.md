@@ -4,6 +4,8 @@ We present the MTG-Jamendo Dataset, a new open dataset for music auto-tagging. I
 
 This repository contains metadata, scripts, instructions on how to download and use the dataset and reproduce baseline results.
 
+A subset of the dataset is used in the [Emotion and Theme Recognition in Music Task](https://multimediaeval.github.io/2019-Emotion-and-Theme-Recognition-in-Music-Task/) within [MediaEval 2019](http://www.multimediaeval.org/mediaeval2019/) (you are welcome to participate).
+
 
 ## Structure
 
@@ -190,6 +192,11 @@ python scripts/split_filter_subset.py data/splits autotagging autotagging_moodth
 ### Reproduce experiments
 
 TODO
+
+
+## Research challenges using the dataset
+
+[MediaEval 2019 Emotion and Theme Recognition in Music](https://multimediaeval.github.io/2019-Emotion-and-Theme-Recognition-in-Music-Task/)
 
 
 ## Citing the dataset
