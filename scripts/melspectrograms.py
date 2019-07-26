@@ -1,5 +1,5 @@
-
 from argparse import ArgumentParser
+
 from essentia.standard import *
 import essentia
 import numpy
@@ -69,13 +69,13 @@ def analyze(audio_file, npy_file, full_audio):
 
 
 if __name__ == '__main__':
-    parser = ArgumentParser(description = """
-Computes a mel-spectrogram for an audio file. Results are stored to a NumPy array binary file.
-""")
+    parser = ArgumentParser(description="Computes a mel-spectrogram for an audio file. Results are stored to a NumPy "
+                                        "array binary file.")
 
     parser.add_argument('audio_file', help='input audio file')
     parser.add_argument('npy_file', help='output NPY file to store mel-spectrogram')
-    parser.add_argument('--full', dest='full_audio', help='analyze full audio instead of a centered 29.1s segment', action='store_true')
+    parser.add_argument('--full', dest='full_audio', help='analyze full audio instead of a centered 29.1s segment',
+                        action='store_true')
     args = parser.parse_args()
 
     analyze(args.audio_file, args.npy_file, args.full_audio)

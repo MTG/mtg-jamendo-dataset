@@ -1,4 +1,5 @@
 import argparse
+
 import commons
 
 
@@ -14,8 +15,7 @@ def filter_category(tracks, tags, category):
 
 if __name__ == '__main__':
     parser = argparse.ArgumentParser(description='Creates subset of the full dataset')
-    parser.add_argument('tsv_file', help='TSV file with such columns: TRACK_ID, ARTIST_ID, ALBUM_ID, PATH, DURATION, '
-                                         'TAGS')
+    parser.add_argument('tsv_file', help=commons.METADATA_DESCRIPTION)
     parser.add_argument('category', choices=commons.CATEGORIES, help='Category to extract')
     parser.add_argument('output_file', help='Output tsv file')
     args = parser.parse_args()
