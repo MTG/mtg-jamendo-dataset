@@ -65,14 +65,15 @@ We provide the following data subsets:
 For faster downloads, we host a copy of the dataset on Google Drive. We provide a script to download and validate all files in the dataset. See its help message for more information:
 
 ```bash
-python scripts/download/download_gdrive.py -h
+python scripts/download/download.py -h
 ```
 ```
-usage: download_gdrive.py [-h] [--dataset {raw_30s,autotagging_moodtheme}]
-                          [--type {audio,melspecs}] [--unpack] [--remove]
-                          outputdir
+usage: download.py [-h] [--dataset {raw_30s,autotagging_moodtheme}]
+                   [--type {audio,melspecs}] [--from {gdrive,mtg}] [--unpack]
+                   [--remove]
+                   outputdir
 
-Download the MTG-Jamendo dataset from Google Drive
+Download the MTG-Jamendo dataset
 
 positional arguments:
   outputdir             directory to store the dataset
@@ -84,6 +85,8 @@ optional arguments:
   --type {audio,melspecs}
                         type of data to download (audio or mel-spectrograms)
                         (default: audio)
+  --from {gdrive,mtg}   download from Google Drive (fast everywhere) or MTG
+                        (server in Spain, slow) (default: gdrive)
   --unpack              unpack tar archives (default: False)
   --remove              remove tar archives while unpacking one by one (use to
                         save disk space) (default: False)
@@ -94,7 +97,7 @@ For example, to download audio for the `autotagging_moodtheme.tsv` subset, unpac
 
 ```
 mkdir /path/to/download
-python3 scripts/download/download_gdrive.py --dataset autotagging_moodtheme --type audio /path/to/download --unpack --remove
+python3 scripts/download/download.py --dataset autotagging_moodtheme --type audio /path/to/download --unpack --remove
 ```
 
 
