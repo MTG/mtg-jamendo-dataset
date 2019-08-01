@@ -56,7 +56,7 @@ Note: on OSX **venv** is recommended to avoid problems with matplotlib ([source]
 
 ### Downloading the data
 
-All audio is distributed in 320kbps MP3 format. In addition we provide precomputed mel-spectrograms which are distributed as NumPy Arrays in NPY format. The audio files and the NPY files are split into folders packed into TAR archives. The dataset is hosted [online at MTG UPF](https://essentia.upf.edu/documentation/datasets/mtg-jamendo/).
+All audio is distributed in 320kbps MP3 format. In addition we provide precomputed mel-spectrograms which are distributed as NumPy Arrays in NPY format. We also provide precomputed statistical features from [Essentia](https://essentia.upf.edu) (used in the [AcousticBrainz](https://acousticbrainz.org) music database) in JSON format. The audio files and the NPY/JSON files are split into folders packed into TAR archives. The dataset is hosted [online at MTG UPF](https://essentia.upf.edu/documentation/datasets/mtg-jamendo/).
 
 We provide the following data subsets:
 - `raw_30s/audio` - all available audio for `raw_30s.tsv` (508 GB)
@@ -71,8 +71,8 @@ python scripts/download/download.py -h
 ```
 ```
 usage: download.py [-h] [--dataset {raw_30s,autotagging_moodtheme}]
-                   [--type {audio,melspecs}] [--from {gdrive,mtg}] [--unpack]
-                   [--remove]
+                   [--type {audio,melspecs,acousticbrainz}]
+                   [--from {gdrive,mtg}] [--unpack] [--remove]
                    outputdir
 
 Download the MTG-Jamendo dataset
@@ -84,9 +84,9 @@ optional arguments:
   -h, --help            show this help message and exit
   --dataset {raw_30s,autotagging_moodtheme}
                         dataset to download (default: raw_30s)
-  --type {audio,melspecs}
-                        type of data to download (audio or mel-spectrograms)
-                        (default: audio)
+  --type {audio,melspecs,acousticbrainz}
+                        type of data to download (audio, mel-spectrograms,
+                        AcousticBrainz features) (default: audio)
   --from {gdrive,mtg}   download from Google Drive (fast everywhere) or MTG
                         (server in Spain, slow) (default: gdrive)
   --unpack              unpack tar archives (default: False)
