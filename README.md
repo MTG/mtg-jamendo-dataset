@@ -183,14 +183,14 @@ python scripts/visualize_tags.py stats/autotagging 20  # generates top20.pdf fig
 ### Recreate subsets
 * Create subset with only top50 tags by number of tracks
 ```bash
-python scripts/filter_toptags.py data/autotagging.tsv 50 data/autotagging_top50tags.tsv --stats-directory stats/autotagging_top50tags --tag-list data/tags_top50.txt
-python scripts/split_filter_subset.py data/splits autotagging autotagging_top50tags --subset-file data/tags_top50.txt
+python scripts/filter_toptags.py data/autotagging.tsv 50 data/autotagging_top50tags.tsv --stats-directory stats/autotagging_top50tags --tag-list data/tags/tags_top50.txt
+python scripts/split_filter_subset.py data/splits autotagging autotagging_top50tags --subset-file data/tags/top50.txt
 ```
 
 * Create subset with only mood/theme tags (or other category: genre, instrument)
 ```bash
-python scripts/filter_category.py data/autotagging.tsv mood/theme data/autotagging_moodtheme.tsv
-python scripts/split_filter_subset.py data/splits autotagging autotagging_moodtheme --category mood/theme
+python scripts/filter_category.py data/autotagging.tsv mood/theme data/autotagging_moodtheme.tsv --tag-list data/tags/moodtheme.txt
+python scripts/split_filter_subset.py data/splits autotagging autotagging_moodtheme --category mood/theme 
 ```
 ### Reproduce experiments
 
@@ -206,7 +206,7 @@ TODO
 
 Please consider citing the following publication when using the dataset:
 
-[1] Bogdanov, D., Won M., Tovstogan P., Porter A., & Serra X. (2019).  [The MTG-Jamendo Dataset for Automatic Music Tagging](http://mtg.upf.edu/node/3957). Machine Learning for Music Discovery Workshop, International Conference on Machine Learning (ICML 2019).
+> Bogdanov, D., Won M., Tovstogan P., Porter A., & Serra X. (2019).  [The MTG-Jamendo Dataset for Automatic Music Tagging](http://mtg.upf.edu/node/3957). Machine Learning for Music Discovery Workshop, International Conference on Machine Learning (ICML 2019).
 
 An expanded version of the paper describing the dataset and the baselines will be announced later.
 

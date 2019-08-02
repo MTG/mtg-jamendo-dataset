@@ -32,6 +32,7 @@ def get_statistics(category, tracks, tags):
 
 
 def write_statistics(category, data, directory):
+    # TODO: move to commons, so the transformation is standardized across all scripts
     data.to_csv(os.path.join(directory, category.replace('/', '_') + '.tsv'), sep='\t', index=False)
 
 
