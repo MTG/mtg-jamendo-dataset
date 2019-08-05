@@ -194,9 +194,13 @@ python scripts/split_filter_subset.py data/splits autotagging autotagging_moodth
 ```
 ### Reproduce experiments
 
-* Training
+* Train
 ```bash
-python scripts/baseline/main.py 
+python scripts/baseline/main.py --mode 'TRAIN' 
+```
+* Test
+```bash
+python scripts/baseline/main.py --mode 'TEST' 
 ```
 ```bash
 optional arguments:
@@ -208,7 +212,6 @@ optional arguments:
   --subset {'all', 'genre', 'instrument', 'moodtheme', 'top50tags'}
                               subset to use (default='all')
 ```
-
 
 ## Research challenges using the dataset
 
