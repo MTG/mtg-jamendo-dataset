@@ -194,7 +194,20 @@ python scripts/split_filter_subset.py data/splits autotagging autotagging_moodth
 ```
 ### Reproduce experiments
 
-TODO
+* Training
+```bash
+python scripts/baseline/main.py 
+```
+```bash
+optional arguments:
+  --batch_size                batch size (default: 32)
+  --mode {'TRAIN', 'TEST'}    train or test (default: 'TRAIN')
+  --model_save_path           path to save trained models (default: './models')
+  --audio_path                path of the dataset (default='/home')
+  --split {0, 1, 2, 3, 4}     split of data to use (default=0)
+  --subset {'all', 'genre', 'instrument', 'moodtheme', 'top50tags'}
+                              subset to use (default='all')
+```
 
 
 ## Research challenges using the dataset
