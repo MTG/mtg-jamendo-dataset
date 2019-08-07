@@ -1,7 +1,7 @@
 import argparse
 
 import commons
-import statistics
+import get_statistics
 import util
 from filter_subset import filter_subset
 
@@ -12,10 +12,10 @@ def filter_tags(tracks, tags, artist_threshold, directory=None):
 
     tags_new_all = {}
     for category in tags:
-        stats, total = statistics.get_statistics(category, tracks, tags)
+        stats, total = get_statistics.get_statistics(category, tracks, tags)
         stats_filtered = stats[stats['artists'] >= artist_threshold]
         if directory is not None:
-            statistics.write_statistics(category, stats_filtered, directory)
+            get_statistics.write_statistics(category, stats_filtered, directory)
 
         tags_new_all[category] = set(stats_filtered['tag'])
         print("- {} tags: {} -> {}".format(category, len(stats), len(stats_filtered)))

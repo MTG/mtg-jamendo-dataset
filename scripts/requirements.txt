@@ -1,3 +1,4 @@
 pandas==0.24.2
 gdown==3.8.1
-wget
+wget==3.2
+scikit-learn==0.21.3

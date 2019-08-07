@@ -1,7 +1,7 @@
 import argparse
 
 import commons
-import statistics
+import get_statistics
 import util
 
 
@@ -17,11 +17,11 @@ def filter_tags(tracks, tags, tag_threshold, directory=None, tags_file=None):
         if tags_file is not None:
             tags_with_prefix.update({tag: category + commons.TAG_HYPHEN + tag for tag in category_tags})
 
-    stats, total = statistics.get_statistics('all', tracks, {'all': tags_merged})
+    stats, total = get_statistics.get_statistics('all', tracks, {'all': tags_merged})
     stats = stats.sort_values(by='tracks', ascending=False)
     stats_filtered = stats[:tag_threshold]
     if directory is not None:
-        statistics.write_statistics('all', stats_filtered, directory)
+        get_statistics.write_statistics('all', stats_filtered, directory)
 
     if tags_file is not None:
         tag_list = stats_filtered['tag'].replace(tags_with_prefix).sort_values()

@@ -6,7 +6,7 @@ import pandas as pd
 import commons
 
 
-def generate_matrix(test_file, tags_file, output_file):
+def generate_matrix(test_file, tags_file, output_file=None):
     tracks, tags, extra = commons.read_file(test_file)
 
     tags_data = pd.read_csv(tags_file, delimiter='\t', header=None)
@@ -25,7 +25,9 @@ def generate_matrix(test_file, tags_file, output_file):
             for tag in track[category]:
                 data[i][tag_map[category][tag]] = True
 
-    np.save(output_file, data)
+    if output_file is not None:
+        np.save(output_file, data)
+
     return data
 
 

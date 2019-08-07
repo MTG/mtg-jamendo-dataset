@@ -47,12 +47,10 @@ Statistics for subsets based on categories are not kept seperated due to it alre
 * Virtualenv: `pip install virtualenv`
 * Create virtual environment and install requirements
 ```bash
-virtualenv venv
+python -m venv venv
 source venv/bin/activate
 pip install -r scripts/requirements.txt
 ```
-
-Note: on OSX **venv** is recommended to avoid problems with matplotlib ([source](https://matplotlib.org/3.1.0/faq/osx_framework.html))
 
 ### Downloading the data
 
@@ -158,14 +156,14 @@ tracks, tags, extra = commons.read_file(input_file)
 
 * Recompute statistics for `raw` and `raw_30s`
 ```bash
-python scripts/statistics.py data/raw.tsv stats/raw
-python scripts/statistics.py data/raw_30s.tsv stats/raw_30s
+python scripts/get_statistics.py data/raw.tsv stats/raw
+python scripts/get_statistics.py data/raw_30s.tsv stats/raw_30s
 ```
 
 * Clean tags and recompute statistics (`raw_30s_cleantags`)
 ```bash
 python scripts/clean_tags.py data/raw_30s.tsv data/tag_map.json data/raw_30s_cleantags.tsv
-python scripts/statistics.py data/raw_30s_cleantags.tsv stats/raw_30s_cleantags
+python scripts/get_statistics.py data/raw_30s_cleantags.tsv stats/raw_30s_cleantags
 ```
 
 * Filter out tags with low number of unique artists and recompute statistics (`raw_30s_cleantags_50artists`)
