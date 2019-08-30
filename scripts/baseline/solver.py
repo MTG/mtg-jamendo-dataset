@@ -21,7 +21,7 @@ class Solver(object):
         self.valid_loader = valid_loader
 
         # Training settings
-        self.n_epochs = 100
+        self.n_epochs = 500
         self.lr = 1e-4
         self.log_step = 10
         self.is_cuda = torch.cuda.is_available()
@@ -82,7 +82,7 @@ class Solver(object):
             # train
             self.model.train()
             ctr = 0
-            for x, y in self.data_loader:
+            for x, y, _ in self.data_loader:
                 ctr += 1
 
                 # variables to cuda
@@ -216,7 +216,8 @@ class Solver(object):
         ctr = 0
         prd_array = []  # prediction
         gt_array = []   # ground truth
-        for x, y in self.data_loader:
+        song_array = [] # song array
+        for x, y, fn in self.data_loader:
             ctr += 1
 
             # variables to cuda
@@ -241,6 +242,8 @@ class Solver(object):
                 prd_array.append(list(np.array(prd)))
             for gt in y:
                 gt_array.append(list(np.array(gt)))
+            for song in fn:
+                song_array.append(song)
 
         # get auc
         roc_auc, pr_auc, roc_auc_all, pr_auc_all = self.get_auc(prd_array, gt_array)
@@ -248,4 +251,5 @@ class Solver(object):
         # save aucs
         np.save(open(self.roc_auc_fn, 'wb'), roc_auc_all)
         np.save(open(self.pr_auc_fn, 'wb'), pr_auc_all)
-
+        np.save(open('prd.npy', 'wb'), prd_array)
+        np.save(open('song_list.npy', 'wb'), song_array)

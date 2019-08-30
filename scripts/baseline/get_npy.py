@@ -53,7 +53,7 @@ def get_npy_array(path, tag_list, option, type_='train'):
                 temp_dict['tags'][tag_list.index(tag)] = 1
             except:
                 continue
-        if temp_dict['tags'].sum() > 0:
+        if temp_dict['tags'].sum() > 0 and os.path.exists(os.path.join('/home/minz/Developer/data/jamendo/npy', row[3][:-3])+'npy'):
             dictionary[i] = temp_dict
             i += 1
     dict_fn = os.path.join(path, '%s_%s_dict.pickle'%(option, type_))

@@ -126,3 +126,10 @@ dmypy.json
 .idea
 .DS_Store
 .directory
+
+# pickle
+data/splits/*/*.pickle
+
+# log
+scripts/baseline/*.out
+scripts/baseline/*.npy

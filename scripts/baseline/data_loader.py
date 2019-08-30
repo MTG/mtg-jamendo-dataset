@@ -15,7 +15,7 @@ class AudioFolder(data.Dataset):
         fn = os.path.join(self.root, 'npy', self.dictionary[index]['path'][:-3]+'npy')
         audio = np.array(np.load(fn))
         tags = self.dictionary[index]['tags']
-        return audio.astype('float32'), tags.astype('float32')
+        return audio.astype('float32'), tags.astype('float32'), self.dictionary[index]['path']
 
     def get_dictionary(self, fn):
         with open(fn, 'rb') as pf:
