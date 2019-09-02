@@ -17,8 +17,6 @@ def generate_matrix(test_file, tags_file, output_file=None):
             tag_map[category] = {}
         tag_map[category][tag] = index
 
-    print(tag_map)
-
     data = np.zeros([len(tracks), len(tags_data[0])], dtype=bool)
     for i, track in enumerate(tracks.values()):
         for category in commons.CATEGORIES:
