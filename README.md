@@ -200,7 +200,7 @@ python scripts/baseline/main.py --mode 'TRAIN'
 ```bash
 python scripts/baseline/main.py --mode 'TEST' 
 ```
-```bash
+```
 optional arguments:
   --batch_size                batch size (default: 32)
   --mode {'TRAIN', 'TEST'}    train or test (default: 'TRAIN')
@@ -211,10 +211,14 @@ optional arguments:
                               subset to use (default='all')
 ```
 
+#### Results
+
+* [ML4MD2019](results/ml4md2019): 5 splits, 5 tag sets (3 categories, top50, all)
+* [Mediaeval2019](results/mediaeval2019): split-0, mood/theme category
+
 ## Research challenges using the dataset
 
 [MediaEval 2019 Emotion and Theme Recognition in Music](https://multimediaeval.github.io/2019-Emotion-and-Theme-Recognition-in-Music-Task/)
-
 
 ## Citing the dataset
 
