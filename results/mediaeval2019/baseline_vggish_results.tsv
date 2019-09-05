@@ -1,8 +1,10 @@
-ROC-AUC	0.725821
-PR-AUC	0.107734
+ROC-AUC-macro	0.725821
+PR-AUC-macro	0.107734
 precision-macro	0.138216
 recall-macro	0.308650
 F-score-macro	0.165694
+ROC-AUC-micro	0.775029
+PR-AUC-micro	0.140913
 precision-micro	0.116097
 recall-micro	0.373480
 F-score-micro	0.177133

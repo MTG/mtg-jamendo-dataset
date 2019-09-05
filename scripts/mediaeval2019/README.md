@@ -7,7 +7,7 @@ Requirements are the same as in the [scripts](/scripts/requirements.txt) directo
 ## Evaluation
 
 ```bash
-python mediaeval2019/evaluate.py ../data/mediaeval2019/groundtruth.npy ../data/mediaeval2019/predictions.npy ../results/mediaeval2019/decisions.npy --output-file ../results/mediaeval2019/results.tsv
+python mediaeval2019/evaluate.py ../results/mediaeval2019/groundtruth.npy ../results/mediaeval2019/predictions.npy ../results/mediaeval2019/decisions.npy --output-file ../results/mediaeval2019/results.tsv
 ```
 
 Will produce `results.tsv` that will contain values for all metrics that are used in the challenge.
@@ -15,7 +15,7 @@ Will produce `results.tsv` that will contain values for all metrics that are use
 ## Calculate thresholds and generate decisions
 
 ```bash
-python mediaeval2019/calculate_decisions.py ../results/mediaeval2019/groundtruth.npy ../results/mediaeval2019/predictions.npy ../data/mediaeval2019/thresholds.txt ../data/tags/moodtheme_split.txt --decision-file ../data/mediaeval2019/decisions.npy
+python mediaeval2019/calculate_decisions.py ../results/mediaeval2019/groundtruth.npy ../results/mediaeval2019/predictions.npy ../results/mediaeval2019/thresholds.txt ../data/tags/moodtheme_split.txt --decision-file ../results/mediaeval2019/decisions.npy
 ```
 
 Will produce `thresholds.txt` that contains per-tag thresholds for making decisions, as well as an optional `decisions.npy` that will contain the binary matrix with the decisions.
