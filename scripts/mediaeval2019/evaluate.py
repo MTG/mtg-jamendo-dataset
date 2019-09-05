@@ -11,16 +11,17 @@ def evaluate(groundtruth, predictions, decisions, output_file=None, display=Fals
             raise ValueError('{} matrix dimensions {} don''t match the groundtruth {}'.format(
                 name, data.shape, groundtruth.shape))
 
-    results = {'ROC-AUC': metrics.roc_auc_score(groundtruth, predictions, average='macro'),
-               'PR-AUC': metrics.average_precision_score(groundtruth, predictions, average='macro')}
+    results = {}
 
     for average in ['macro', 'micro']:
+        results['ROC-AUC-' + average] = metrics.roc_auc_score(groundtruth, predictions, average=average)
+        results['PR-AUC-' + average] = metrics.average_precision_score(groundtruth, predictions, average=average)
         results['precision-' + average], results['recall-' + average], results['F-score-' + average], _ = \
             metrics.precision_recall_fscore_support(groundtruth, decisions, average=average)
 
     if display:
         for metric, value in results.items():
-            print('{}\t{:6f}'.format(metric, value))
+            print('{:20}\t{:6f}'.format(metric, value))
 
     if output_file is not None:
         df = pd.DataFrame(results.values(), results.keys())

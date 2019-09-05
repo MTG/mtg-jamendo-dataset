@@ -23,11 +23,31 @@ def predict_popular(train_tracks, train_tags, test_tracks, test_tags, tags_order
     return data
 
 
+# super non-optimized, refactor due after tags rework
+def predict_random(train_tracks, train_tags, test_tracks, test_tags, tags_order):
+    n_tracks = len(train_tracks)
+    tag_ratios = {}
+    for category in commons.CATEGORIES:
+        stats, _ = get_statistics(category, train_tracks, train_tags)
+        if len(stats) > 0:
+            for _, row in stats.iterrows():
+                full_tag = category + commons.TAG_HYPHEN + row['tag']
+                tag_ratios[full_tag] = row['tracks'] / n_tracks
+
+    tag_vector = np.zeros(len(tags_order))
+    for i, row in tags_order.iterrows():
+        tag_vector[i] = tag_ratios[row[0]]
+
+    data = np.tile(tag_vector, (len(test_tracks), 1))
+    return data
+
+
 ALGORITHMS = {
-    'popular': predict_popular
+    'popular': predict_popular,
+    'random': predict_random
 }
 
-DEFAULT_ALGORITHM = 'popular'
+DEFAULT_ALGORITHM = 'random'
 
 
 if __name__ == '__main__':
