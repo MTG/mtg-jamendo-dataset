@@ -13,8 +13,11 @@ def predict_popular(train_tracks, train_tags, test_tracks, test_tags, tags_order
         stats, _ = get_statistics(category, train_tracks, train_tags)
         if len(stats) > 0:
             # save top tag, number of tracks and category for it
-            tags_popular[stats['tag'][0]] = {'artists': stats['tracks'][0], 'category': category}
-    tag_popular = max(tags_popular.keys(), key=lambda key: tags_popular[key]['artists'])
+            stats = stats.sort_values(by='tracks', ascending=False)
+            stats = stats.reset_index(drop=True)
+            tags_popular[stats['tag'][0]] = {'tracks': stats['tracks'][0], 'category': category}
+    print(tags_popular)
+    tag_popular = max(tags_popular.keys(), key=lambda key: tags_popular[key]['tracks'])
     full_tag = tags_popular[tag_popular]['category'] + commons.TAG_HYPHEN + tag_popular
 
     data = np.zeros([len(test_tracks), len(tags_order)], dtype=bool)
@@ -47,7 +50,7 @@ ALGORITHMS = {
     'random': predict_random
 }
 
-DEFAULT_ALGORITHM = 'random'
+DEFAULT_ALGORITHM = 'popular'
 
 
 if __name__ == '__main__':
