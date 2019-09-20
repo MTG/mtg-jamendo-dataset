@@ -16,16 +16,11 @@ DATA = {
         'dir': 'MediaEval2019/results/',
     },
     'AugLi': {
-        'dir': 'AugLi_results_mediaeval19_emotion_task',
+        'dir': 'AugLi_results_mediaeval19_emotion_task/',
     }
 }
 
 if __name__ == '__main__':
-    # parser = argparse.ArgumentParser(description='Calculates evaluation metrics from prediction and ground-truth '
-    #                                              'matrices')
-    # parser.add_argument('groundtruth_file', help='NPY file with groundtruth values (tracks x tags)')
-    # args = parser.parse_args()
-
     groundtruth = np.load(GROUNDTRUTH)
 
     for team, data in DATA.items():
@@ -39,6 +34,6 @@ if __name__ == '__main__':
             predictions = np.load(prediction_file)
             decisions = np.load(decision_file)
             results[name] = evaluate(groundtruth, predictions, decisions)
-        df = pd.DataFrame(results)
+        df = pd.DataFrame(results).T
         print(df)
         df.to_csv(RESULTS_ROOT / (team + '.tsv'), sep='\t', float_format='%.6f')
