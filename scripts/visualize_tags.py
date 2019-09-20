@@ -36,7 +36,7 @@ def visualize(directory, n):
 def visualize2(directory, n):
     tag_list = []
     track_list = []
-    for category in ['genre', 'instrument', 'mood_theme']:
+    for category in ['mood_theme']:
         tsv_file = os.path.join(directory, category + '.tsv')
         data = pd.read_csv(tsv_file, delimiter='\t')
         data = data.sort_values(by=['tracks'], ascending=False)
@@ -44,7 +44,7 @@ def visualize2(directory, n):
         tag_list += list(data['tag'])
         track_list += list(data['tracks'])
 
-    fig = plt.figure(figsize=(12, 2.5))
+    fig = plt.figure(figsize=(12, 2))
     plt.style.use('seaborn-whitegrid')
 
     font_manager._rebuild()
@@ -52,19 +52,25 @@ def visualize2(directory, n):
     rcParams['font.serif'] = 'Times'
     plt.grid(False)
     plt.ylabel('# of tracks')
-    plt.xlim([-1, 60])
-    plt.ylim([0, 18000])
-    for i, color in enumerate(['c', 'm', 'y']):
+    plt.xlim([-1, 56])
+    plt.ylim([0, 2000])
+    for i, color in enumerate(['c']):
         indices = np.arange(n * i, n * (i + 1))
         plt.bar(indices, np.array(track_list)[indices], align='center')
 
-    for i in [0, 20, 40, 59]:
-        plt.text(i, track_list[i] + 300, track_list[i], fontsize=8, horizontalalignment='center')
+    for i in [0, 55]:
+        plt.text(i, track_list[i] + 100, track_list[i], fontsize=8, horizontalalignment='center')
 
     plt.xticks(np.arange(len(tag_list)), tag_list, rotation='vertical')
-    ylabels = np.arange(4, 20, 4)
-    plt.yticks(ylabels*1000, ['{}k'.format(ylabel) for ylabel in ylabels])
+    ylabels = np.arange(0, 2000, 500)
+    plt.yticks(ylabels, ['{}'.format(ylabel) for ylabel in ylabels])
     plt.subplots_adjust(bottom=0.4)
+
+    ax = plt.gca()
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.spines['bottom'].set_visible(False)
+    ax.spines['left'].set_visible(False)
 
     output_file = os.path.join(directory, 'top{}.pdf'.format(n))
     plt.savefig(output_file, bbox_inches='tight')
