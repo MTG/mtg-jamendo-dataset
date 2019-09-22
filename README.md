@@ -192,7 +192,9 @@ python scripts/split_filter_subset.py data/splits autotagging autotagging_moodth
 ```
 ### Reproduce experiments
 * Preprocessing
-
+```bash
+python scripts/baseline/get_npy.py run 'your_path_to_spectrogram_npy'
+```
 
 * Train
 ```bash
