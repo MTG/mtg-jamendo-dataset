@@ -72,8 +72,8 @@ def visualize2(directory, n):
     ax.spines['bottom'].set_visible(False)
     ax.spines['left'].set_visible(False)
 
-    output_file = os.path.join(directory, 'top{}.pdf'.format(n))
-    plt.savefig(output_file, bbox_inches='tight')
+    output_file = os.path.join(directory, 'top{}.png'.format(n))
+    plt.savefig(output_file, bbox_inches='tight', dpi=150)
     # plt.show()
     plt.close()
 
