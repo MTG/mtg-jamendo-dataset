@@ -52,8 +52,8 @@ class Solver(object):
         # model and optimizer
         model = CNN(num_class=self.num_class)
 
+        self.model = model
         if self.is_cuda:
-            self.model = model
             self.model.cuda()
         self.optimizer = torch.optim.Adam(self.model.parameters(), self.lr)
 

@@ -3,6 +3,8 @@ import numpy as np
 import pickle
 from torch.utils import data
 
+N = 1366
+
 
 class AudioFolder(data.Dataset):
     def __init__(self, root, subset, tr_val='train', split=0):
@@ -12,8 +14,9 @@ class AudioFolder(data.Dataset):
         self.get_dictionary(fn)
 
     def __getitem__(self, index):
-        fn = os.path.join(self.root, 'npy', self.dictionary[index]['path'][:-3]+'npy')
+        fn = os.path.join(self.root, self.dictionary[index]['path'][:-3]+'npy')
         audio = np.array(np.load(fn))
+        audio = audio[:, (audio.shape[1] - N)//2:(audio.shape[1] + N)//2]
         tags = self.dictionary[index]['tags']
         return audio.astype('float32'), tags.astype('float32'), self.dictionary[index]['path']
 
