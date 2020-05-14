@@ -1,5 +1,7 @@
 # The MTG-Jamendo Dataset
 
+![](https://zenodo.org/badge/DOI/10.5281/zenodo.3826813.svg)
+
 We present the MTG-Jamendo Dataset, a new open dataset for music auto-tagging. It is built using music available at Jamendo under Creative Commons licenses and tags provided by content uploaders. The dataset contains over 55,000 full audio tracks with 195 tags from genre, instrument, and mood/theme categories. We provide elaborated data splits for researchers and report the performance of a simple baseline approach on five different sets of tags: genre, instrument, mood/theme, top-50, and overall.
 
 This repository contains metadata, scripts, instructions on how to download and use the dataset and reproduce baseline results.
@@ -229,6 +231,17 @@ optional arguments:
 Please consider citing the following publication when using the dataset:
 
 > Bogdanov, D., Won M., Tovstogan P., Porter A., & Serra X. (2019).  [The MTG-Jamendo Dataset for Automatic Music Tagging](http://mtg.upf.edu/node/3957). Machine Learning for Music Discovery Workshop, International Conference on Machine Learning (ICML 2019).
+
+```
+@conference {bogdanov2019mtg,
+    author = "Bogdanov, Dmitry and Won, Minz and Tovstogan, Philip and Porter, Alastair and Serra, Xavier",
+    title = "The MTG-Jamendo Dataset for Automatic Music Tagging",
+    booktitle = "Machine Learning for Music Discovery Workshop, International Conference on Machine Learning (ICML 2019)",
+    year = "2019",
+    address = "Long Beach, CA, United States",
+    url = "http://hdl.handle.net/10230/42015"
+}
+```
 
 An expanded version of the paper describing the dataset and the baselines will be announced later.
 
