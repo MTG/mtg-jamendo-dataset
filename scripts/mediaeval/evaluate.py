@@ -7,7 +7,7 @@ from sklearn import metrics
 
 def evaluate(groundtruth, predictions, decisions, output_file=None, display=False):
     for name, data in [('Decision', decisions), ('Prediction', predictions)]:
-        if not data.shape == groundtruth.shape:
+        if data is not None and not data.shape == groundtruth.shape:
             raise ValueError('{} matrix dimensions {} don''t match the groundtruth {}'.format(
                 name, data.shape, groundtruth.shape))
 
@@ -16,8 +16,9 @@ def evaluate(groundtruth, predictions, decisions, output_file=None, display=Fals
     for average in ['macro', 'micro']:
         results['ROC-AUC-' + average] = metrics.roc_auc_score(groundtruth, predictions, average=average)
         results['PR-AUC-' + average] = metrics.average_precision_score(groundtruth, predictions, average=average)
-        results['precision-' + average], results['recall-' + average], results['F-score-' + average], _ = \
-            metrics.precision_recall_fscore_support(groundtruth, decisions, average=average)
+        if decisions is not None:
+            results['precision-' + average], results['recall-' + average], results['F-score-' + average], _ = \
+                metrics.precision_recall_fscore_support(groundtruth, decisions, average=average)
 
     if display:
         for metric, value in results.items():
@@ -35,12 +36,12 @@ if __name__ == '__main__':
                                                  'matrices')
     parser.add_argument('groundtruth_file', help='NPY file with groundtruth values (tracks x tags)')
     parser.add_argument('prediction_file', help='NPY file with activation values (float64)')
-    parser.add_argument('decision_file', help='NPY file with decision values (bool)')
-    parser.add_argument('--output-file', help='file to write metric values to')
+    parser.add_argument('-d', '--decision_file', help='NPY file with decision values (bool)')
+    parser.add_argument('-o', '--output-file', help='file to write metric values to')
     args = parser.parse_args()
 
     groundtruth = np.load(args.groundtruth_file)
     predictions = np.load(args.prediction_file)
-    decisions = np.load(args.decision_file)
+    decisions = np.load(args.decision_file) if args.decision_file is not None else None
 
     evaluate(groundtruth, predictions, decisions, args.output_file, display=True)
