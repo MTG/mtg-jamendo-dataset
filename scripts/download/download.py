@@ -109,11 +109,11 @@ def download(dataset, data_type, download_from, output_dir, unpack_tars, remove_
             if remove_tars:
                 os.remove(output)
     
-    # Check if any tracks are missing in the unpacked archives.
-    if set(tracks_checked) != set(sha256_tracks.keys()):
-        raise Exception('Unpacked data contains tracks not present in the checksum files')
+        # Check if any tracks are missing in the unpacked archives.
+        if set(tracks_checked) != set(sha256_tracks.keys()):
+            raise Exception('Unpacked data contains tracks not present in the checksum files')
 
-    print('Unpacking complete')
+        print('Unpacking complete')
 
 
 
