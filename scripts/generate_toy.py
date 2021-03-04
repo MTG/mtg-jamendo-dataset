@@ -44,4 +44,5 @@ if __name__ == '__main__':
 
         if args.stats_directory is not None:
             _, tags_toy, _ = commons.read_file(filename)
-            statistics.compute_statistics(tracks_toy, tags_toy, "{}_{}".format(args.stats_directory, i))
+            statistics.compute_statistics(tracks_toy, tags_toy, "{}_{}".format(args.stats_directory, i),
+                                          sort_by='tracks')

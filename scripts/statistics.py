@@ -8,7 +8,7 @@ import numpy as np
 import commons
 
 
-def get_statistics(category, tracks, tags):
+def get_statistics(category, tracks, tags, sort_by=None):
     data = []
     total = {'track': set(), 'artist': set(), 'album': set()}
     for tag, tag_tracks in tags[category].items():
@@ -25,6 +25,8 @@ def get_statistics(category, tracks, tags):
 
     data = pd.DataFrame(data, columns=['tag', 'artists', 'albums', 'tracks'])
     data = data.sort_values(by=['artists', 'albums', 'tracks', 'tag'], ascending=[False, False, False, True])
+    if sort_by is not None:
+        data = data.sort_values(by=sort_by, ascending=False)
     data = data.reset_index(drop=True)
 
     total_stats = {category: len(collection_ids) for category, collection_ids in total.items()}
@@ -35,11 +37,11 @@ def write_statistics(category, data, directory):
     data.to_csv(os.path.join(directory, category.replace('/', '_') + '.tsv'), sep='\t', index=False)
 
 
-def compute_statistics(tracks, tags, directory):
+def compute_statistics(tracks, tags, directory, sort_by=None):
     util.mkdir_p(directory)
 
     for category in tags:
-        data, total = get_statistics(category, tracks, tags)
+        data, total = get_statistics(category, tracks, tags, sort_by=sort_by)
         write_statistics(category, data, directory)
         print('Total tags for {}: {} tags, {}'.format(category, len(data), total))
 
