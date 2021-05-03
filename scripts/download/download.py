@@ -1,18 +1,23 @@
 import argparse
-import sys
-import os.path
 import csv
 import hashlib
+import os.path
+import shutil
+import sys
 import tarfile
+import tempfile
 from pathlib import Path
-import gdown
-import wget
 
+import gdown
+import requests
+from tqdm import tqdm
 
 base_path = Path(__file__).parent
 ID_FILE_PATH = (base_path / "../../data/download/").resolve()
 
 download_from_names = {'gdrive': 'GDrive', 'mtg': 'MTG'}
+
+CHUNK_SIZE = 1024 * 1024  # 512KB
 
 
 def compute_sha256(filename):
@@ -23,6 +28,39 @@ def compute_sha256(filename):
     return None
     
     raise Exception('Error computing a checksum for %s' % filename)
+
+
+def download_from_mtg(url, output):
+    output_path = Path(output)
+
+    print('Downloading...', file=sys.stderr)
+    print('From:', url, file=sys.stderr)
+    print('To:', output_path, file=sys.stderr)
+
+    res = requests.get(url, stream=True)
+
+    try:
+        total = res.headers.get('Content-Length')
+        if total is not None:
+            total = int(total)
+        with tempfile.NamedTemporaryFile(
+            prefix=output_path.name,
+            dir=output_path.parent,
+            delete=False,
+        ) as tmp_file_d:
+            tmp_file = tmp_file_d.name
+            with tqdm(total=total, unit='B', unit_scale=True) as progressbar:
+                for chunk in res.iter_content(chunk_size=CHUNK_SIZE):
+                    tmp_file_d.write(chunk)
+                    progressbar.update(len(chunk))
+        shutil.move(tmp_file_d.name, output)
+    finally:
+        try:
+            os.remove(tmp_file)
+        except OSError:
+            pass
+
+    return output
 
 
 def download(dataset, data_type, download_from, output_dir, unpack_tars, remove_tars):
@@ -65,9 +103,7 @@ def download(dataset, data_type, download_from, output_dir, unpack_tars, remove_
         elif download_from == 'mtg':
             url = 'https://essentia.upf.edu/documentation/datasets/mtg-jamendo/' \
                   '%s/%s/%s' % (dataset, data_type, filename)
-            print('From:', url)
-            print('To:', output)
-            wget.download (url, out=output)
+            download_from_mtg(url, output)
 
         # Validate the checksum.
         if compute_sha256(output) != sha256_tars[filename]:
