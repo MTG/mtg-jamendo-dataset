@@ -17,7 +17,7 @@ ID_FILE_PATH = (base_path / "../../data/download/").resolve()
 
 download_from_names = {'gdrive': 'GDrive', 'mtg': 'MTG'}
 
-CHUNK_SIZE = 1024 * 1024  # 512KB
+CHUNK_SIZE = 512 * 1024  # 512KB
 
 
 def compute_sha256(filename):
