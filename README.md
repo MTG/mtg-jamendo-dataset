@@ -224,7 +224,10 @@ optional arguments:
 
 ## Research challenges using the dataset
 
-[MediaEval 2019 Emotion and Theme Recognition in Music](https://multimediaeval.github.io/2019-Emotion-and-Theme-Recognition-in-Music-Task/)
+- [MediaEval 2019 Emotion and Theme Recognition in Music](https://multimediaeval.github.io/2019-Emotion-and-Theme-Recognition-in-Music-Task/)
+- [MediaEval 2020 Emotion and Theme Recognition in Music](https://multimediaeval.github.io/2020-Emotion-and-Theme-Recognition-in-Music-Task/)
+- [MediaEval 2021 Emotion and Theme Recognition in Music](https://multimediaeval.github.io/2021-Emotion-and-Theme-Recognition-in-Music-Task/)
+
 
 ## Citing the dataset
 
