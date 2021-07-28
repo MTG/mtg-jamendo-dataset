@@ -1,0 +1,796 @@
+TRACK_ID	ARTIST_ID	ALBUM_ID	PATH	DURATION	TAGS
+track_0001729	artist_000264	album_000252	29/1729.mp3	270.2	genre---pop	genre---poprock	genre---rock	genre---ska
+track_0003899	artist_000508	album_000612	99/3899.mp3	334.1	genre---electronic	genre---world	genre---worldfusion
+track_0003961	artist_000357	album_000621	61/3961.mp3	425.8	genre---disco	genre---funk	genre---groove	genre---rnb
+track_0005482	artist_000786	album_000853	82/5482.mp3	313.5	genre---instrumentalrock	genre---rock	genre---ska
+track_0005634	artist_000811	album_000867	34/5634.mp3	233.1	genre---electronic	genre---minimal	genre---soundtrack	mood/theme---documentary	mood/theme---emotional	mood/theme---space
+track_0007832	artist_001119	album_001191	32/7832.mp3	205.1	genre---celtic	genre---electronic
+track_0008305	artist_001235	album_001250	05/8305.mp3	338.9	genre---chillout	genre---easylistening	genre---electronic	genre---lounge	genre---oriental
+track_0009506	artist_001428	album_001424	06/9506.mp3	127.5	genre---alternative	genre---darkwave	genre---electronic	genre---experimental	genre---gothic	genre---metal	genre---newwave	genre---pop	genre---rock
+track_0009830	artist_001491	album_001465	30/9830.mp3	212.2	genre---hard	genre---metal	genre---progressive	genre---rock	mood/theme---heavy
+track_0010643	artist_000768	album_001570	43/10643.mp3	365.2	genre---chanson	genre---funk	genre---rock	genre---ska
+track_0010999	artist_001619	album_001628	99/10999.mp3	406.0	genre---alternative	genre---electronic	genre---ethnicrock	genre---experimental	genre---progressive	genre---techno	genre---world
+track_0011839	artist_001780	album_001749	39/11839.mp3	212.2	genre---classical	genre---contemporary	instrument---guitar	mood/theme---calm	mood/theme---melodic	mood/theme---relaxing	mood/theme---soft
+track_0012099	artist_001822	album_001781	99/12099.mp3	273.1	genre---metal	genre---symphonic	mood/theme---energetic	mood/theme---heavy
+track_0012301	artist_001858	album_001820	01/12301.mp3	336.0	genre---blues	genre---bluesrock
+track_0013398	artist_001968	album_001938	98/13398.mp3	175.0	genre---instrumentalpop	mood/theme---ballad	mood/theme---melodic
+track_0013823	artist_002023	album_001979	23/13823.mp3	88.5	genre---alternative	genre---ambient	genre---experimental	genre---gothic	genre---metal	mood/theme---dark
+track_0015159	artist_002208	album_002161	59/15159.mp3	277.1	genre---easylistening	genre---electronic	genre---soundtrack	genre---triphop	instrument---drummachine	instrument---electricguitar	instrument---piano	instrument---violin	mood/theme---ballad
+track_0015998	artist_002324	album_002269	98/15998.mp3	241.4	genre---indie	genre---punkrock	genre---rock	mood/theme---action	mood/theme---adventure	mood/theme---dramatic	mood/theme---epic
+track_0016038	artist_002323	album_002275	38/16038.mp3	190.0	genre---electronic	genre---hiphop	mood/theme---dark	mood/theme---dramatic	mood/theme---epic	mood/theme---powerful
+track_0016092	artist_002320	album_002284	92/16092.mp3	293.3	genre---metal	mood/theme---heavy
+track_0016407	artist_002350	album_002336	07/16407.mp3	355.1	genre---acidjazz	genre---electronic	genre---jazz
+track_0016658	artist_002455	album_002368	58/16658.mp3	191.8	genre---alternative	genre---indie	genre---metal	mood/theme---epic	mood/theme---inspiring	mood/theme---powerful	mood/theme---uplifting
+track_0017490	artist_002449	album_002470	90/17490.mp3	233.7	genre---jazz	genre---jazzfusion	instrument---bass	instrument---drums	instrument---guitar	mood/theme---energetic
+track_0017617	artist_002621	album_002488	17/17617.mp3	507.5	genre---ethnicrock
+track_0019198	artist_002831	album_002700	98/19198.mp3	280.8	genre---ambient	genre---instrumentalpop	genre---jazzfunk	genre---pop	genre---rock	instrument---acousticguitar	instrument---drummachine	instrument---electricguitar	instrument---synthesizer
+track_0020530	artist_003039	album_002882	30/20530.mp3	232.5	genre---alternative	genre---easylistening	genre---ethno	genre---indie	genre---pop	genre---world	mood/theme---fun
+track_0021293	artist_002521	album_002976	93/21293.mp3	231.2	genre---hard	genre---metal	genre---punkrock	genre---rock	mood/theme---heavy
+track_0021492	artist_003177	album_003005	92/21492.mp3	80.0	genre---dance	genre---folk	genre---world	mood/theme---funny	mood/theme---happy	mood/theme---positive	mood/theme---relaxing
+track_0023861	artist_003498	album_003297	61/23861.mp3	205.2	genre---hard	genre---hardrock	genre---metal	genre---rock	instrument---guitar	mood/theme---melodic
+track_0024017	artist_003581	album_003316	17/24017.mp3	268.4	genre---dance	genre---electronic	genre---eurodance	instrument---keyboard	instrument---strings	instrument---synthesizer	instrument---voice	mood/theme---happy
+track_0025244	artist_002740	album_003480	44/25244.mp3	156.7	genre---easylistening	genre---soundtrack	mood/theme---children
+track_0026321	artist_003933	album_003603	21/26321.mp3	405.3	genre---70s	genre---disco	genre---pop	mood/theme---happy	mood/theme---party
+track_0026965	artist_004056	album_003699	65/26965.mp3	229.8	genre---acidjazz	genre---funk	genre---groove	instrument---computer	instrument---drums	instrument---electricguitar	instrument---keyboard	instrument---rhodes
+track_0028191	artist_004116	album_003744	91/28191.mp3	119.7	genre---electronic	genre---pop	genre---rock	instrument---guitar	instrument---synthesizer	mood/theme---calm	mood/theme---happy	mood/theme---motivational
+track_0030857	artist_000793	album_003878	57/30857.mp3	119.6	genre---bossanova	genre---rock
+track_0033627	artist_004695	album_004145	27/33627.mp3	201.7	genre---funk	genre---jazz	genre---jazzfunk	genre---world
+track_0033820	artist_004488	album_004157	20/33820.mp3	131.8	genre---chanson	genre---pop	mood/theme---children
+track_0034696	artist_004748	album_004247	96/34696.mp3	209.2	genre---newwave	genre---rock	mood/theme---film
+track_0036655	artist_005117	album_004484	55/36655.mp3	228.3	genre---alternative	genre---indie	mood/theme---dramatic	mood/theme---emotional	mood/theme---epic	mood/theme---uplifting
+track_0036982	artist_004812	album_004527	82/36982.mp3	135.0	genre---african	genre---world
+track_0038656	artist_005422	album_004742	56/38656.mp3	352.8	genre---dance	genre---easylistening	genre---electronic	mood/theme---advertising	mood/theme---corporate
+track_0039796	artist_005615	album_004892	96/39796.mp3	346.1	genre---60s	genre---70s	genre---acidjazz
+track_0040026	artist_005669	album_004923	26/40026.mp3	218.4	genre---pop	genre---rock	mood/theme---ballad	mood/theme---love	mood/theme---soft
+track_0040146	artist_005634	album_004939	46/40146.mp3	266.0	genre---ambient	mood/theme---slow
+track_0040417	artist_005544	album_004979	17/40417.mp3	247.3	genre---alternative	genre---experimental	genre---funk	genre---hard	genre---progressive	genre---rock
+track_0045972	artist_006361	album_005525	72/45972.mp3	240.0	genre---punkrock	genre---reggae	genre---ska
+track_0047455	artist_006573	album_005733	55/47455.mp3	305.5	genre---electronic	genre---triphop	mood/theme---ballad
+track_0048164	artist_006741	album_005822	64/48164.mp3	220.4	genre---blues	genre---pop	genre---rock	instrument---guitar	mood/theme---sexy
+track_0048843	artist_006125	album_005924	43/48843.mp3	209.7	genre---country	genre---rock	mood/theme---ballad	mood/theme---soft
+track_0049019	artist_006905	album_005951	19/49019.mp3	63.0	genre---classical	genre---contemporary	genre---orchestral	mood/theme---film	mood/theme---movie
+track_0064073	artist_007211	album_006307	73/64073.mp3	207.5	genre---electronic	genre---techno	mood/theme---fast
+track_0066942	artist_007063	album_006339	42/66942.mp3	174.4	genre---easylistening	genre---folk	genre---pop	instrument---acousticguitar	instrument---bass	mood/theme---commercial
+track_0072830	artist_007320	album_006414	30/72830.mp3	261.8	genre---blues	genre---chanson	genre---pop	instrument---voice	mood/theme---cool
+track_0073117	artist_007338	album_006458	17/73117.mp3	510.0	genre---fusion	genre---instrumentalpop	genre---jazz	instrument---horn
+track_0074654	artist_007379	album_006644	54/74654.mp3	296.0	genre---alternative	genre---electronic	genre---experimental	genre---industrial	mood/theme---energetic	mood/theme---heavy
+track_0076237	artist_006964	album_006839	37/76237.mp3	145.4	genre---70s	genre---alternative	genre---pop	genre---rock
+track_0077033	artist_002792	album_006950	33/77033.mp3	183.4	genre---ambient	genre---electronic	genre---funk	genre---groove
+track_0078304	artist_007872	album_007098	04/78304.mp3	228.5	genre---alternative	genre---folk	genre---hard	genre---indie	genre---pop	genre---rock	instrument---bass	instrument---drums	instrument---guitar	mood/theme---drama	mood/theme---emotional	mood/theme---horror	mood/theme---melodic
+track_0078361	artist_007731	album_007107	61/78361.mp3	297.5	genre---bossanova	mood/theme---calm
+track_0081016	artist_008004	album_007421	16/81016.mp3	199.4	genre---ambient	genre---electronic	genre---lounge	mood/theme---advertising	mood/theme---corporate	mood/theme---documentary	mood/theme---meditative
+track_0081196	artist_008134	album_007436	96/81196.mp3	215.4	genre---alternative	genre---electronic	genre---experimental	genre---hiphop	mood/theme---funny
+track_0082871	artist_000482	album_007635	71/82871.mp3	305.3	genre---easylistening	genre---electronic	genre---medieval	genre---pop
+track_0084020	artist_006064	album_007786	20/84020.mp3	286.7	genre---celtic	genre---folk	genre---pop	genre---rock	instrument---harmonica	instrument---violin
+track_0086244	artist_003799	album_008287	44/86244.mp3	321.3	genre---ambient	genre---electronic	genre---experimental	genre---techno	genre---triphop	instrument---acousticbassguitar	instrument---saxophone	instrument---synthesizer	instrument---voice
+track_0088462	artist_007339	album_008463	62/88462.mp3	153.5	genre---jazz	genre---soundtrack	instrument---bass	instrument---clarinet	instrument---drums	instrument---guitar	instrument---piano	mood/theme---christmas	mood/theme---holiday
+track_0090031	artist_336563	album_008727	31/90031.mp3	335.8	genre---heavymetal	genre---metal
+track_0090044	artist_361044	album_008726	44/90044.mp3	102.2	genre---electronic	instrument---bass	instrument---drums	instrument---electricguitar	instrument---sampler	instrument---synthesizer	mood/theme---adventure	mood/theme---documentary	mood/theme---energetic
+track_0091373	artist_007969	album_008914	73/91373.mp3	183.7	genre---bossanova	mood/theme---soft
+track_0093376	artist_003192	album_009392	76/93376.mp3	188.0	genre---pop	genre---rock	mood/theme---positive
+track_0095581	artist_336764	album_009831	81/95581.mp3	268.4	genre---easylistening	genre---electronic	genre---lounge	instrument---bass	instrument---cello	instrument---computer	instrument---piano	mood/theme---game	mood/theme---melodic
+track_0098251	artist_336890	album_010281	51/98251.mp3	1597.4	genre---classicrock	genre---progressive	genre---psychedelic	genre---rock	instrument---bass	instrument---drums	instrument---electricguitar	instrument---synthesizer	instrument---violin	mood/theme---epic
+track_0098542	artist_336896	album_010328	42/98542.mp3	130.1	genre---ambient	genre---easylistening	genre---folk	genre---instrumentalpop	mood/theme---calm	mood/theme---nature
+track_0100603	artist_336984	album_011091	03/100603.mp3	151.5	genre---country	genre---rocknroll	genre---soundtrack	instrument---acousticguitar	instrument---electricguitar	mood/theme---advertising
+track_0106555	artist_008021	album_012803	55/106555.mp3	268.7	genre---metal	genre---rock	genre---soundtrack	mood/theme---horror
+track_0107226	artist_337262	album_012899	26/107226.mp3	161.3	genre---alternative	genre---funk	genre---groove	genre---rock	instrument---bass	instrument---drums	instrument---electricguitar	instrument---guitar	instrument---keyboard
+track_0108446	artist_337284	album_013064	46/108446.mp3	315.7	genre---celtic	genre---metal	mood/theme---epic
+track_0108505	artist_007392	album_013067	05/108505.mp3	448.5	genre---electronic	mood/theme---cool
+track_0110017	artist_337346	album_013565	17/110017.mp3	260.0	genre---ambient	genre---fusion	instrument---acousticguitar	instrument---guitar	mood/theme---advertising
+track_0113848	artist_337465	album_014824	48/113848.mp3	238.0	genre---classical	genre---orchestral	instrument---acousticbassguitar	instrument---horn	instrument---oboe	instrument---orchestra	instrument---violin
+track_0116237	artist_337529	album_015516	37/116237.mp3	321.5	genre---african	genre---ambient	genre---club	genre---ethnicrock	genre---world	mood/theme---travel
+track_0123932	artist_337750	album_017332	32/123932.mp3	450.4	genre---ambient	genre---darkambient	genre---electronic	mood/theme---dark
+track_0130919	artist_338009	album_018456	19/130919.mp3	349.0	genre---ambient	genre---folk	genre---pop	genre---worldfusion
+track_0132278	artist_338058	album_018678	78/132278.mp3	184.9	genre---ambient	genre---classical	genre---electronic	genre---pop	genre---popfolk	mood/theme---mellow
+track_0134824	artist_001095	album_019203	24/134824.mp3	211.1	genre---jazzfunk
+track_0140516	artist_338390	album_020073	16/140516.mp3	152.5	genre---blues	genre---bluesrock	genre---rock	genre---rocknroll
+track_0140637	artist_338395	album_020092	37/140637.mp3	257.3	genre---alternative	genre---easylistening	genre---soundtrack	instrument---acousticguitar	instrument---bongo	instrument---cello	mood/theme---love
+track_0141260	artist_338424	album_020201	60/141260.mp3	65.6	genre---classicrock
+track_0145731	artist_337058	album_020743	31/145731.mp3	100.3	genre---classical	instrument---brass	instrument---horn	instrument---trombone	instrument---trumpet
+track_0148458	artist_338787	album_021410	58/148458.mp3	205.8	genre---funk	genre---fusion	genre---jazzfunk	genre---pop	genre---poprock	genre---world	instrument---drums	instrument---guitar	instrument---saxophone
+track_0148526	artist_338660	album_021296	26/148526.mp3	327.1	genre---electronic	genre---experimental	genre---soundtrack	mood/theme---ambiental
+track_0149288	artist_338779	album_021398	88/149288.mp3	238.1	genre---classical	genre---contemporary	instrument---guitar	mood/theme---film	mood/theme---movie
+track_0149750	artist_338800	album_021450	50/149750.mp3	269.7	genre---newwave	genre---rock
+track_0152542	artist_338900	album_021757	42/152542.mp3	321.3	genre---alternative	genre---electronic	genre---experimental	genre---idm	genre---soundtrack	mood/theme---horror
+track_0156873	artist_339104	album_022545	73/156873.mp3	191.6	instrument---piano	instrument---voice	mood/theme---retro
+track_0159241	artist_339212	album_022886	41/159241.mp3	244.3	genre---newwave
+track_0159781	artist_339233	album_022939	81/159781.mp3	271.4	genre---electronic	genre---techno	mood/theme---dark	mood/theme---documentary
+track_0159797	artist_007506	album_022948	97/159797.mp3	277.1	genre---easylistening	genre---electronic	genre---lounge	genre---soundtrack	mood/theme---background	mood/theme---film
+track_0160064	artist_007215	album_023245	64/160064.mp3	170.5	genre---ska
+track_0163087	artist_003882	album_024566	87/163087.mp3	196.3	genre---acidjazz
+track_0164987	artist_339452	album_024181	87/164987.mp3	213.3	genre---electronic	genre---newwave	genre---rock
+track_0165029	artist_004590	album_024185	29/165029.mp3	260.4	genre---acidjazz
+track_0166391	artist_339517	album_024391	91/166391.mp3	344.5	genre---electropop	genre---hiphop	genre---pop	genre---rnb	genre---triphop	instrument---drummachine	instrument---drums	instrument---rhodes	instrument---sampler	instrument---synthesizer
+track_0166577	artist_339527	album_024435	77/166577.mp3	126.3	genre---alternative	genre---country	genre---folk	instrument---acousticguitar	mood/theme---energetic	mood/theme---fast
+track_0166793	artist_000906	album_024489	93/166793.mp3	253.0	genre---electronic	genre---ethno	genre---fusion	genre---tribal
+track_0168403	artist_339610	album_024793	03/168403.mp3	193.9	genre---alternative	genre---hard	genre---poprock	genre---rock	instrument---guitar
+track_0170946	artist_339724	album_025160	46/170946.mp3	304.5	genre---bossanova	genre---jazz
+track_0171315	artist_339736	album_025211	15/171315.mp3	196.4	genre---hard	genre---hardrock	genre---punkrock	genre---rock	mood/theme---fast
+track_0173505	artist_340578	album_028297	05/173505.mp3	125.9	instrument---acousticguitar	instrument---bass	instrument---electricpiano	instrument---guitar	instrument---keyboard	instrument---pipeorgan
+track_0174863	artist_339923	album_025912	63/174863.mp3	277.9	genre---newwave	genre---rock
+track_0176278	artist_339979	album_026107	78/176278.mp3	270.0	genre---classicrock
+track_0178620	artist_340076	album_026593	20/178620.mp3	186.9	genre---ambient	genre---gothic	mood/theme---dark
+track_0182020	artist_340262	album_027339	20/182020.mp3	232.3	genre---ambient	genre---chillout	genre---newage	instrument---piano	mood/theme---motivational	mood/theme---romantic
+track_0184197	artist_340347	album_027615	97/184197.mp3	176.5	genre---newage	instrument---piano	mood/theme---ambiental
+track_0186869	artist_340431	album_027949	69/186869.mp3	183.7	genre---easylistening	instrument---pipeorgan	instrument---synthesizer	mood/theme---children	mood/theme---melancholic
+track_0187464	artist_006874	album_028022	64/187464.mp3	222.1	genre---dub	genre---groove	genre---reggae
+track_0187621	artist_340494	album_028044	21/187621.mp3	326.8	genre---dub	genre---rock	genre---ska
+track_0188479	artist_340550	album_028236	79/188479.mp3	186.0	genre---metal	genre---punkrock	genre---rock	genre---ska	instrument---bass	instrument---drums	instrument---electricguitar	instrument---saxophone	instrument---trombone	instrument---trumpet
+track_0193811	artist_340782	album_028958	11/193811.mp3	193.6	genre---darkwave	genre---gothic	genre---newwave	genre---rock
+track_0200581	artist_341072	album_029779	81/200581.mp3	210.1	genre---punkrock	genre---ska
+track_0201979	artist_341125	album_030024	79/201979.mp3	619.7	genre---electronic	genre---oriental
+track_0202149	artist_341226	album_030315	49/202149.mp3	234.1	genre---folk	instrument---guitar	instrument---ukulele
+track_0205734	artist_341323	album_030556	34/205734.mp3	64.0	genre---ambient	genre---chillout	genre---easylistening	genre---newage	instrument---synthesizer	mood/theme---commercial	mood/theme---inspiring	mood/theme---meditative	mood/theme---relaxing	mood/theme---uplifting
+track_0210606	artist_341528	album_031131	06/210606.mp3	179.7	genre---celtic	genre---classical	genre---contemporary	instrument---harp
+track_0210969	artist_341542	album_031180	69/210969.mp3	216.7	genre---alternative	genre---indie	genre---pop	instrument---bass	instrument---electricguitar	instrument---piano	instrument---pipeorgan	instrument---voice
+track_0222207	artist_342215	album_032719	07/222207.mp3	449.9	genre---gothic	genre---rock
+track_0225361	artist_342507	album_033374	61/225361.mp3	218.0	genre---disco	genre---funk	genre---house	genre---pop	genre---soul	instrument---bongo	instrument---electricguitar	instrument---violin	instrument---voice
+track_0226374	artist_342584	album_033482	74/226374.mp3	268.4	genre---jazzfunk
+track_0230934	artist_003881	album_034022	34/230934.mp3	172.0	genre---rock	genre---ska
+track_0231922	artist_342910	album_034095	22/231922.mp3	257.4	genre---ska
+track_0233257	artist_338197	album_034240	57/233257.mp3	130.1	genre---celtic	genre---folk
+track_0238578	artist_343172	album_034766	78/238578.mp3	208.0	genre---world	genre---worldfusion
+track_0239317	artist_343054	album_034874	17/239317.mp3	759.6	genre---ethnicrock	genre---ethno	genre---folk
+track_0240975	artist_343470	album_035061	75/240975.mp3	205.3	genre---ethnicrock	genre---world	genre---worldfusion
+track_0251669	artist_344921	album_036197	69/251669.mp3	138.2	mood/theme---retro
+track_0253538	artist_005644	album_036413	38/253538.mp3	357.2	genre---classical	genre---electronic	genre---orchestral	instrument---pipeorgan
+track_0253716	artist_345082	album_036418	16/253716.mp3	230.7	genre---ska
+track_0257059	artist_006821	album_036997	59/257059.mp3	127.3	genre---pop	mood/theme---children
+track_0257663	artist_345704	album_036932	63/257663.mp3	480.0	genre---downtempo	genre---easylistening	genre---lounge	mood/theme---love	mood/theme---sexy
+track_0257818	artist_345766	album_036971	18/257818.mp3	354.6	genre---electronic	genre---eurodance
+track_0258841	artist_345894	album_037204	41/258841.mp3	385.7	genre---classical	genre---groove	genre---world	instrument---beat	instrument---percussion
+track_0259482	artist_345877	album_037165	82/259482.mp3	240.0	genre---blues	genre---chanson	genre---jazz	mood/theme---ballad
+track_0259559	artist_339590	album_037175	59/259559.mp3	30.9	genre---electronic	genre---gothic	genre---industrial	genre---techno	mood/theme---dark	mood/theme---dream
+track_0275103	artist_339443	album_038819	03/275103.mp3	265.2	genre---folk	genre---punkrock	genre---rock	genre---ska	genre---world
+track_0282626	artist_347536	album_039495	26/282626.mp3	274.6	genre---easylistening	genre---ethnicrock	mood/theme---background
+track_0282695	artist_340968	album_039503	95/282695.mp3	277.2	genre---darkambient	genre---electronica	genre---psychedelic
+track_0297686	artist_348126	album_040816	86/297686.mp3	209.3	genre---easylistening	genre---pop	instrument---guitar	instrument---trombone
+track_0302715	artist_348501	album_041619	15/302715.mp3	327.5	genre---classical	genre---classicrock	genre---newage	instrument---piano
+track_0309627	artist_006845	album_041989	27/309627.mp3	373.1	genre---ambient	genre---downtempo	genre---lounge	instrument---guitar	instrument---rhodes	mood/theme---melodic
+track_0310257	artist_348691	album_042041	57/310257.mp3	357.6	genre---alternative	genre---experimental	genre---oriental	genre---psychedelic	instrument---synthesizer
+track_0311701	artist_348797	album_042244	01/311701.mp3	375.4	genre---ethnicrock	genre---world
+track_0316034	artist_349009	album_042739	34/316034.mp3	216.1	genre---instrumentalrock	genre---rock	genre---soundtrack	instrument---bass	instrument---drums	instrument---electricguitar	instrument---synthesizer	mood/theme---energetic	mood/theme---movie
+track_0317695	artist_348998	album_042950	95/317695.mp3	288.1	genre---acidjazz	genre---downtempo	genre---easylistening	genre---soundtrack	instrument---piano
+track_0319761	artist_349210	album_043175	61/319761.mp3	250.9	genre---folk	genre---pop	genre---popfolk	genre---rock	mood/theme---retro
+track_0326882	artist_006051	album_043854	82/326882.mp3	325.4	genre---instrumentalpop	genre---world	genre---worldfusion
+track_0329682	artist_349654	album_044073	82/329682.mp3	76.7	genre---ambient	genre---blues	genre---rock	instrument---electricguitar	instrument---guitar	mood/theme---soft
+track_0339325	artist_350083	album_044890	25/339325.mp3	261.0	genre---newwave	genre---pop	genre---poprock
+track_0340016	artist_350110	album_044940	16/340016.mp3	105.0	genre---classical	genre---medieval	instrument---voice
+track_0344320	artist_350222	album_045343	20/344320.mp3	166.9	genre---ambient	genre---electronic	genre---newage	mood/theme---children	mood/theme---relaxing
+track_0345139	artist_340710	album_045452	39/345139.mp3	168.0	genre---indie	genre---latin	genre---rock	genre---soundtrack	instrument---bass	instrument---bongo	instrument---drums	instrument---electricguitar	instrument---saxophone	instrument---voice
+track_0348704	artist_350519	album_045760	04/348704.mp3	286.6	genre---club	genre---electronic	genre---house	mood/theme---party
+track_0351044	artist_350652	album_046000	44/351044.mp3	214.9	genre---african	genre---pop	genre---world
+track_0355479	artist_350813	album_046377	79/355479.mp3	741.0	genre---jazz	instrument---piano	mood/theme---cool	mood/theme---slow
+track_0356842	artist_350867	album_046494	42/356842.mp3	195.8	genre---heavymetal	genre---industrial	genre---metal	genre---rock	instrument---bass	instrument---drums	instrument---electricguitar
+track_0361470	artist_351032	album_046819	70/361470.mp3	137.1	genre---electronic	mood/theme---game
+track_0363853	artist_351159	album_047069	53/363853.mp3	193.8	genre---jazz	genre---swing	instrument---doublebass	mood/theme---retro
+track_0367816	artist_351301	album_047347	16/367816.mp3	383.0	genre---ambient	genre---ethnicrock	genre---ethno	genre---soundtrack	instrument---acousticguitar
+track_0369905	artist_004934	album_047529	05/369905.mp3	261.4	genre---chillout	genre---easylistening	genre---electronic	mood/theme---happy	mood/theme---love	mood/theme---summer
+track_0369977	artist_351383	album_047515	77/369977.mp3	291.2	genre---electronic	genre---soundtrack	instrument---cello	instrument---synthesizer	mood/theme---horror
+track_0370172	artist_350817	album_047530	72/370172.mp3	235.7	genre---alternative	genre---celtic	genre---country	genre---folk	genre---gothic	genre---metal
+track_0373353	artist_351515	album_047798	53/373353.mp3	262.1	genre---rock	genre---ska	instrument---trumpet
+track_0375034	artist_351558	album_047903	34/375034.mp3	139.0	genre---electronic	genre---eurodance
+track_0377141	artist_349563	album_048097	41/377141.mp3	149.9	genre---tribal
+track_0378604	artist_351691	album_048197	04/378604.mp3	232.9	genre---heavymetal	genre---metal	genre---rock
+track_0380586	artist_351588	album_048352	86/380586.mp3	360.9	genre---chillout	genre---pop	genre---singersongwriter	instrument---keyboard	mood/theme---children
+track_0381705	artist_351811	album_048430	05/381705.mp3	155.9	genre---reggae	genre---rock	genre---ska
+track_0381858	artist_351846	album_048489	58/381858.mp3	243.7	genre---electronic	genre---pop	genre---soundtrack	instrument---drums	instrument---guitar	mood/theme---slow
+track_0387011	artist_351968	album_048911	11/387011.mp3	247.9	genre---alternative	genre---folk	genre---pop	instrument---accordion	instrument---bass	instrument---bongo	instrument---drums	instrument---electricguitar	instrument---saxophone	instrument---violin
+track_0387501	artist_352042	album_048909	01/387501.mp3	218.0	genre---atmospheric	genre---instrumentalrock	genre---rock	genre---soundtrack	instrument---electricguitar	mood/theme---dream	mood/theme---love	mood/theme---melancholic	mood/theme---romantic
+track_0388473	artist_352130	album_049143	73/388473.mp3	274.5	genre---metal	genre---rock	mood/theme---heavy
+track_0389520	artist_352114	album_049104	20/389520.mp3	113.8	genre---easylistening	genre---jazz	genre---jazzfunk	instrument---bass	instrument---drums	instrument---guitar	instrument---piano
+track_0395005	artist_352335	album_049542	05/395005.mp3	315.5	genre---electronic	genre---soundtrack	mood/theme---mellow	mood/theme---space
+track_0398690	artist_352450	album_049795	90/398690.mp3	281.0	genre---heavymetal	genre---instrumentalrock	genre---metal
+track_0403064	artist_340676	album_050140	64/403064.mp3	210.1	genre---electronic	genre---eurodance
+track_0406015	artist_352789	album_050501	15/406015.mp3	204.0	genre---hard	genre---hardrock	genre---rock
+track_0415050	artist_353090	album_051155	50/415050.mp3	255.8	genre---pop	genre---punkrock	genre---reggae	genre---rock	genre---ska
+track_0415498	artist_353096	album_051198	98/415498.mp3	294.6	genre---electronic	genre---instrumentalrock	genre---metal	genre---soundtrack	instrument---computer	instrument---electricguitar	instrument---guitar	mood/theme---horror
+track_0417368	artist_353167	album_051333	68/417368.mp3	325.8	genre---dubstep	genre---reggae	instrument---bass	instrument---rhodes	instrument---synthesizer	mood/theme---adventure	mood/theme---uplifting
+track_0424014	artist_353437	album_051887	14/424014.mp3	224.5	genre---alternative	genre---experimental	genre---rock	mood/theme---sport
+track_0426030	artist_353511	album_052057	30/426030.mp3	264.5	genre---electronic	genre---pop	genre---rock	instrument---computer	instrument---electricguitar	instrument---synthesizer	instrument---voice	mood/theme---ballad	mood/theme---melancholic
+track_0429240	artist_353618	album_052270	40/429240.mp3	352.0	genre---electronic	genre---instrumentalpop	mood/theme---ambiental
+track_0429358	artist_007461	album_052277	58/429358.mp3	245.0	genre---blues	genre---bluesrock	genre---rock
+track_0432804	artist_353741	album_052546	04/432804.mp3	198.9	genre---dance	genre---electronic	genre---house	mood/theme---sport
+track_0439129	artist_354025	album_053127	29/439129.mp3	235.7	genre---metal	genre---rock	mood/theme---heavy
+track_0451120	artist_354465	album_054187	20/451120.mp3	248.8	genre---celtic	genre---folk	genre---instrumentalpop
+track_0452732	artist_354542	album_054218	32/452732.mp3	362.0	genre---heavymetal	genre---metal	instrument---bass	instrument---drums	instrument---electricguitar	instrument---voice
+track_0452954	artist_354445	album_054242	54/452954.mp3	296.8	genre---celtic	genre---folk	genre---popfolk
+track_0459346	artist_354817	album_054805	46/459346.mp3	357.7	genre---darkwave	genre---gothic	genre---orchestral	instrument---bass	instrument---bongo	instrument---cello	instrument---doublebass	instrument---voice	mood/theme---dark
+track_0460974	artist_354941	album_055088	74/460974.mp3	236.6	genre---electronic	genre---eurodance
+track_0468500	artist_355519	album_056395	00/468500.mp3	237.2	genre---pop	mood/theme---christmas	mood/theme---holiday
+track_0474691	artist_355358	album_056019	91/474691.mp3	231.4	genre---heavymetal	genre---metal	genre---rock
+track_0477305	artist_355362	album_056298	05/477305.mp3	223.7	genre---orchestral	genre---soundtrack	genre---world	instrument---orchestra	mood/theme---corporate	mood/theme---positive	mood/theme---relaxing
+track_0478300	artist_355549	album_056480	00/478300.mp3	336.0	genre---soundtrack	instrument---brass	instrument---drums	instrument---piano	instrument---violin
+track_0481862	artist_355683	album_056835	62/481862.mp3	163.0	genre---instrumentalrock	genre---rock	genre---soundtrack	instrument---acousticguitar	instrument---drums	instrument---electricguitar	instrument---piano	mood/theme---drama	mood/theme---emotional
+track_0484327	artist_355753	album_057010	27/484327.mp3	220.0	genre---alternative	genre---poprock	instrument---electricguitar	instrument---electricpiano	instrument---piano	mood/theme---emotional	mood/theme---mellow
+track_0485055	artist_355764	album_057044	55/485055.mp3	252.3	genre---hard	genre---punkrock	genre---rock	genre---rocknroll	instrument---bass	instrument---drums	instrument---electricguitar	instrument---voice
+track_0487325	artist_355808	album_057163	25/487325.mp3	265.2	genre---dance	genre---electronic	genre---eurodance
+track_0488291	artist_355870	album_057299	91/488291.mp3	190.0	genre---reggae	genre---ska
+track_0494203	artist_356111	album_057926	03/494203.mp3	222.6	genre---acidjazz	genre---electronic	genre---electropop
+track_0502592	artist_356511	album_058859	92/502592.mp3	284.3	genre---ambient	genre---soundtrack	mood/theme---advertising	mood/theme---film
+track_0506952	artist_356482	album_059379	52/506952.mp3	158.8	genre---alternative	genre---experimental	instrument---strings	mood/theme---action
+track_0512153	artist_356877	album_059906	53/512153.mp3	138.6	genre---classical	genre---orchestral	genre---symphonic	instrument---piano	mood/theme---film	mood/theme---trailer	mood/theme---uplifting
+track_0519694	artist_338310	album_060755	94/519694.mp3	227.1	genre---soundtrack	mood/theme---movie
+track_0533166	artist_358003	album_062210	66/533166.mp3	152.0	genre---classical	genre---soundtrack	instrument---cello	instrument---doublebass	instrument---piano	instrument---viola	instrument---violin
+track_0537587	artist_008230	album_062654	87/537587.mp3	244.5	genre---ambient	instrument---bass	instrument---bongo	instrument---computer	instrument---drums	instrument---electricguitar	instrument---piano	instrument---sampler	instrument---synthesizer	instrument---trumpet	instrument---violin	mood/theme---ambiental
+track_0540998	artist_358348	album_063088	98/540998.mp3	277.1	genre---ambient	genre---gothic	mood/theme---dark
+track_0553240	artist_358040	album_064349	40/553240.mp3	150.5	genre---jazzfunk	instrument---drums	instrument---electricpiano	instrument---sampler
+track_0556349	artist_359034	album_064662	49/556349.mp3	100.1	genre---experimental	genre---funk	genre---hiphop	genre---jazz	genre---soul	instrument---accordion	instrument---bell	instrument---bongo	instrument---brass	instrument---cello	instrument---clarinet	instrument---classicalguitar	instrument---drummachine	instrument---drums	instrument---electricguitar	instrument---electricpiano	instrument---flute	instrument---guitar	instrument---keyboard	instrument---percussion	instrument---piano	instrument---rhodes	instrument---saxophone	instrument---strings	instrument---synthesizer	instrument---trumpet	instrument---violin	instrument---voice
+track_0556568	artist_358554	album_064681	68/556568.mp3	205.8	genre---bossanova	genre---jazz
+track_0567734	artist_359425	album_065579	34/567734.mp3	273.9	genre---metal	instrument---bass	instrument---drums	instrument---electricguitar	mood/theme---heavy
+track_0568126	artist_359452	album_065639	26/568126.mp3	199.4	genre---dance	genre---disco	genre---electronica	genre---eurodance	mood/theme---dream
+track_0577324	artist_359795	album_066550	24/577324.mp3	387.1	genre---electronic	genre---indie	genre---pop	instrument---drums	instrument---electricpiano	instrument---synthesizer	mood/theme---groovy
+track_0578351	artist_359853	album_066708	51/578351.mp3	200.5	genre---classicrock	genre---hardrock	genre---punkrock
+track_0582651	artist_360054	album_067216	51/582651.mp3	176.1	genre---soul	instrument---bass	instrument---drums	mood/theme---adventure
+track_0594258	artist_358060	album_068623	58/594258.mp3	290.1	genre---downtempo	genre---folk	genre---soundtrack	instrument---acousticguitar	instrument---bass	instrument---drummachine	instrument---drums	instrument---electricguitar	instrument---guitar	instrument---harmonica	instrument---synthesizer	mood/theme---dark
+track_0611731	artist_347673	album_070789	31/611731.mp3	335.2	genre---progressive	genre---psychedelic	instrument---beat	mood/theme---slow
+track_0613799	artist_361454	album_071025	99/613799.mp3	166.7	instrument---computer	instrument---synthesizer	mood/theme---christmas
+track_0615068	artist_004060	album_071175	68/615068.mp3	175.5	genre---ambient	genre---darkambient	genre---poprock	genre---rock	instrument---electricguitar	mood/theme---melodic
+track_0615164	artist_348065	album_071189	64/615164.mp3	367.3	genre---african	genre---dance	genre---house	instrument---drummachine
+track_0620248	artist_360910	album_071825	48/620248.mp3	373.4	genre---dance	genre---eurodance	genre---techno	instrument---synthesizer	mood/theme---melodic
+track_0625206	artist_356759	album_072408	06/625206.mp3	235.8	genre---funk	genre---jazz	genre---jazzfunk	instrument---bass	instrument---drums	instrument---piano
+track_0628530	artist_360462	album_072793	30/628530.mp3	104.6	genre---electropop	mood/theme---holiday
+track_0635107	artist_004625	album_073505	07/635107.mp3	307.0	genre---electronic	instrument---computer	instrument---sampler	mood/theme---travel
+track_0635546	artist_354516	album_073833	46/635546.mp3	416.9	genre---folk	genre---pop	genre---rocknroll	instrument---electricguitar	instrument---guitar	mood/theme---ballad	mood/theme---melodic
+track_0635794	artist_362433	album_073587	94/635794.mp3	723.0	genre---ambient	instrument---bell	instrument---bongo	instrument---drums	instrument---harp	instrument---orchestra	instrument---percussion	mood/theme---game	mood/theme---movie
+track_0636818	artist_362501	album_073787	18/636818.mp3	254.0	genre---funk	genre---groove	genre---poprock	instrument---guitar	instrument---orchestra
+track_0637185	artist_362548	album_073920	85/637185.mp3	190.7	genre---blues	genre---bluesrock	genre---rock	instrument---bass	instrument---drums	instrument---electricguitar
+track_0640122	artist_362636	album_074136	22/640122.mp3	287.5	genre---ambient	genre---atmospheric	genre---electronic	instrument---drums	instrument---piano	mood/theme---powerful	mood/theme---uplifting
+track_0642026	artist_350433	album_075529	26/642026.mp3	201.0	genre---bossanova	genre---pop	genre---singersongwriter	instrument---flute	instrument---guitar
+track_0661752	artist_363592	album_076769	52/661752.mp3	205.2	genre---hiphop	genre---jazz	genre---swing	instrument---bass	instrument---piano	instrument---sampler	instrument---saxophone	instrument---trombone	mood/theme---ballad
+track_0666532	artist_342908	album_077338	32/666532.mp3	241.9	genre---classicrock	genre---poprock	instrument---guitar	mood/theme---ambiental
+track_0678073	artist_355460	album_078773	73/678073.mp3	323.1	genre---electronic	instrument---sampler	instrument---synthesizer	mood/theme---fun
+track_0681097	artist_364471	album_079176	97/681097.mp3	309.0	genre---darkambient	genre---experimental	genre---industrial	genre---techno	instrument---sampler
+track_0686752	artist_364767	album_079952	52/686752.mp3	186.4	genre---ethnicrock	genre---jazz	genre---oriental	genre---swing	instrument---acousticguitar	instrument---doublebass
+track_0692791	artist_339449	album_080744	91/692791.mp3	262.9	genre---soundtrack	mood/theme---christmas
+track_0695805	artist_365154	album_081112	05/695805.mp3	208.2	genre---instrumentalrock	genre---newwave	genre---poprock	genre---progressive	instrument---bass	instrument---drummachine	instrument---electricguitar
+track_0697303	artist_365230	album_081319	03/697303.mp3	64.0	genre---electronic	genre---synthpop	mood/theme---funny
+track_0718297	artist_366162	album_083791	97/718297.mp3	142.6	genre---dance	genre---easylistening	instrument---electricguitar	instrument---electricpiano	mood/theme---background	mood/theme---melodic	mood/theme---romantic
+track_0725197	artist_366456	album_084719	97/725197.mp3	251.0	genre---club	genre---trance	genre---world	genre---worldfusion	mood/theme---holiday	mood/theme---upbeat	mood/theme---uplifting
+track_0726468	artist_003004	album_084892	68/726468.mp3	322.8	genre---acidjazz	genre---blues	genre---rock	instrument---guitar	instrument---keyboard	instrument---synthesizer
+track_0730802	artist_364878	album_085430	02/730802.mp3	354.9	genre---ethnicrock	genre---ethno	instrument---sampler	instrument---synthesizer
+track_0731396	artist_366701	album_085488	96/731396.mp3	195.5	genre---easylistening	genre---jazz	genre---soundtrack	instrument---bass	instrument---drums	instrument---piano	mood/theme---cool	mood/theme---emotional	mood/theme---happy
+track_0736621	artist_366906	album_086083	21/736621.mp3	214.0	instrument---electricpiano	instrument---keyboard	instrument---synthesizer	mood/theme---documentary	mood/theme---melodic
+track_0752115	artist_367711	album_088025	15/752115.mp3	218.5	genre---hardrock	genre---heavymetal	genre---metal	genre---rock	instrument---bass	instrument---classicalguitar	instrument---drums	instrument---electricguitar	instrument---voice
+track_0752575	artist_367193	album_088046	75/752575.mp3	209.2	genre---dubstep	genre---edm	genre---electronic	instrument---bass	mood/theme---melodic
+track_0757496	artist_365142	album_088601	96/757496.mp3	79.3	genre---classical	instrument---piano	mood/theme---adventure	mood/theme---dream	mood/theme---love	mood/theme---melodic	mood/theme---nature
+track_0760009	artist_368019	album_088908	09/760009.mp3	112.4	genre---ambient	genre---darkambient	genre---darkwave	genre---electronic	genre---experimental	instrument---computer	instrument---synthesizer	mood/theme---dark
+track_0765341	artist_346131	album_089652	41/765341.mp3	399.3	genre---ambient	genre---darkambient	genre---soundtrack	mood/theme---sad	mood/theme---soundscape
+track_0768200	artist_368387	album_090012	00/768200.mp3	253.1	genre---classicrock	genre---medieval
+track_0773889	artist_368617	album_090711	89/773889.mp3	381.0	genre---blues	genre---bluesrock	genre---rock	genre---rocknroll	instrument---bass	instrument---drums	instrument---electricguitar
+track_0774691	artist_364909	album_090771	91/774691.mp3	271.5	genre---electronic	instrument---computer	instrument---synthesizer	mood/theme---background
+track_0785618	artist_369105	album_092168	18/785618.mp3	202.0	genre---blues	genre---folk	genre---singersongwriter	instrument---acousticguitar	instrument---harmonica
+track_0790654	artist_364644	album_092780	54/790654.mp3	102.8	genre---soundtrack	mood/theme---movie
+track_0798198	artist_370191	album_094038	98/798198.mp3	216.9	genre---classical	genre---medieval	genre---orchestral	genre---soundtrack	instrument---cello	instrument---doublebass	instrument---flute	instrument---horn	instrument---piano	instrument---violin	mood/theme---emotional	mood/theme---epic	mood/theme---film	mood/theme---trailer
+track_0799250	artist_370157	album_093968	50/799250.mp3	75.1	genre---ethnicrock	genre---ethno	genre---world
+track_0799819	artist_360384	album_093709	19/799819.mp3	234.0	genre---folk	genre---popfolk	instrument---acousticguitar	instrument---doublebass	instrument---ukulele
+track_0800684	artist_369475	album_093761	84/800684.mp3	386.5	genre---african	genre---hiphop	genre---rap
+track_0804123	artist_370213	album_094085	23/804123.mp3	311.7	genre---folk	genre---indie	genre---rock	instrument---cello	instrument---guitar	mood/theme---melancholic
+track_0806976	artist_370314	album_094288	76/806976.mp3	295.6	genre---80s	genre---hardrock	genre---rock	instrument---bass	instrument---drums	instrument---electricguitar	instrument---synthesizer	mood/theme---melodic
+track_0812226	artist_370759	album_095561	26/812226.mp3	246.9	genre---newage	instrument---synthesizer	mood/theme---children	mood/theme---relaxing	mood/theme---soft
+track_0815967	artist_370677	album_095284	67/815967.mp3	534.0	genre---ambient	genre---darkambient	genre---world
+track_0816747	artist_370714	album_095399	47/816747.mp3	148.1	genre---ambient	instrument---bell	instrument---harmonica	instrument---harp	instrument---piano	mood/theme---deep	mood/theme---film	mood/theme---nature
+track_0817598	artist_370753	album_095550	98/817598.mp3	384.7	genre---alternative	genre---darkwave	genre---gothic	genre---indie
+track_0840580	artist_371725	album_098339	80/840580.mp3	88.4	genre---electronic	genre---poprock	genre---rock	instrument---guitar	instrument---synthesizer	mood/theme---adventure	mood/theme---happy
+track_0840643	artist_371898	album_098804	43/840643.mp3	230.9	genre---dance	genre---electronic	genre---techno	mood/theme---energetic	mood/theme---party
+track_0842401	artist_371757	album_098432	01/842401.mp3	266.6	genre---alternative	genre---metal	genre---punkrock	mood/theme---epic	mood/theme---powerful	mood/theme---uplifting
+track_0848623	artist_358586	album_099148	23/848623.mp3	198.0	genre---alternative	genre---postrock	instrument---bass	instrument---clarinet	instrument---drums	instrument---electricguitar
+track_0851749	artist_371122	album_099521	49/851749.mp3	273.6	genre---alternative	genre---celtic	genre---indie	instrument---piano	instrument---voice	mood/theme---love	mood/theme---sad
+track_0858779	artist_373214	album_100502	79/858779.mp3	181.7	genre---classical	genre---electronic	genre---soundtrack	instrument---drums	instrument---synthesizer	mood/theme---happy	mood/theme---sport
+track_0859442	artist_364887	album_100589	42/859442.mp3	201.0	genre---60s	instrument---synthesizer
+track_0860966	artist_372557	album_100801	66/860966.mp3	81.1	genre---classical	genre---medieval	mood/theme---epic	mood/theme---trailer
+track_0864294	artist_373836	album_101278	94/864294.mp3	343.8	genre---chanson	instrument---classicalguitar	instrument---guitar	instrument---harmonica	instrument---ukulele
+track_0864755	artist_362463	album_101304	55/864755.mp3	150.5	genre---indie	genre---newwave	genre---poprock
+track_0865201	artist_361353	album_101367	01/865201.mp3	211.7	genre---ambient	genre---electronic	genre---electronica	instrument---piano	instrument---synthesizer	mood/theme---melancholic
+track_0873861	artist_365250	album_102533	61/873861.mp3	236.2	genre---deephouse	genre---electronic	genre---pop
+track_0878925	artist_364882	album_103236	25/878925.mp3	325.1	genre---metal	genre---rock	instrument---computer	instrument---electricguitar	mood/theme---christmas
+track_0881283	artist_375935	album_103564	83/881283.mp3	235.0	genre---easylistening	mood/theme---christmas
+track_0887976	artist_375938	album_104423	76/887976.mp3	64.2	genre---ambient	genre---bossanova	genre---latin	genre---soundtrack	instrument---bass	instrument---drums	instrument---piano
+track_0889606	artist_374651	album_104616	06/889606.mp3	305.3	genre---ambient	genre---chillout	genre---lounge	instrument---electricguitar	instrument---electricpiano	instrument---keyboard	instrument---synthesizer	mood/theme---relaxing	mood/theme---slow
+track_0896526	artist_378103	album_105483	26/896526.mp3	68.1	genre---celtic	instrument---acousticguitar
+track_0900713	artist_378701	album_106021	13/900713.mp3	272.0	genre---ambient	mood/theme---dream	mood/theme---game	mood/theme---relaxing
+track_0905171	artist_367840	album_106600	71/905171.mp3	154.5	genre---rock	genre---rocknroll	mood/theme---energetic	mood/theme---fast
+track_0905417	artist_378747	album_106638	17/905417.mp3	444.0	genre---classical	genre---easylistening	genre---minimal	genre---newage	genre---soundtrack	instrument---piano	mood/theme---melancholic
+track_0906585	artist_379181	album_107004	85/906585.mp3	321.0	genre---jazz	instrument---acousticbassguitar	instrument---acousticguitar	instrument---cello	instrument---drums	instrument---viola	instrument---violin
+track_0907228	artist_384306	album_107250	28/907228.mp3	273.2	genre---electronic	genre---newwave	genre---synthpop
+track_0912858	artist_337939	album_108032	58/912858.mp3	244.4	genre---world	mood/theme---meditative	mood/theme---relaxing	mood/theme---travel
+track_0913366	artist_415224	album_108104	66/913366.mp3	292.0	genre---ambient	genre---atmospheric	genre---newage	genre---world	instrument---harp	instrument---piano	instrument---synthesizer	instrument---viola	mood/theme---relaxing	mood/theme---slow
+track_0914576	artist_415317	album_108243	76/914576.mp3	310.2	genre---poprock	mood/theme---advertising	mood/theme---corporate	mood/theme---motivational
+track_0914765	artist_377380	album_108272	65/914765.mp3	134.3	genre---folk	instrument---acousticguitar	instrument---ukulele
+track_0915384	artist_373547	album_108354	84/915384.mp3	306.9	genre---funk	genre---jazz	genre---jazzfunk	instrument---bass	instrument---drums	instrument---guitar	mood/theme---happy	mood/theme---party	mood/theme---trailer
+track_0919931	artist_352814	album_108946	31/919931.mp3	389.4	genre---drumnbass	genre---electronic	instrument---computer	instrument---keyboard	instrument---voice	mood/theme---fast	mood/theme---inspiring
+track_0921755	artist_419285	album_109208	55/921755.mp3	271.4	genre---easylistening	genre---newage	genre---pop	instrument---bass	instrument---guitar	instrument---piano	instrument---synthesizer	mood/theme---emotional	mood/theme---soft
+track_0940505	artist_377415	album_110472	05/940505.mp3	226.5	genre---ambient	genre---dance	genre---edm	genre---electronic	genre---experimental	instrument---computer	instrument---sampler	instrument---synthesizer
+track_0940994	artist_354984	album_110539	94/940994.mp3	243.9	genre---ambient	instrument---computer	instrument---keyboard	mood/theme---melodic	mood/theme---slow
+track_0941397	artist_421254	album_110581	97/941397.mp3	179.9	genre---indie	genre---progressive	genre---rock	instrument---accordion	instrument---bass	instrument---drums	instrument---electricguitar	instrument---pipeorgan
+track_0945192	artist_421686	album_111017	92/945192.mp3	225.0	genre---dance	genre---house	genre---pop	instrument---synthesizer	mood/theme---happy	mood/theme---summer
+track_0952001	artist_368089	album_111938	01/952001.mp3	168.6	genre---pop	genre---swing	mood/theme---love
+track_0952875	artist_422939	album_112041	75/952875.mp3	272.8	genre---deephouse	genre---edm	genre---electronic	genre---techno
+track_0953262	artist_420323	album_112077	62/953262.mp3	246.0	genre---classicrock	genre---hardrock	genre---rock
+track_0959961	artist_424196	album_112861	61/959961.mp3	157.5	genre---grunge	genre---rock	instrument---bass	instrument---drums	instrument---guitar	mood/theme---energetic	mood/theme---fast	mood/theme---happy
+track_0965303	artist_367887	album_113522	03/965303.mp3	199.3	genre---classical	instrument---drums	instrument---harp	instrument---oboe	instrument---piano	mood/theme---christmas
+track_0966857	artist_425159	album_113731	57/966857.mp3	37.5	genre---ambient	genre---darkambient	genre---soundtrack	mood/theme---trailer
+track_0967148	artist_422860	album_113775	48/967148.mp3	218.1	genre---ska
+track_0975621	artist_426658	album_114886	21/975621.mp3	209.8	genre---ska
+track_0978765	artist_425843	album_115273	65/978765.mp3	210.1	genre---electronic	genre---jazzfunk	genre---jazzfusion
+track_0981457	artist_427549	album_115596	57/981457.mp3	155.7	genre---blues	instrument---electricguitar	instrument---harmonica
+track_0981916	artist_357976	album_115644	16/981916.mp3	317.4	genre---ambient	genre---soundtrack	mood/theme---emotional	mood/theme---movie
+track_0983935	artist_370822	album_115836	35/983935.mp3	142.0	genre---classical	genre---medieval	instrument---cello	instrument---piano
+track_0984674	artist_428097	album_115908	74/984674.mp3	289.7	genre---drumnbass	genre---electronic	genre---electronica	mood/theme---energetic	mood/theme---fast
+track_0984989	artist_428049	album_115967	89/984989.mp3	198.1	genre---hardrock	genre---punkrock	genre---swing
+track_0991710	artist_428829	album_116662	10/991710.mp3	115.2	genre---jazz	genre---soul	instrument---acousticbassguitar	instrument---drums	instrument---piano	instrument---saxophone	instrument---voice	mood/theme---christmas	mood/theme---happy
+track_0992067	artist_428877	album_116741	67/992067.mp3	63.1	genre---classical	instrument---piano	mood/theme---christmas
+track_0992762	artist_428489	album_116788	62/992762.mp3	91.2	genre---classical	genre---orchestral	genre---soundtrack	instrument---harp	instrument---piano	mood/theme---children
+track_0993757	artist_428971	album_117004	57/993757.mp3	30.6	genre---electronic	genre---hard	mood/theme---advertising	mood/theme---commercial	mood/theme---energetic	mood/theme---sport
+track_0995919	artist_429278	album_117122	19/995919.mp3	209.9	genre---celtic	genre---soundtrack	genre---symphonic	instrument---piano	mood/theme---epic	mood/theme---film
+track_1001307	artist_429975	album_117834	07/1001307.mp3	255.5	genre---easylistening	genre---orchestral	genre---soundtrack	instrument---acousticbassguitar	instrument---cello	instrument---classicalguitar	instrument---drummachine	instrument---drums	instrument---flute	instrument---piano	instrument---strings	instrument---viola	instrument---violin	mood/theme---corporate	mood/theme---dramatic	mood/theme---inspiring
+track_1002223	artist_005987	album_117932	23/1002223.mp3	426.7	genre---jazz	instrument---piano	mood/theme---slow
+track_1007745	artist_377544	album_118603	45/1007745.mp3	272.9	genre---ambient	genre---chillout	genre---dub	genre---electronic	instrument---accordion	instrument---electricguitar	instrument---synthesizer	mood/theme---retro
+track_1009005	artist_427271	album_118754	05/1009005.mp3	361.1	genre---rock	instrument---bass	instrument---drums	instrument---electricguitar	instrument---viola	instrument---violin
+track_1009589	artist_431065	album_118866	89/1009589.mp3	120.8	genre---classical	genre---orchestral	genre---soundtrack	instrument---cello	instrument---clarinet	instrument---doublebass	instrument---electricguitar	instrument---flute	instrument---trombone	instrument---trumpet	instrument---viola	instrument---violin	mood/theme---horror	mood/theme---trailer
+track_1011641	artist_421874	album_119118	41/1011641.mp3	289.1	genre---reggae	instrument---bass	instrument---drums	instrument---electricguitar	instrument---saxophone	mood/theme---retro
+track_1011994	artist_431465	album_119184	94/1011994.mp3	195.8	genre---ambient	genre---classical	genre---soundtrack	instrument---cello	instrument---piano	instrument---trombone	instrument---trumpet	instrument---violin	mood/theme---emotional	mood/theme---epic	mood/theme---film
+track_1015565	artist_428294	album_119600	65/1015565.mp3	158.4	genre---classical	genre---soundtrack	instrument---viola	instrument---violin	mood/theme---dream	mood/theme---hopeful	mood/theme---inspiring	mood/theme---romantic
+track_1021233	artist_360410	album_120067	33/1021233.mp3	191.4	genre---hardrock	genre---indie	genre---instrumentalrock	instrument---bass	instrument---drums	instrument---electricguitar	mood/theme---background
+track_1022248	artist_432521	album_120206	48/1022248.mp3	280.4	genre---ambient	genre---darkwave	genre---newage	mood/theme---horror
+track_1022531	artist_425618	album_121846	31/1022531.mp3	144.0	genre---soundtrack	genre---world	instrument---bass	instrument---cello	instrument---computer	instrument---drums	instrument---viola	instrument---violin	mood/theme---action	mood/theme---drama	mood/theme---film
+track_1023258	artist_432273	album_120319	58/1023258.mp3	111.6	genre---classical	genre---orchestral	genre---soundtrack	instrument---cello	instrument---piano	instrument---viola	instrument---violin	mood/theme---documentary	mood/theme---dramatic
+track_1024655	artist_432803	album_120448	55/1024655.mp3	273.5	genre---house	genre---lounge	genre---tribal
+track_1026811	artist_370789	album_120715	11/1026811.mp3	215.3	instrument---acousticbassguitar	instrument---piano	instrument---violin	mood/theme---sad	mood/theme---slow
+track_1027723	artist_422508	album_120858	23/1027723.mp3	154.1	genre---80s	genre---alternative	genre---indie	genre---poprock	genre---rock
+track_1027858	artist_433004	album_120864	58/1027858.mp3	212.4	genre---electronic	genre---eurodance	instrument---bass	instrument---piano	instrument---synthesizer
+track_1029507	artist_433352	album_121048	07/1029507.mp3	197.0	genre---ambient	genre---chillout	genre---lounge	instrument---piano	mood/theme---ambiental
+track_1031106	artist_370893	album_121305	06/1031106.mp3	312.0	genre---electronic	instrument---bass	mood/theme---slow
+track_1032157	artist_421279	album_121460	57/1032157.mp3	172.8	genre---blues	genre---rock	instrument---bass	instrument---electricguitar	instrument---horn	instrument---voice	mood/theme---retro
+track_1032553	artist_433726	album_121517	53/1032553.mp3	143.8	genre---pop	genre---popfolk	instrument---acousticguitar	instrument---drums	instrument---harmonica	instrument---ukulele
+track_1032559	artist_361785	album_121514	59/1032559.mp3	235.3	genre---dance	genre---electronic	genre---electropop	genre---eurodance
+track_1033575	artist_367341	album_121723	75/1033575.mp3	194.8	genre---bossanova	genre---fusion	genre---latin	genre---newage	genre---rock	instrument---computer	instrument---electricguitar
+track_1034236	artist_434091	album_121753	36/1034236.mp3	250.6	genre---chillout	genre---classical	genre---newage	genre---orchestral	instrument---cello	instrument---classicalguitar	instrument---doublebass	instrument---horn	instrument---piano	instrument---trombone	instrument---trumpet	instrument---viola	instrument---violin	mood/theme---epic
+track_1035883	artist_434304	album_121955	83/1035883.mp3	256.5	genre---ethnicrock
+track_1036002	artist_431136	album_121961	02/1036002.mp3	248.3	genre---pop	genre---rnb	genre---swing
+track_1036799	artist_434427	album_122056	99/1036799.mp3	192.7	genre---pop	genre---popfolk	genre---world	instrument---bass	instrument---bongo	instrument---classicalguitar	instrument---percussion	instrument---piano	instrument---ukulele
+track_1036834	artist_366878	album_122060	34/1036834.mp3	171.8	genre---experimental	genre---fusion	instrument---bass	instrument---drums	instrument---electricguitar	instrument---synthesizer	mood/theme---action	mood/theme---adventure
+track_1037431	artist_354947	album_122139	31/1037431.mp3	168.0	genre---classical	genre---soundtrack	instrument---piano	instrument---strings	instrument---viola	instrument---violin
+track_1038507	artist_434449	album_122310	07/1038507.mp3	183.7	genre---funk	genre---lounge	instrument---bass	instrument---drums	instrument---piano	instrument---violin	mood/theme---groovy
+track_1038652	artist_372060	album_122333	52/1038652.mp3	201.0	genre---soundtrack	mood/theme---drama	mood/theme---dramatic
+track_1038723	artist_434498	album_122345	23/1038723.mp3	209.3	genre---choir	genre---classical	genre---orchestral	instrument---violin	mood/theme---movie
+track_1038943	artist_410300	album_122379	43/1038943.mp3	396.0	genre---classicrock	genre---poprock	genre---soundtrack	instrument---electricguitar	instrument---viola
+track_1039831	artist_363585	album_122510	31/1039831.mp3	270.2	genre---rock	instrument---acousticguitar	instrument---voice	mood/theme---slow
+track_1041104	artist_434893	album_122878	04/1041104.mp3	158.7	genre---60s	genre---70s	genre---chillout	genre---rock	genre---rocknroll	instrument---bass	instrument---drums	instrument---electricguitar	mood/theme---energetic
+track_1041167	artist_434948	album_122651	67/1041167.mp3	308.9	genre---electronic	mood/theme---sport
+track_1041998	artist_434945	album_122750	98/1041998.mp3	116.1	genre---classical	genre---orchestral	mood/theme---drama	mood/theme---film
+track_1042762	artist_434734	album_122786	62/1042762.mp3	218.1	genre---funk	instrument---acousticbassguitar	instrument---drums	instrument---electricguitar	instrument---piano	mood/theme---funny
+track_1042998	artist_435113	album_122805	98/1042998.mp3	196.5	genre---alternative	genre---gothic	genre---indie	genre---metal	genre---rock	instrument---bass	instrument---drums	instrument---electricguitar
+track_1043411	artist_346227	album_122867	11/1043411.mp3	156.0	genre---african	genre---ambient	genre---fusion
+track_1043882	artist_431809	album_122931	82/1043882.mp3	174.3	genre---pop	mood/theme---children
+track_1044669	artist_434276	album_123098	69/1044669.mp3	373.2	genre---fusion	genre---world	instrument---acousticbassguitar	instrument---classicalguitar	instrument---electricguitar	instrument---guitar	instrument---keyboard	instrument---sampler	instrument---synthesizer
+track_1044775	artist_355675	album_123026	75/1044775.mp3	202.0	genre---rock	instrument---acousticguitar	instrument---bass	instrument---bell	instrument---drums	instrument---electricguitar	instrument---voice	mood/theme---ballad
+track_1047453	artist_435614	album_123447	53/1047453.mp3	511.2	genre---classical	genre---soundtrack	genre---symphonic	instrument---cello	instrument---flute	instrument---orchestra	instrument---viola	instrument---violin	mood/theme---dark
+track_1049759	artist_435869	album_123637	59/1049759.mp3	205.7	genre---acidjazz	genre---easylistening	instrument---piano
+track_1052367	artist_431036	album_123933	67/1052367.mp3	101.6	genre---easylistening	genre---electronic	genre---pop	instrument---piano	mood/theme---background	mood/theme---corporate	mood/theme---dream
+track_1052468	artist_364472	album_123951	68/1052468.mp3	191.1	genre---jazz	genre---jazzfunk	instrument---electricguitar	instrument---keyboard	instrument---saxophone
+track_1052961	artist_436176	album_124032	61/1052961.mp3	192.0	genre---ambient	genre---jazz	genre---lounge	mood/theme---background	mood/theme---corporate
+track_1053175	artist_436212	album_124076	75/1053175.mp3	221.1	genre---electronic	genre---soundtrack	instrument---acousticbassguitar	instrument---harp	instrument---piano
+track_1055021	artist_436558	album_124371	21/1055021.mp3	258.0	genre---metal	instrument---bass	instrument---drums	instrument---electricguitar	instrument---electricpiano	instrument---guitar	instrument---piano	instrument---voice	mood/theme---fast
+track_1056638	artist_431739	album_124593	38/1056638.mp3	82.8	genre---classical	genre---funk	genre---jazzfunk
+track_1057422	artist_436872	album_124707	22/1057422.mp3	168.2	genre---pop	genre---poprock	genre---singersongwriter	instrument---bass	instrument---drums	instrument---electricguitar	instrument---electricpiano	instrument---pipeorgan	instrument---synthesizer	mood/theme---love	mood/theme---melodic
+track_1058213	artist_436908	album_124806	13/1058213.mp3	577.0	genre---ambient	genre---experimental	instrument---acousticbassguitar	instrument---acousticguitar	instrument---cello	instrument---doublebass	instrument---flute	instrument---harp	instrument---horn	instrument---oboe	instrument---piano	mood/theme---documentary	mood/theme---movie	mood/theme---relaxing
+track_1058716	artist_430416	album_124886	16/1058716.mp3	874.7	genre---african	genre---reggae	mood/theme---relaxing
+track_1060106	artist_437237	album_125051	06/1060106.mp3	335.8	genre---electronic	genre---ska	instrument---synthesizer
+track_1060998	artist_365059	album_125195	98/1060998.mp3	194.8	genre---dance	genre---disco	genre---latin	mood/theme---upbeat
+track_1061564	artist_342608	album_125303	64/1061564.mp3	95.8	genre---pop	mood/theme---children
+track_1062581	artist_428449	album_125456	81/1062581.mp3	303.1	genre---ambient	genre---atmospheric	genre---chillout	genre---soundtrack	instrument---acousticguitar	instrument---classicalguitar	instrument---electricguitar	instrument---electricpiano	instrument---keyboard	instrument---piano	mood/theme---advertising	mood/theme---motivational
+track_1063326	artist_437571	album_125588	26/1063326.mp3	224.0	genre---indie	genre---rock	genre---soundtrack	instrument---guitar	mood/theme---documentary	mood/theme---film
+track_1063951	artist_432258	album_125657	51/1063951.mp3	180.6	genre---ambient	genre---ethnicrock	instrument---flute	instrument---keyboard
+track_1064497	artist_437778	album_125740	97/1064497.mp3	183.1	genre---ambient	genre---electronic	genre---psychedelic	instrument---bass	instrument---cello	instrument---drums	instrument---electricguitar	instrument---viola
+track_1064559	artist_377663	album_125742	59/1064559.mp3	251.4	genre---alternative	genre---dance	genre---poprock	genre---rock	instrument---computer	mood/theme---adventure
+track_1065619	artist_437812	album_125874	19/1065619.mp3	199.6	genre---ambient	genre---edm	genre---electronic	genre---soundtrack	instrument---acousticguitar	instrument---drummachine	instrument---drums	instrument---electricguitar	instrument---pipeorgan	instrument---sampler	instrument---synthesizer	instrument---violin	mood/theme---advertising
+track_1065627	artist_436349	album_125875	27/1065627.mp3	188.0	genre---country	genre---rock	genre---rocknroll	genre---swing	instrument---bass	instrument---drums	instrument---electricguitar	instrument---voice
+track_1066500	artist_437980	album_126061	00/1066500.mp3	160.2	genre---pop	instrument---accordion	instrument---drums	instrument---pipeorgan	instrument---ukulele	mood/theme---advertising	mood/theme---happy	mood/theme---positive	mood/theme---uplifting
+track_1067689	artist_437999	album_126196	89/1067689.mp3	247.9	genre---indie	genre---instrumentalrock	genre---poprock	genre---rock	instrument---bass	instrument---drums	instrument---electricguitar	instrument---electricpiano	instrument---harmonica	instrument---piano	instrument---voice
+track_1068560	artist_376805	album_126314	60/1068560.mp3	284.6	genre---trance	instrument---bass	instrument---pad	instrument---pipeorgan	instrument---synthesizer
+track_1069400	artist_349425	album_126603	00/1069400.mp3	357.4	genre---ambient	genre---chillout	genre---dance	genre---easylistening	mood/theme---hopeful	mood/theme---melodic
+track_1072373	artist_438431	album_127199	73/1072373.mp3	242.4	genre---fusion	genre---indie	genre---world	genre---worldfusion
+track_1072570	artist_340240	album_127331	70/1072570.mp3	838.0	genre---ethno	genre---fusion	genre---improvisation	genre---jazz	instrument---accordion	instrument---bass	instrument---bell	instrument---clarinet	instrument---drums	instrument---flute	instrument---keyboard	instrument---piano	instrument---saxophone	instrument---synthesizer	instrument---voice
+track_1074137	artist_437211	album_127530	37/1074137.mp3	176.6	genre---atmospheric	genre---classical	genre---orchestral	genre---soundtrack	genre---symphonic	instrument---clarinet	instrument---flute	instrument---harp	instrument---violin	mood/theme---dark	mood/theme---game
+track_1075047	artist_438718	album_128043	47/1075047.mp3	707.0	genre---80s	genre---ambient	genre---electronic	genre---industrial	instrument---computer	instrument---electricguitar	instrument---piano	instrument---synthesizer
+track_1075815	artist_435948	album_128135	15/1075815.mp3	241.6	genre---electronic	genre---soundtrack	instrument---piano	instrument---synthesizer	mood/theme---game	mood/theme---retro
+track_1077773	artist_365811	album_128419	73/1077773.mp3	218.0	genre---electronic	genre---techno	genre---world	instrument---accordion	instrument---saxophone	instrument---trombone	instrument---trumpet
+track_1078325	artist_370748	album_128418	25/1078325.mp3	206.7	genre---acidjazz	genre---funk	genre---fusion	instrument---bass	instrument---drums	instrument---electricguitar	instrument---piano	instrument---rhodes	instrument---synthesizer
+track_1078425	artist_438603	album_128450	25/1078425.mp3	274.8	genre---easylistening	genre---pop	genre---progressive	genre---rock	genre---singersongwriter	instrument---acousticguitar	instrument---bass	instrument---drummachine	instrument---drums	instrument---electricguitar	instrument---guitar	instrument---piano	instrument---synthesizer	instrument---voice	mood/theme---summer
+track_1079248	artist_368762	album_128531	48/1079248.mp3	250.0	genre---chillout	genre---symphonic	genre---world	mood/theme---trailer
+track_1079319	artist_438499	album_128542	19/1079319.mp3	207.2	genre---pop	genre---rnb	mood/theme---energetic	mood/theme---sexy
+track_1080152	artist_438910	album_128665	52/1080152.mp3	158.9	genre---easylistening	genre---pop	instrument---acousticguitar	instrument---organ	instrument---strings	instrument---synthesizer	mood/theme---meditative	mood/theme---relaxing
+track_1080374	artist_439286	album_128688	74/1080374.mp3	248.3	genre---rock	mood/theme---energetic	mood/theme---melodic	mood/theme---motivational
+track_1080806	artist_439316	album_128775	06/1080806.mp3	270.3	genre---eurodance	genre---house	genre---pop	instrument---sampler	instrument---synthesizer
+track_1081720	artist_439436	album_128913	20/1081720.mp3	215.0	genre---gothic	genre---newage	instrument---bell	instrument---flute	instrument---pipeorgan
+track_1081839	artist_419438	album_128890	39/1081839.mp3	156.0	genre---easylistening	genre---electronic	genre---lounge	instrument---electricguitar	instrument---piano	instrument---synthesizer	mood/theme---calm	mood/theme---soft
+track_1082092	artist_439398	album_128916	92/1082092.mp3	116.0	genre---classical	genre---soundtrack	instrument---cello	instrument---clarinet	instrument---doublebass	instrument---viola	instrument---violin	mood/theme---love	mood/theme---movie	mood/theme---romantic
+track_1084432	artist_439311	album_129177	32/1084432.mp3	255.9	genre---choir	genre---grunge	genre---pop	genre---poprock	genre---rock	instrument---bass	instrument---drums	instrument---electricguitar	instrument---synthesizer	instrument---voice
+track_1085585	artist_433284	album_129374	85/1085585.mp3	266.8	genre---dubstep	genre---electronic	genre---rap	mood/theme---party
+track_1085598	artist_423658	album_129367	98/1085598.mp3	207.0	genre---folk	genre---popfolk	instrument---acousticguitar	instrument---guitar	instrument---piano	instrument---viola
+track_1085600	artist_360077	album_129368	00/1085600.mp3	190.7	genre---folk	genre---jazz	genre---reggae	genre---swing	instrument---classicalguitar	instrument---doublebass
+track_1085692	artist_439861	album_129380	92/1085692.mp3	321.0	genre---easylistening	instrument---electricguitar	mood/theme---christmas	mood/theme---love	mood/theme---romantic
+track_1085922	artist_357040	album_129432	22/1085922.mp3	110.1	genre---classical	instrument---horn	instrument---violin	mood/theme---film
+track_1086266	artist_423978	album_129474	66/1086266.mp3	315.2	genre---popfolk	genre---poprock	instrument---acousticguitar	instrument---classicalguitar	instrument---harmonica	instrument---keyboard
+track_1086667	artist_439729	album_129531	67/1086667.mp3	211.0	genre---electronic	genre---pop	genre---rock	instrument---bass	instrument---drums	instrument---keyboard	instrument---voice	mood/theme---travel
+track_1087886	artist_405009	album_129697	86/1087886.mp3	365.6	genre---alternative	genre---progressive	genre---rock	instrument---bass	instrument---drums	instrument---electricguitar	instrument---synthesizer	instrument---voice	mood/theme---dark	mood/theme---heavy
+track_1091136	artist_424522	album_130062	36/1091136.mp3	290.7	genre---deephouse	genre---electronic	genre---house	instrument---computer
+track_1091441	artist_440307	album_130091	41/1091441.mp3	296.6	genre---rock	mood/theme---dark	mood/theme---melancholic	mood/theme---melodic
+track_1092672	artist_368438	album_130228	72/1092672.mp3	356.5	genre---dubstep	genre---electronic	genre---hard	instrument---computer
+track_1093042	artist_440474	album_130289	42/1093042.mp3	239.9	genre---downtempo	genre---easylistening	instrument---acousticbassguitar	instrument---cello	instrument---drummachine	instrument---piano	instrument---strings	instrument---violin
+track_1093295	artist_440388	album_130308	95/1093295.mp3	352.1	genre---acidjazz	genre---electronic	genre---triphop	instrument---acousticbassguitar	instrument---computer	instrument---keyboard	instrument---synthesizer
+track_1093606	artist_378695	album_130347	06/1093606.mp3	218.2	genre---dance	genre---pop	instrument---drums	instrument---electricguitar	instrument---synthesizer	mood/theme---energetic	mood/theme---upbeat
+track_1096138	artist_439935	album_130693	38/1096138.mp3	407.3	genre---indie	instrument---acousticguitar	mood/theme---dream	mood/theme---melancholic
+track_1096788	artist_376671	album_130817	88/1096788.mp3	211.0	genre---alternative	genre---electronic	genre---experimental	genre---gothic	instrument---electricguitar	instrument---synthesizer	instrument---voice	mood/theme---sad
+track_1096870	artist_440452	album_130804	70/1096870.mp3	220.6	genre---club	genre---dance	genre---electropop	genre---hiphop	genre---pop	genre---rap	genre---techno	instrument---beat	instrument---classicalguitar	instrument---electricguitar	instrument---keyboard	mood/theme---energetic	mood/theme---fast
+track_1097842	artist_441217	album_130923	42/1097842.mp3	235.0	genre---classicrock	genre---progressive	genre---rock	instrument---computer	instrument---electricguitar
+track_1098745	artist_358843	album_131090	45/1098745.mp3	217.0	genre---african	genre---latin	instrument---percussion
+track_1101117	artist_360990	album_131402	17/1101117.mp3	189.0	genre---ambient	genre---classical	genre---darkambient	genre---symphonic
+track_1101594	artist_441694	album_131470	94/1101594.mp3	229.0	genre---electronic	genre---indie	instrument---bass	instrument---computer	instrument---drums	instrument---electricguitar	mood/theme---energetic	mood/theme---slow
+track_1102048	artist_441801	album_131517	48/1102048.mp3	259.2	genre---ambient	genre---experimental	genre---hard	genre---soundtrack	instrument---bass	instrument---drums	instrument---electricguitar	instrument---electricpiano	instrument---sampler	mood/theme---emotional
+track_1102216	artist_441841	album_131548	16/1102216.mp3	312.9	genre---deephouse	genre---disco	genre---electronic	instrument---computer
+track_1103171	artist_441764	album_131668	71/1103171.mp3	154.8	genre---hiphop	genre---rap	instrument---acousticbassguitar	instrument---bass	instrument---bell	instrument---drummachine	instrument---harp	instrument---synthesizer
+track_1103966	artist_441585	album_131767	66/1103966.mp3	281.3	genre---club	genre---dance	genre---edm	genre---electronic	instrument---drummachine	instrument---sampler	instrument---synthesizer	instrument---voice
+track_1104319	artist_344957	album_131817	19/1104319.mp3	241.3	genre---chillout	genre---easylistening	genre---lounge	instrument---drums	instrument---electricguitar	instrument---synthesizer	mood/theme---ambiental
+track_1104339	artist_441810	album_131821	39/1104339.mp3	388.8	genre---atmospheric	genre---instrumentalrock	genre---pop	genre---postrock	instrument---bass	instrument---bell	instrument---computer	instrument---drums	instrument---electricguitar	instrument---electricpiano	instrument---synthesizer	mood/theme---melodic
+track_1104996	artist_442174	album_131935	96/1104996.mp3	221.4	genre---dance	genre---edm	genre---house	genre---techno
+track_1105872	artist_442150	album_132041	72/1105872.mp3	192.1	genre---dance	genre---electronic	genre---eurodance	instrument---computer	instrument---synthesizer	instrument---voice	mood/theme---love
+track_1106675	artist_442041	album_132166	75/1106675.mp3	281.8	genre---club	genre---dance	genre---edm	genre---electronic	genre---house
+track_1106733	artist_440150	album_132171	33/1106733.mp3	260.6	genre---electronic	genre---experimental	instrument---sampler	mood/theme---party
+track_1107277	artist_366251	album_132229	77/1107277.mp3	213.1	genre---funk	genre---fusion	genre---jazz	genre---metal	instrument---bass	instrument---drums	instrument---electricguitar	instrument---voice	mood/theme---groovy
+track_1107329	artist_442381	album_132233	29/1107329.mp3	363.0	genre---ethnicrock	genre---world	instrument---piano	instrument---sampler	mood/theme---energetic
+track_1108281	artist_442477	album_132368	81/1108281.mp3	54.5	genre---ambient	genre---electronic	genre---soundtrack	instrument---bass	instrument---drums	instrument---electricguitar	instrument---synthesizer	mood/theme---emotional	mood/theme---melancholic
+track_1111313	artist_442829	album_132736	13/1111313.mp3	286.5	genre---indie	genre---newwave	genre---rock	genre---synthpop
+track_1111737	artist_442664	album_132780	37/1111737.mp3	114.0	genre---easylistening	genre---soundtrack	mood/theme---game
+track_1112360	artist_413201	album_132851	60/1112360.mp3	260.0	genre---soundtrack	mood/theme---horror
+track_1113505	artist_363557	album_132973	05/1113505.mp3	268.9	genre---ambient	instrument---acousticguitar	instrument---piano	mood/theme---slow
+track_1113639	artist_442950	album_133048	39/1113639.mp3	253.2	genre---blues	genre---bluesrock	genre---progressive	genre---rock	instrument---bass	instrument---drums	instrument---electricguitar	instrument---voice	mood/theme---melodic
+track_1114386	artist_341169	album_133119	86/1114386.mp3	312.8	genre---easylistening	mood/theme---meditative	mood/theme---slow
+track_1114535	artist_443136	album_133138	35/1114535.mp3	473.7	genre---70s	genre---blues	genre---bluesrock	genre---rock	instrument---electricguitar	mood/theme---ballad
+track_1115220	artist_370421	album_133235	20/1115220.mp3	170.8	genre---electronic	genre---triphop	instrument---acousticbassguitar	instrument---bell	instrument---classicalguitar	instrument---electricpiano	instrument---keyboard	instrument---synthesizer
+track_1115317	artist_367594	album_133255	17/1115317.mp3	231.1	genre---electropop	genre---newwave	genre---poprock	instrument---computer	instrument---synthesizer
+track_1115732	artist_442937	album_133299	32/1115732.mp3	154.2	genre---classical	genre---soundtrack	instrument---piano	instrument---violin	mood/theme---soft
+track_1116696	artist_421137	album_133426	96/1116696.mp3	354.5	genre---dub	genre---dubstep	genre---edm	genre---psychedelic
+track_1118540	artist_366940	album_133682	40/1118540.mp3	296.6	genre---atmospheric	genre---metal	instrument---electricguitar	mood/theme---melancholic
+track_1121101	artist_367124	album_133948	01/1121101.mp3	389.9	genre---jazz	genre---jazzfunk	instrument---electricguitar	instrument---keyboard	instrument---rhodes	instrument---sampler	instrument---saxophone	instrument---synthesizer	mood/theme---groovy
+track_1121392	artist_443553	album_134004	92/1121392.mp3	204.0	genre---dance	genre---eurodance	genre---pop	instrument---keyboard	instrument---synthesizer	instrument---violin	mood/theme---energetic
+track_1121532	artist_443569	album_134010	32/1121532.mp3	211.1	genre---folk	genre---soundtrack	instrument---acousticguitar	mood/theme---documentary	mood/theme---meditative
+track_1122128	artist_443598	album_134100	28/1122128.mp3	437.6	genre---classical	genre---experimental	genre---jazz	instrument---bass	instrument---guitar	instrument---piano	mood/theme---commercial	mood/theme---documentary	mood/theme---emotional
+track_1123854	artist_443769	album_134375	54/1123854.mp3	81.9	genre---electronic	genre---funk	instrument---drums	mood/theme---groovy
+track_1124504	artist_443816	album_134483	04/1124504.mp3	316.4	genre---bluesrock	genre---rock	genre---rocknroll	instrument---bass	instrument---drums	instrument---electricguitar
+track_1124505	artist_443813	album_134485	05/1124505.mp3	143.7	genre---bluesrock	genre---experimental	genre---rock	genre---rocknroll	instrument---bass	instrument---drums	instrument---electricguitar
+track_1125001	artist_442933	album_134573	01/1125001.mp3	88.0	genre---easylistening	genre---pop	instrument---synthesizer	mood/theme---children	mood/theme---funny
+track_1126024	artist_443923	album_134731	24/1126024.mp3	256.8	genre---hiphop	instrument---accordion	instrument---acousticbassguitar	instrument---acousticguitar	instrument---bass	instrument---cello	instrument---classicalguitar	instrument---computer	instrument---drummachine	instrument---drums	instrument---electricguitar	instrument---electricpiano	instrument---keyboard	instrument---piano	instrument---rhodes	instrument---sampler	instrument---synthesizer	instrument---violin
+track_1126082	artist_443926	album_134744	82/1126082.mp3	526.9	genre---electronic	genre---house	instrument---acousticbassguitar	instrument---acousticguitar	instrument---bass	instrument---classicalguitar	instrument---computer	instrument---drummachine	instrument---drums	instrument---electricguitar	instrument---electricpiano	instrument---keyboard	instrument---piano	instrument---rhodes	instrument---sampler	instrument---saxophone	instrument---synthesizer	instrument---voice
+track_1129316	artist_365441	album_135322	16/1129316.mp3	168.5	genre---classical	genre---jazz	genre---medieval	instrument---bass	instrument---electricguitar	instrument---synthesizer	mood/theme---meditative
+track_1129939	artist_444120	album_135412	39/1129939.mp3	168.0	genre---easylistening	instrument---synthesizer	mood/theme---motivational
+track_1130055	artist_340472	album_135471	55/1130055.mp3	323.2	genre---newage	instrument---acousticguitar	instrument---electricguitar	instrument---percussion	instrument---synthesizer	mood/theme---meditative	mood/theme---nature
+track_1131071	artist_439908	album_135588	71/1131071.mp3	434.8	genre---deephouse	genre---house
+track_1131291	artist_444361	album_135627	91/1131291.mp3	242.3	genre---ambient	instrument---voice	mood/theme---christmas	mood/theme---holiday
+track_1131442	artist_444350	album_135645	42/1131442.mp3	275.1	genre---newage	genre---soundtrack	genre---worldfusion	instrument---bass	instrument---guitar	instrument---saxophone	instrument---synthesizer	instrument---voice	mood/theme---energetic
+track_1131914	artist_441699	album_135724	14/1131914.mp3	86.1	genre---electronic	genre---punkrock	genre---reggae	instrument---computer	mood/theme---game
+track_1133176	artist_366531	album_135932	76/1133176.mp3	258.2	genre---blues	genre---folk	genre---rnb	genre---rock	instrument---acousticguitar	instrument---bass	instrument---cello	instrument---drums	instrument---electricguitar	instrument---harmonica	instrument---piano	instrument---strings	instrument---trumpet	instrument---violin
+track_1133268	artist_443574	album_135944	68/1133268.mp3	109.0	genre---electronic	genre---soundtrack	genre---symphonic	instrument---synthesizer	mood/theme---dark	mood/theme---documentary	mood/theme---movie
+track_1133285	artist_435483	album_135947	85/1133285.mp3	147.6	genre---classical	genre---electronic	instrument---bass	instrument---keyboard	instrument---piano	mood/theme---happy	mood/theme---hopeful	mood/theme---motivational
+track_1134574	artist_429529	album_136162	74/1134574.mp3	240.0	genre---ambient	genre---classical	genre---soundtrack	instrument---cello	instrument---doublebass	instrument---piano	instrument---viola	instrument---violin
+track_1135602	artist_444571	album_136342	02/1135602.mp3	284.8	genre---ambient	genre---electronic	genre---ethnicrock	genre---experimental	genre---indie	instrument---accordion	instrument---acousticguitar	instrument---bass	instrument---bell	instrument---bongo	instrument---cello	instrument---clarinet	instrument---computer	instrument---drummachine	instrument---drums	instrument---electricguitar	instrument---harp	instrument---keyboard	instrument---orchestra	instrument---percussion	instrument---sampler	instrument---strings	instrument---synthesizer	instrument---trombone	instrument---violin	instrument---voice
+track_1136673	artist_448664	album_136517	73/1136673.mp3	193.2	genre---experimental	genre---postrock	genre---rock	instrument---bass	instrument---drums	instrument---guitar	mood/theme---adventure	mood/theme---commercial	mood/theme---documentary	mood/theme---sport
+track_1136706	artist_448542	album_136524	06/1136706.mp3	170.9	genre---downtempo	genre---edm	genre---electronic	genre---experimental	genre---house
+track_1136874	artist_448643	album_136544	74/1136874.mp3	150.0	genre---experimental	genre---hiphop	genre---jazz	genre---lounge	instrument---bass	instrument---beat	instrument---bongo	instrument---brass	instrument---cello	instrument---classicalguitar	instrument---computer	instrument---drummachine	instrument---drums	instrument---electricguitar	instrument---electricpiano	instrument---guitar	instrument---keyboard	instrument---piano	instrument---rhodes	instrument---saxophone	instrument---synthesizer	instrument---trumpet
+track_1139435	artist_450094	album_136853	35/1139435.mp3	31.0	genre---jazz	genre---lounge	instrument---bass	instrument---doublebass	instrument---drums	instrument---electricguitar	instrument---piano	instrument---rhodes
+track_1142856	artist_429523	album_137046	56/1142856.mp3	35.6	genre---electronic	mood/theme---children	mood/theme---game
+track_1143010	artist_451073	album_137054	10/1143010.mp3	195.7	genre---easylistening	mood/theme---advertising	mood/theme---happy	mood/theme---holiday	mood/theme---positive	mood/theme---summer
+track_1143977	artist_448647	album_137162	77/1143977.mp3	96.3	genre---ambient	genre---easylistening	instrument---acousticguitar	mood/theme---relaxing	mood/theme---soft
+track_1144143	artist_451032	album_137185	43/1144143.mp3	192.8	genre---hiphop	genre---rap	instrument---drums	mood/theme---upbeat	mood/theme---uplifting
+track_1144450	artist_452182	album_137220	50/1144450.mp3	244.7	genre---acidjazz	genre---jazz	instrument---bass
+track_1145459	artist_374130	album_137333	59/1145459.mp3	191.2	genre---pop	instrument---acousticguitar	instrument---bongo	instrument---ukulele	instrument---voice	mood/theme---ballad
+track_1146085	artist_452184	album_137421	85/1146085.mp3	487.8	genre---90s	genre---club	genre---dance	genre---electronic	genre---house	instrument---computer	instrument---synthesizer
+track_1146113	artist_452644	album_137415	13/1146113.mp3	361.8	genre---dance	genre---electronic	mood/theme---sport
+track_1146198	artist_452647	album_137442	98/1146198.mp3	225.0	genre---electronic	genre---eurodance	mood/theme---commercial
+track_1146201	artist_359108	album_137440	01/1146201.mp3	515.2	genre---ambient	genre---electronic	genre---industrial	genre---newage	instrument---sampler	instrument---synthesizer	mood/theme---ambiental
+track_1147338	artist_452945	album_137564	38/1147338.mp3	161.7	genre---country	genre---rock	genre---rocknroll	instrument---guitar	mood/theme---energetic	mood/theme---movie	mood/theme---sport
+track_1147924	artist_452920	album_137648	24/1147924.mp3	98.5	genre---experimental	instrument---horn	instrument---piano	instrument---strings	instrument---synthesizer
+track_1149611	artist_441693	album_137858	11/1149611.mp3	219.1	genre---dance	genre---hard	genre---pop	instrument---drums	instrument---percussion	instrument---sampler	instrument---trombone	instrument---trumpet
+track_1149878	artist_453308	album_137891	78/1149878.mp3	130.7	genre---country	genre---folk	genre---indie	instrument---guitar	mood/theme---ballad	mood/theme---love
+track_1153707	artist_453809	album_138388	07/1153707.mp3	88.8	genre---experimental	instrument---guitar	instrument---piano	mood/theme---dramatic
+track_1155517	artist_454172	album_138628	17/1155517.mp3	399.9	genre---rap	genre---reggae	genre---ska	genre---world	instrument---acousticguitar	instrument---bass	instrument---bongo	instrument---drums	instrument---electricguitar	instrument---saxophone	instrument---trumpet
+track_1155551	artist_362955	album_138633	51/1155551.mp3	177.0	genre---folk	genre---instrumentalpop	instrument---acousticbassguitar	instrument---acousticguitar	instrument---drums	instrument---electricguitar	mood/theme---film
+track_1156050	artist_434614	album_138697	50/1156050.mp3	185.1	genre---folk	genre---popfolk	instrument---drums	instrument---guitar	instrument---pipeorgan
+track_1156086	artist_454192	album_138708	86/1156086.mp3	242.1	genre---ethnicrock	genre---ethno	genre---experimental	instrument---acousticbassguitar	instrument---piano	mood/theme---meditative
+track_1156317	artist_454426	album_138739	17/1156317.mp3	248.4	genre---pop	instrument---bass	instrument---drums	instrument---electricguitar	instrument---piano	instrument---pipeorgan	instrument---voice	mood/theme---energetic	mood/theme---inspiring
+track_1156353	artist_443735	album_138770	53/1156353.mp3	272.1	genre---ethnicrock	genre---ethno	genre---lounge	genre---world	instrument---acousticbassguitar	instrument---acousticguitar
+track_1156550	artist_440191	album_138779	50/1156550.mp3	248.1	genre---edm	genre---electronic	instrument---computer
+track_1157123	artist_454446	album_138851	23/1157123.mp3	373.2	genre---edm	genre---electropop	genre---eurodance	genre---pop
+track_1157171	artist_436144	album_138862	71/1157171.mp3	169.0	genre---edm	genre---electronic	genre---house	instrument---computer
+track_1157349	artist_381661	album_138888	49/1157349.mp3	179.3	genre---celtic	genre---classical	genre---soundtrack	instrument---orchestra	mood/theme---adventure	mood/theme---epic
+track_1158135	artist_454754	album_138984	35/1158135.mp3	216.0	genre---blues	genre---rock	mood/theme---energetic	mood/theme---fun
+track_1158375	artist_426717	album_139021	75/1158375.mp3	122.1	genre---easylistening	genre---pop	mood/theme---background	mood/theme---happy	mood/theme---melodic	mood/theme---summer
+track_1158965	artist_450929	album_139106	65/1158965.mp3	213.7	genre---electronic	genre---folk	genre---popfolk	instrument---guitar	instrument---synthesizer	mood/theme---fast	mood/theme---positive
+track_1159856	artist_455091	album_139278	56/1159856.mp3	187.7	genre---indie	instrument---acousticguitar	instrument---voice	mood/theme---dream	mood/theme---melancholic
+track_1161407	artist_455335	album_139513	07/1161407.mp3	307.3	genre---dance	genre---easylistening	genre---electronic	genre---electropop	instrument---bongo	instrument---drummachine	instrument---electricpiano	instrument---synthesizer
+track_1162938	artist_455463	album_139731	38/1162938.mp3	266.1	genre---ambient	genre---experimental	genre---progressive	instrument---brass	instrument---piano	instrument---violin	mood/theme---calm	mood/theme---dream	mood/theme---love
+track_1163132	artist_345865	album_139762	32/1163132.mp3	361.8	genre---newage	genre---newwave	instrument---acousticguitar	instrument---guitar	instrument---orchestra	mood/theme---calm
+track_1163204	artist_455057	album_139770	04/1163204.mp3	117.7	genre---folk	genre---soundtrack	genre---world	mood/theme---adventure	mood/theme---advertising	mood/theme---commercial	mood/theme---fun
+track_1163334	artist_455710	album_139787	34/1163334.mp3	343.9	genre---chillout	genre---jazzfusion	genre---newage
+track_1163775	artist_370988	album_139837	75/1163775.mp3	252.1	genre---80s	genre---electronic	instrument---synthesizer	mood/theme---retro
+track_1163962	artist_455760	album_139867	62/1163962.mp3	236.1	genre---folk	instrument---acousticguitar	mood/theme---ballad
+track_1164431	artist_454501	album_139941	31/1164431.mp3	385.4	genre---ambient	genre---electronic	genre---soundtrack	mood/theme---background
+track_1164566	artist_455286	album_139964	66/1164566.mp3	270.7	genre---classical	genre---orchestral	genre---soundtrack	instrument---brass	instrument---drums	instrument---trombone	instrument---trumpet
+track_1166261	artist_456578	album_140231	61/1166261.mp3	151.7	genre---ambient	instrument---brass	instrument---flute	instrument---piano	instrument---strings	instrument---trumpet	instrument---violin
+track_1167098	artist_456653	album_140342	98/1167098.mp3	212.2	genre---ambient	genre---dance	genre---deephouse	genre---electronic	instrument---synthesizer	mood/theme---deep
+track_1167619	artist_455778	album_140416	19/1167619.mp3	180.8	genre---pop	instrument---acousticguitar	instrument---ukulele
+track_1167863	artist_456650	album_140451	63/1167863.mp3	234.8	genre---alternativerock	genre---pop	genre---poprock	instrument---electricguitar	mood/theme---happy	mood/theme---love	mood/theme---romantic	mood/theme---summer	mood/theme---upbeat
+track_1168483	artist_456894	album_140551	83/1168483.mp3	313.8	genre---celtic	genre---chillout	genre---choir	genre---soundtrack	instrument---computer	instrument---harp	mood/theme---film
+track_1169581	artist_442727	album_140724	81/1169581.mp3	456.7	genre---blues	genre---jazz	genre---soundtrack	instrument---drummachine	instrument---electricguitar	instrument---electricpiano	instrument---synthesizer	mood/theme---travel
+track_1170315	artist_457196	album_140827	15/1170315.mp3	176.3	genre---dance	genre---edm	genre---electronic	genre---house	genre---soundtrack	genre---trance	instrument---synthesizer
+track_1170399	artist_455493	album_140848	99/1170399.mp3	399.3	genre---classical	genre---soundtrack	instrument---orchestra	instrument---piano	mood/theme---movie
+track_1171031	artist_354414	album_140969	31/1171031.mp3	293.8	genre---folk	genre---popfolk	genre---poprock	instrument---acousticguitar	instrument---electricguitar	mood/theme---ballad
+track_1171049	artist_443589	album_140978	49/1171049.mp3	234.5	genre---classical	genre---soundtrack	instrument---cello	instrument---oboe	instrument---piano	instrument---violin
+track_1174401	artist_457853	album_141667	01/1174401.mp3	173.1	genre---70s	genre---funk	instrument---drums	instrument---guitar
+track_1176150	artist_457205	album_141627	50/1176150.mp3	218.9	genre---folk	genre---rock	genre---soundtrack	instrument---ukulele	mood/theme---hopeful	mood/theme---inspiring	mood/theme---positive
+track_1176652	artist_458008	album_141669	52/1176652.mp3	216.0	genre---electronic	genre---lounge	genre---triphop	instrument---bass	instrument---drums	instrument---synthesizer	mood/theme---melancholic	mood/theme---soft
+track_1177027	artist_457221	album_141691	27/1177027.mp3	284.1	genre---60s	genre---pop	genre---soundtrack	mood/theme---dream	mood/theme---love	mood/theme---retro	mood/theme---romantic	mood/theme---soft
+track_1177099	artist_456947	album_141697	99/1177099.mp3	238.8	genre---electronic	genre---pop	mood/theme---commercial	mood/theme---corporate	mood/theme---happy	mood/theme---hopeful	mood/theme---positive
+track_1177354	artist_458036	album_141728	54/1177354.mp3	186.6	genre---breakbeat	genre---electronic	genre---oriental	instrument---cello	instrument---flute	mood/theme---fast	mood/theme---upbeat
+track_1178443	artist_360768	album_141833	43/1178443.mp3	240.4	genre---classical	genre---classicrock	instrument---guitar	instrument---harp	instrument---piano	instrument---strings	mood/theme---film
+track_1181032	artist_458611	album_142127	32/1181032.mp3	272.3	genre---ambient	genre---funk	genre---fusion	genre---jazzfunk
+track_1181461	artist_458397	album_142173	61/1181461.mp3	82.2	genre---ambient	genre---atmospheric	genre---darkambient	genre---soundtrack	mood/theme---horror
+track_1184146	artist_457496	album_142520	46/1184146.mp3	219.4	genre---80s	genre---darkwave	genre---newwave	instrument---bass	instrument---drummachine	instrument---guitar	instrument---synthesizer
+track_1184998	artist_459301	album_142606	98/1184998.mp3	226.2	genre---ambient	genre---chillout	genre---jazzfunk	instrument---keyboard	instrument---saxophone	mood/theme---relaxing
+track_1185987	artist_459561	album_142757	87/1185987.mp3	179.9	genre---easylistening	genre---jazz	genre---swing	instrument---horn	instrument---piano	mood/theme---calm	mood/theme---fun
+track_1186162	artist_457665	album_142773	62/1186162.mp3	217.1	genre---folk	genre---pop	genre---popfolk	instrument---guitar	instrument---organ	mood/theme---happy	mood/theme---love	mood/theme---summer
+track_1186429	artist_459653	album_142789	29/1186429.mp3	107.8	genre---90s	genre---hiphop	instrument---beat
+track_1187327	artist_459838	album_142892	27/1187327.mp3	239.7	genre---90s	genre---alternative	genre---rock
+track_1189893	artist_460469	album_143228	93/1189893.mp3	152.4	genre---alternative	genre---indie	genre---rock	instrument---guitar	mood/theme---background	mood/theme---hopeful	mood/theme---inspiring
+track_1189993	artist_460484	album_143232	93/1189993.mp3	203.5	genre---alternative	genre---classicrock	genre---rocknroll	instrument---drums	instrument---guitar
+track_1193976	artist_461356	album_143697	76/1193976.mp3	179.3	genre---alternative	genre---rock	mood/theme---fun	mood/theme---party
+track_1194600	artist_461498	album_143770	00/1194600.mp3	269.6	genre---bossanova	genre---ethno	genre---world	instrument---percussion
+track_1194943	artist_459839	album_143816	43/1194943.mp3	153.2	genre---classical	genre---hiphop	genre---orchestral	instrument---brass	instrument---strings
+track_1196897	artist_442127	album_144024	97/1196897.mp3	250.8	genre---heavymetal	genre---metal	mood/theme---heavy
+track_1197769	artist_462027	album_144102	69/1197769.mp3	338.4	genre---deephouse	genre---house	genre---techno
+track_1197780	artist_360991	album_144105	80/1197780.mp3	182.7	genre---60s	genre---blues	genre---jazz	instrument---guitar
+track_1198556	artist_462340	album_144181	56/1198556.mp3	122.6	genre---newage	instrument---piano	mood/theme---christmas	mood/theme---holiday
+track_1198576	artist_457977	album_144183	76/1198576.mp3	226.3	genre---dance	genre---dubstep	genre---electronic	mood/theme---deep	mood/theme---heavy
+track_1202954	artist_463083	album_144509	54/1202954.mp3	191.3	genre---folk	genre---world	instrument---guitar	mood/theme---travel
+track_1203123	artist_463029	album_144537	23/1203123.mp3	42.0	genre---classical	genre---orchestral	genre---soundtrack	instrument---orchestra	mood/theme---advertising	mood/theme---children
+track_1203194	artist_456946	album_144533	94/1203194.mp3	182.4	genre---pop	genre---poprock	genre---soundtrack	mood/theme---documentary	mood/theme---dream	mood/theme---film	mood/theme---love	mood/theme---melodic	mood/theme---romantic	mood/theme---sad
+track_1203319	artist_360430	album_144548	19/1203319.mp3	247.7	genre---hiphop	genre---rnb	genre---soundtrack	instrument---beat	instrument---piano	mood/theme---upbeat	mood/theme---uplifting
+track_1203411	artist_463180	album_144561	11/1203411.mp3	444.8	genre---ambient	genre---soundtrack	instrument---bell	mood/theme---melodic
+track_1204588	artist_463388	album_144697	88/1204588.mp3	474.4	genre---house	genre---techno	genre---tribal
+track_1204663	artist_463402	album_144705	63/1204663.mp3	250.4	genre---country	genre---pop	mood/theme---ballad	mood/theme---love
+track_1204747	artist_462568	album_144355	47/1204747.mp3	184.4	genre---ambient	genre---newage	genre---oriental	instrument---saxophone
+track_1204807	artist_462768	album_144725	07/1204807.mp3	235.0	genre---alternative	genre---indie	genre---poprock	mood/theme---fun	mood/theme---funny
+track_1205168	artist_463441	album_144776	68/1205168.mp3	245.2	genre---atmospheric	genre---chillout	genre---experimental	instrument---flute	instrument---organ	instrument---percussion	instrument---synthesizer	mood/theme---dream
+track_1205392	artist_463438	album_144795	92/1205392.mp3	231.8	genre---tribal	genre---world	instrument---guitar	instrument---piano	mood/theme---sad
+track_1205618	artist_443558	album_144821	18/1205618.mp3	166.7	genre---80s	genre---dance	genre---disco	instrument---drums	instrument---guitar	instrument---synthesizer
+track_1214917	artist_466606	album_145771	17/1214917.mp3	120.0	genre---indie	genre---postrock	genre---rock	mood/theme---dramatic	mood/theme---meditative	mood/theme---melancholic	mood/theme---melodic	mood/theme---relaxing	mood/theme---space
+track_1215071	artist_466600	album_145788	71/1215071.mp3	34.1	genre---pop	genre---rock	genre---soundtrack	mood/theme---commercial	mood/theme---corporate	mood/theme---inspiring	mood/theme---motivational	mood/theme---positive
+track_1215525	artist_466428	album_145827	25/1215525.mp3	35.1	genre---atmospheric	genre---soundtrack	instrument---pad
+track_1215628	artist_466801	album_145866	28/1215628.mp3	245.4	genre---indie	genre---rock	genre---rocknroll	instrument---guitar	mood/theme---party
+track_1215804	artist_466853	album_145861	04/1215804.mp3	190.0	genre---indie	genre---pop	genre---rnb	mood/theme---slow
+track_1216154	artist_458175	album_145895	54/1216154.mp3	107.2	genre---orchestral	genre---soundtrack	genre---symphonic	mood/theme---film	mood/theme---positive	mood/theme---trailer
+track_1218780	artist_466654	album_146188	80/1218780.mp3	222.2	genre---alternative	genre---indie	genre---rock	instrument---bass	instrument---drums	instrument---electricguitar	mood/theme---adventure	mood/theme---energetic
+track_1218916	artist_467750	album_146203	16/1218916.mp3	119.0	genre---folk	genre---medieval	genre---rock	instrument---flute	mood/theme---motivational
+track_1219088	artist_467768	album_146214	88/1219088.mp3	308.8	genre---90s	genre---poprock	genre---progressive	genre---rock	instrument---bass	instrument---drums	instrument---guitar
+track_1219825	artist_438817	album_146305	25/1219825.mp3	330.0	genre---dance	genre---electronic	genre---electronica	mood/theme---party
+track_1219897	artist_467873	album_146372	97/1219897.mp3	928.0	genre---ambient	genre---atmospheric	genre---darkambient
+track_1220097	artist_467601	album_146336	97/1220097.mp3	308.3	genre---heavymetal	genre---metal	mood/theme---dark
+track_1221745	artist_468780	album_146540	45/1221745.mp3	343.4	genre---folk	genre---popfolk	genre---rock	instrument---guitar	mood/theme---happy	mood/theme---melancholic	mood/theme---mellow
+track_1226581	artist_337428	album_147119	81/1226581.mp3	384.1	genre---hardrock	genre---metal	genre---rock	mood/theme---action	mood/theme---powerful
+track_1226813	artist_469255	album_147147	13/1226813.mp3	611.0	genre---70s	genre---psychedelic	genre---rock	instrument---drums	instrument---guitar	instrument---keyboard	mood/theme---travel
+track_1227360	artist_470592	album_147226	60/1227360.mp3	209.0	genre---chillout	genre---jazz	genre---lounge	instrument---beat	instrument---rhodes	instrument---strings
+track_1227459	artist_459422	album_147239	59/1227459.mp3	246.4	genre---orchestral	genre---soundtrack	mood/theme---advertising	mood/theme---documentary	mood/theme---film
+track_1228102	artist_470905	album_147335	02/1228102.mp3	299.2	genre---chillout	genre---deephouse	genre---lounge	instrument---piano	mood/theme---ambiental
+track_1228709	artist_468276	album_147394	09/1228709.mp3	124.9	genre---folk	genre---pop	instrument---guitar	instrument---ukulele
+track_1230535	artist_442527	album_147567	35/1230535.mp3	412.4	genre---heavymetal	genre---metal	instrument---guitar	instrument---piano	mood/theme---dramatic
+track_1230765	artist_471813	album_147598	65/1230765.mp3	171.5	genre---experimental	instrument---synthesizer	mood/theme---slow
+track_1230839	artist_471837	album_147600	39/1230839.mp3	222.3	genre---heavymetal	genre---metal	genre---postrock	instrument---drums	instrument---guitar	mood/theme---fast	mood/theme---happy
+track_1231486	artist_472111	album_147683	86/1231486.mp3	305.5	genre---world	instrument---ukulele
+track_1232915	artist_471536	album_147542	15/1232915.mp3	75.1	genre---alternative	genre---classical	genre---classicrock
+track_1233734	artist_472947	album_147941	34/1233734.mp3	300.0	genre---ambient	genre---chillout	genre---downtempo	instrument---bass	mood/theme---soft
+track_1234084	artist_472971	album_147952	84/1234084.mp3	310.7	genre---hardrock	genre---heavymetal	genre---progressive	instrument---drums	instrument---guitar
+track_1234482	artist_472670	album_148015	82/1234482.mp3	340.7	genre---edm	genre---house	genre---tribal	genre---world	instrument---drums
+track_1235070	artist_465078	album_148064	70/1235070.mp3	36.0	genre---dance	genre---electropop	genre---pop	mood/theme---corporate	mood/theme---funny
+track_1235179	artist_473442	album_148077	79/1235179.mp3	127.8	genre---acidjazz	genre---rocknroll
+track_1236043	artist_473850	album_148187	43/1236043.mp3	171.2	genre---60s	genre---indie	genre---lounge	mood/theme---dream	mood/theme---romantic
+track_1236294	artist_456900	album_148224	94/1236294.mp3	183.1	genre---funk	genre---groove	genre---hiphop
+track_1236400	artist_473960	album_148240	00/1236400.mp3	211.0	genre---pop	genre---poprock	genre---rock	instrument---brass	instrument---cello	instrument---strings	instrument---trumpet	instrument---violin
+track_1236452	artist_472506	album_147803	52/1236452.mp3	248.1	genre---dance	genre---tribal	genre---world	instrument---percussion
+track_1240472	artist_378529	album_148663	72/1240472.mp3	306.8	genre---electronic	genre---hard	instrument---synthesizer	mood/theme---party
+track_1240482	artist_444343	album_148639	82/1240482.mp3	270.8	genre---ambient	genre---atmospheric	genre---electronic	mood/theme---documentary
+track_1240644	artist_475450	album_148685	44/1240644.mp3	378.9	genre---ambient	genre---soundtrack	genre---synthpop	instrument---synthesizer	mood/theme---hopeful
+track_1241182	artist_475635	album_148765	82/1241182.mp3	207.8	genre---indie	genre---pop	genre---singersongwriter	instrument---guitar	mood/theme---groovy	mood/theme---melodic
+track_1241774	artist_474502	album_148819	74/1241774.mp3	289.1	genre---funk	genre---improvisation	genre---jazzfunk	instrument---bass	instrument---guitar	instrument---keyboard	instrument---piano	instrument---saxophone	instrument---trumpet
+track_1242204	artist_455715	album_148879	04/1242204.mp3	186.7	genre---classical	genre---classicrock	genre---poprock	instrument---bass	instrument---drums	instrument---percussion	instrument---piano
+track_1243198	artist_476215	album_148990	98/1243198.mp3	248.5	genre---indie	genre---poprock	mood/theme---happy	mood/theme---love	mood/theme---summer
+track_1247040	artist_438808	album_149377	40/1247040.mp3	322.5	genre---atmospheric	genre---experimental	genre---psychedelic	instrument---pad
+track_1248083	artist_353807	album_149468	83/1248083.mp3	177.1	genre---electronic	genre---house	instrument---synthesizer	mood/theme---party
+track_1248723	artist_477707	album_149512	23/1248723.mp3	232.6	genre---alternative	genre---alternativerock	genre---easylistening	mood/theme---nature	mood/theme---romantic
+track_1249300	artist_475209	album_148591	00/1249300.mp3	255.6	genre---classicrock	genre---rock
+track_1249886	artist_473133	album_149611	86/1249886.mp3	218.6	genre---60s	genre---ambient	genre---atmospheric	instrument---guitar
+track_1250078	artist_349895	album_149625	78/1250078.mp3	100.4	genre---folk	genre---grunge	genre---indie	instrument---acousticguitar	instrument---bass	instrument---classicalguitar	instrument---guitar	mood/theme---ballad	mood/theme---epic
+track_1251416	artist_441738	album_149740	16/1251416.mp3	218.7	genre---classicrock	genre---hardrock	genre---progressive	instrument---bass	instrument---drums	instrument---guitar
+track_1254011	artist_346564	album_150044	11/1254011.mp3	160.9	genre---atmospheric	genre---classical	genre---soundtrack	instrument---piano	mood/theme---dream	mood/theme---emotional	mood/theme---melodic	mood/theme---positive	mood/theme---romantic
+track_1254722	artist_348547	album_150095	22/1254722.mp3	100.3	genre---classical	genre---soundtrack	instrument---piano	mood/theme---documentary	mood/theme---romantic	mood/theme---soft
+track_1254923	artist_371736	album_150115	23/1254923.mp3	199.4	genre---classical	genre---classicrock	genre---experimental	mood/theme---uplifting
+track_1256020	artist_479346	album_150226	20/1256020.mp3	222.9	genre---hiphop	genre---rap	instrument---piano	mood/theme---deep	mood/theme---retro
+track_1256886	artist_479479	album_150313	86/1256886.mp3	178.8	genre---punkrock	mood/theme---happy	mood/theme---sexy
+track_1257002	artist_479495	album_150326	02/1257002.mp3	288.3	genre---electronic	genre---funk	genre---industrial	instrument---guitar	instrument---synthesizer	mood/theme---upbeat
+track_1261197	artist_477576	album_150774	97/1261197.mp3	40.5	genre---classical	genre---industrial	mood/theme---trailer
+track_1263269	artist_355162	album_151019	69/1263269.mp3	200.6	genre---chillout	genre---classical	genre---newage	genre---soundtrack	instrument---piano	mood/theme---hopeful
+track_1265307	artist_480019	album_151227	07/1265307.mp3	211.6	genre---chillout	genre---classical	genre---newage	instrument---piano	mood/theme---ballad	mood/theme---relaxing	mood/theme---romantic
+track_1265462	artist_372595	album_151182	62/1265462.mp3	134.0	genre---80s	genre---pop	instrument---drums
+track_1266572	artist_480321	album_151355	72/1266572.mp3	336.0	genre---ambient	genre---chillout	genre---electronic	instrument---pad	mood/theme---emotional	mood/theme---meditative	mood/theme---soundscape
+track_1268022	artist_480599	album_151604	22/1268022.mp3	116.0	genre---electronica	genre---indie	genre---soundtrack	instrument---bass	mood/theme---melancholic	mood/theme---powerful	mood/theme---uplifting
+track_1268317	artist_480605	album_151535	17/1268317.mp3	254.0	genre---80s	genre---deephouse	genre---techno	instrument---synthesizer
+track_1268460	artist_463659	album_151517	60/1268460.mp3	222.6	genre---acidjazz	genre---blues	genre---jazz	instrument---piano	instrument---saxophone	mood/theme---dark
+track_1268985	artist_339595	album_151596	85/1268985.mp3	244.8	genre---electronic	genre---swing	instrument---guitar
+track_1269805	artist_480798	album_151679	05/1269805.mp3	215.0	genre---folk	genre---popfolk	genre---singersongwriter	instrument---acousticguitar	instrument---percussion	mood/theme---soft
+track_1270025	artist_387374	album_151705	25/1270025.mp3	1416.0	genre---60s	genre---atmospheric	genre---darkambient
+track_1270478	artist_480888	album_151756	78/1270478.mp3	349.2	genre---80s	genre---dance	genre---electronic	mood/theme---space
+track_1273258	artist_463125	album_152017	58/1273258.mp3	364.0	genre---blues	genre---bluesrock	genre---jazz	genre---jazzfusion
+track_1274235	artist_430396	album_152105	35/1274235.mp3	183.8	genre---bossanova	genre---jazz	genre---singersongwriter	instrument---guitar	mood/theme---melodic
+track_1275260	artist_481486	album_152483	60/1275260.mp3	96.1	genre---medieval	genre---orchestral	instrument---brass	instrument---orchestra	instrument---percussion	instrument---strings	instrument---violin
+track_1278514	artist_482074	album_152552	14/1278514.mp3	144.1	genre---classical	genre---medieval	genre---soundtrack	instrument---orchestra	mood/theme---epic	mood/theme---film
+track_1279451	artist_482241	album_152638	51/1279451.mp3	896.0	genre---ambient	genre---electronic	genre---progressive	instrument---synthesizer	mood/theme---dramatic	mood/theme---epic	mood/theme---space
+track_1282290	artist_483163	album_152936	90/1282290.mp3	219.4	genre---easylistening	genre---pop	genre---popfolk	mood/theme---happy	mood/theme---positive	mood/theme---relaxing
+track_1284299	artist_483736	album_153194	99/1284299.mp3	67.8	genre---ambient	genre---soundtrack	genre---world	instrument---strings	mood/theme---energetic	mood/theme---epic	mood/theme---trailer
+track_1284330	artist_483253	album_153202	30/1284330.mp3	286.5	genre---bluesrock	genre---poprock	genre---rock	genre---soundtrack	instrument---drums	instrument---guitar
+track_1287450	artist_484369	album_153476	50/1287450.mp3	288.6	genre---dubstep	genre---idm	genre---triphop	instrument---piano	mood/theme---love	mood/theme---melancholic
+track_1288416	artist_484432	album_153582	16/1288416.mp3	437.6	genre---blues	genre---jazzfusion
+track_1291388	artist_464915	album_153817	88/1291388.mp3	240.0	genre---acidjazz	genre---downtempo	genre---triphop	instrument---saxophone	instrument---synthesizer	mood/theme---dream
+track_1291475	artist_484449	album_153652	75/1291475.mp3	47.2	genre---blues	genre---folk	instrument---guitar	mood/theme---funny	mood/theme---holiday
+track_1292489	artist_484797	album_153939	89/1292489.mp3	283.9	genre---club	genre---house	genre---trance	mood/theme---summer
+track_1292790	artist_484840	album_153965	90/1292790.mp3	327.3	genre---ambient	genre---classical	genre---minimal	instrument---piano	instrument---trombone
+track_1293797	artist_484954	album_154063	97/1293797.mp3	168.0	genre---club	genre---experimental	genre---lounge	instrument---bell	instrument---drums	instrument---pad
+track_1294702	artist_479407	album_154150	02/1294702.mp3	107.8	genre---alternative	genre---hard	genre---rock	instrument---drums	instrument---electricguitar	mood/theme---motivational	mood/theme---sport
+track_1294881	artist_485061	album_154171	81/1294881.mp3	195.0	genre---funk	genre---groove	genre---soul	genre---soundtrack	instrument---percussion	mood/theme---groovy
+track_1295054	artist_480962	album_154190	54/1295054.mp3	103.9	genre---orchestral	genre---soundtrack	instrument---strings	mood/theme---adventure	mood/theme---documentary	mood/theme---epic
+track_1296295	artist_485239	album_154302	95/1296295.mp3	164.1	genre---folk	genre---latin	genre---soul	mood/theme---ambiental
+track_1297412	artist_482333	album_154435	12/1297412.mp3	69.6	genre---funk	genre---groove	genre---house	mood/theme---groovy
+track_1297476	artist_485286	album_154441	76/1297476.mp3	423.3	genre---deephouse	genre---house	genre---techno	instrument---bass
+track_1299624	artist_485611	album_154672	24/1299624.mp3	329.1	genre---ethno	genre---hardrock	genre---heavymetal
+track_1299787	artist_485608	album_154693	87/1299787.mp3	210.1	genre---electronic	genre---funk	genre---jazzfunk	instrument---guitar
+track_1301081	artist_485734	album_154829	81/1301081.mp3	299.1	genre---metal	genre---symphonic	mood/theme---dark	mood/theme---epic	mood/theme---powerful
+track_1302072	artist_485821	album_154915	72/1302072.mp3	525.6	genre---ambient	genre---atmospheric	genre---darkambient
+track_1303131	artist_485932	album_155043	31/1303131.mp3	447.2	genre---deephouse	genre---idm	instrument---synthesizer
+track_1304354	artist_442862	album_155130	54/1304354.mp3	372.7	genre---darkambient	genre---experimental	mood/theme---ambiental	mood/theme---dark
+track_1305116	artist_486113	album_155209	16/1305116.mp3	253.6	genre---deephouse	genre---house	genre---techno	instrument---bass	mood/theme---deep
+track_1306024	artist_484685	album_155289	24/1306024.mp3	123.8	genre---ethno	genre---soundtrack	genre---world	instrument---drums	mood/theme---background
+track_1306699	artist_461418	album_155351	99/1306699.mp3	150.9	genre---ambient	genre---electronic	genre---soundtrack	mood/theme---emotional	mood/theme---happy	mood/theme---motivational	mood/theme---relaxing
+track_1307846	artist_456647	album_155331	46/1307846.mp3	238.8	genre---blues	genre---bluesrock	genre---classicrock	genre---rock	instrument---guitar
+track_1308616	artist_486490	album_155502	16/1308616.mp3	391.7	genre---deephouse	genre---house	genre---techno	instrument---bass	mood/theme---deep
+track_1308818	artist_486519	album_155514	18/1308818.mp3	103.2	genre---ethno	genre---world	instrument---flute	mood/theme---funny
+track_1309354	artist_486593	album_155563	54/1309354.mp3	322.9	genre---improvisation	genre---jazz	genre---jazzfusion
+track_1309597	artist_486613	album_155583	97/1309597.mp3	395.0	genre---progressive	genre---trance	instrument---bass	instrument---pad	instrument---piano
+track_1309737	artist_486627	album_155598	37/1309737.mp3	351.9	genre---celtic	genre---easylistening	genre---medieval	instrument---drums	instrument---electricguitar	instrument---violin
+track_1309874	artist_486652	album_155623	74/1309874.mp3	261.1	genre---metal	genre---rock	genre---soundtrack	instrument---guitar	mood/theme---background
+track_1310529	artist_486550	album_155675	29/1310529.mp3	186.3	genre---classical	genre---orchestral	mood/theme---film	mood/theme---romantic	mood/theme---sexy
+track_1311233	artist_483960	album_155742	33/1311233.mp3	227.4	genre---dubstep	genre---hiphop	genre---soundtrack	mood/theme---movie	mood/theme---sport
+track_1313447	artist_487051	album_155946	47/1313447.mp3	307.1	genre---blues	genre---bluesrock	genre---poprock	genre---rock
+track_1314300	artist_487143	album_156029	00/1314300.mp3	401.9	genre---atmospheric	genre---downtempo	genre---soundtrack	instrument---bass	instrument---pad	mood/theme---melodic	mood/theme---space
+track_1315256	artist_487202	album_156109	56/1315256.mp3	333.8	genre---classicrock	genre---folk	genre---world
+track_1315508	artist_486995	album_156119	08/1315508.mp3	200.8	genre---acidjazz	genre---breakbeat	genre---lounge	instrument---rhodes	instrument---strings	mood/theme---groovy
+track_1315835	artist_487296	album_156151	35/1315835.mp3	307.5	genre---african	genre---electronic	genre---funk
+track_1317594	artist_466627	album_156310	94/1317594.mp3	320.2	genre---bluesrock	genre---country	genre---poprock	genre---rock	instrument---guitar	mood/theme---happy
+track_1319497	artist_487532	album_156458	97/1319497.mp3	190.0	genre---pop	genre---rnb	genre---soul	mood/theme---groovy	mood/theme---positive
+track_1320933	artist_466436	album_156615	33/1320933.mp3	232.0	genre---ambient	genre---chillout	genre---soul	instrument---drums	instrument---rhodes	instrument---voice
+track_1321079	artist_487699	album_156623	79/1321079.mp3	69.9	genre---ambient	genre---downtempo	genre---easylistening	instrument---piano	mood/theme---calm	mood/theme---soft
+track_1321603	artist_484482	album_156691	03/1321603.mp3	128.7	genre---bossanova	genre---easylistening	genre---jazz	instrument---guitar	mood/theme---fun
+track_1321707	artist_487628	album_156668	07/1321707.mp3	392.7	genre---club	genre---dance	genre---disco	genre---house	genre---tribal	mood/theme---happy	mood/theme---summer
+track_1322067	artist_440794	album_156696	67/1322067.mp3	182.4	genre---80s	genre---electronic	genre---world	mood/theme---melodic
+track_1323796	artist_473030	album_156870	96/1323796.mp3	303.4	genre---ambient	genre---downtempo	genre---electronic	instrument---rhodes	mood/theme---relaxing	mood/theme---space
+track_1324371	artist_487913	album_156874	71/1324371.mp3	235.2	genre---folk	genre---soundtrack	instrument---guitar	mood/theme---travel
+track_1325143	artist_444306	album_156161	43/1325143.mp3	258.7	genre---80s	genre---atmospheric	genre---electronic
+track_1328938	artist_485800	album_157281	38/1328938.mp3	241.0	genre---90s	genre---alternativerock	genre---grunge	genre---rock
+track_1329487	artist_460032	album_157326	87/1329487.mp3	117.5	genre---easylistening	genre---pop	genre---soundtrack	instrument---ukulele	mood/theme---advertising	mood/theme---commercial	mood/theme---happy	mood/theme---upbeat
+track_1329825	artist_488457	album_157359	25/1329825.mp3	146.1	genre---alternative	genre---grunge	genre---rock	instrument---electricguitar	mood/theme---dramatic
+track_1330660	artist_488487	album_157414	60/1330660.mp3	249.3	genre---90s	genre---indie	genre---pop
+track_1333888	artist_486413	album_157724	88/1333888.mp3	278.4	genre---edm	genre---house	genre---progressive	genre---trance
+track_1334412	artist_487330	album_157783	12/1334412.mp3	150.5	genre---jazz	genre---latin	genre---lounge	mood/theme---commercial	mood/theme---corporate
+track_1336283	artist_488171	album_157921	83/1336283.mp3	225.0	genre---ambient	genre---downtempo	genre---triphop	mood/theme---dark	mood/theme---groovy
+track_1339471	artist_489296	album_158235	71/1339471.mp3	111.4	genre---groove	genre---metal	instrument---guitar	mood/theme---action	mood/theme---dark
+track_1339823	artist_479547	album_158273	23/1339823.mp3	178.8	genre---alternativerock	genre---blues	genre---hardrock	instrument---guitar	instrument---harmonica	mood/theme---summer
+track_1340186	artist_338347	album_158309	86/1340186.mp3	240.0	genre---90s	genre---classicrock	genre---pop	instrument---guitar	instrument---piano
+track_1340190	artist_487711	album_158310	90/1340190.mp3	178.1	genre---reggae	genre---world	instrument---bass	instrument---guitar	instrument---piano	mood/theme---positive
+track_1340332	artist_481897	album_158322	32/1340332.mp3	180.0	genre---hiphop	genre---rnb	genre---triphop	instrument---bass	instrument---drums	instrument---harmonica
+track_1340787	artist_489644	album_158355	87/1340787.mp3	323.2	genre---groove	genre---house	instrument---bass	instrument---drums	mood/theme---deep
+track_1342757	artist_488976	album_158532	57/1342757.mp3	95.7	genre---club	genre---electronic	mood/theme---fast
+track_1343010	artist_464757	album_158567	10/1343010.mp3	449.1	genre---electronic	genre---techno	genre---trance	mood/theme---party	mood/theme---space
+track_1343442	artist_488843	album_158863	42/1343442.mp3	228.6	genre---ambient	genre---atmospheric	genre---easylistening	mood/theme---calm	mood/theme---melodic	mood/theme---nature	mood/theme---relaxing
+track_1343571	artist_489220	album_158611	71/1343571.mp3	199.4	genre---funk	genre---latin	genre---popfolk	mood/theme---funny
+track_1344391	artist_489961	album_158676	91/1344391.mp3	128.9	genre---metal	mood/theme---funny
+track_1346157	artist_490131	album_158862	57/1346157.mp3	230.6	genre---electronic	genre---synthpop	genre---techno	mood/theme---retro
+track_1347475	artist_490314	album_158998	75/1347475.mp3	46.9	genre---easylistening	genre---soundtrack	mood/theme---children	mood/theme---christmas	mood/theme---game
+track_1348466	artist_490066	album_159111	66/1348466.mp3	235.2	genre---acidjazz	genre---downtempo	genre---fusion
+track_1352504	artist_489561	album_159465	04/1352504.mp3	216.4	genre---hiphop	genre---rap	genre---soundtrack	mood/theme---motivational	mood/theme---sport
+track_1352848	artist_490806	album_159500	48/1352848.mp3	633.9	genre---ambient	genre---atmospheric	genre---newage	mood/theme---nature
+track_1352944	artist_462377	album_159513	44/1352944.mp3	105.3	genre---electronica	genre---pop	genre---poprock	mood/theme---corporate	mood/theme---inspiring	mood/theme---motivational	mood/theme---uplifting
+track_1353241	artist_490858	album_159541	41/1353241.mp3	203.5	genre---chillout	genre---easylistening	genre---house	instrument---bass	instrument---drums	instrument---keyboard	instrument---percussion	instrument---synthesizer	mood/theme---deep	mood/theme---summer
+track_1353294	artist_490859	album_159545	94/1353294.mp3	177.4	genre---chillout	genre---house	instrument---bass	instrument---drums	instrument---keyboard	instrument---percussion	instrument---synthesizer	mood/theme---deep	mood/theme---happy	mood/theme---summer
+track_1353357	artist_490860	album_159548	57/1353357.mp3	176.6	genre---club	genre---dance	genre---disco	genre---easylistening	genre---funk	instrument---bass	instrument---drums	instrument---keyboard	instrument---percussion	instrument---synthesizer	mood/theme---happy	mood/theme---sport	mood/theme---summer
+track_1354122	artist_490945	album_159633	22/1354122.mp3	227.0	genre---bossanova	genre---jazz	genre---lounge	instrument---guitar	mood/theme---soft
+track_1357553	artist_491348	album_159989	53/1357553.mp3	220.9	genre---indie	genre---poprock	genre---rock	instrument---drums	instrument---guitar	mood/theme---fun	mood/theme---funny	mood/theme---uplifting
+track_1359472	artist_491338	album_160196	72/1359472.mp3	203.6	genre---hiphop	genre---newwave	genre---rnb	instrument---bass	instrument---drums	instrument---piano	instrument---synthesizer	instrument---violin
+track_1359485	artist_491402	album_160198	85/1359485.mp3	215.8	genre---drumnbass	genre---synthpop	genre---trance	mood/theme---sexy
+track_1359805	artist_469878	album_160221	05/1359805.mp3	203.6	genre---drumnbass	genre---eurodance	instrument---bass	instrument---guitar	instrument---synthesizer
+track_1359866	artist_460586	album_160234	66/1359866.mp3	203.6	instrument---guitar	instrument---harmonica
+track_1360218	artist_491628	album_160262	18/1360218.mp3	227.2	genre---funk	genre---poprock	genre---soundtrack	mood/theme---cool
+track_1360276	artist_474866	album_160269	76/1360276.mp3	36.7	genre---pop	genre---popfolk	genre---rock	instrument---piano	mood/theme---corporate	mood/theme---motivational
+track_1360535	artist_491003	album_160282	35/1360535.mp3	381.2	genre---ambient	genre---darkambient	mood/theme---soundscape
+track_1361366	artist_491725	album_160346	66/1361366.mp3	120.1	genre---80s	genre---disco	genre---electronic
+track_1361471	artist_491731	album_160353	71/1361471.mp3	185.3	genre---alternative	genre---hiphop	genre---rock	instrument---electricguitar	instrument---horn	mood/theme---commercial
+track_1365049	artist_492122	album_160686	49/1365049.mp3	307.5	genre---gothic	genre---industrial	genre---metal	instrument---guitar	mood/theme---dark
+track_1365355	artist_339778	album_160712	55/1365355.mp3	272.4	genre---90s	genre---easylistening	genre---singersongwriter	mood/theme---love
+track_1366125	artist_492259	album_160757	25/1366125.mp3	265.1	genre---easylistening	genre---jazz	genre---soundtrack	instrument---keyboard	instrument---piano	instrument---trumpet	mood/theme---melodic	mood/theme---soft
+track_1366342	artist_492255	album_160777	42/1366342.mp3	116.1	genre---poprock	genre---punkrock	instrument---drums	instrument---guitar	mood/theme---positive
+track_1366582	artist_492310	album_160809	82/1366582.mp3	153.6	genre---hiphop	genre---rap	genre---rnb	mood/theme---party
+track_1368284	artist_492481	album_160975	84/1368284.mp3	204.6	genre---dance	genre---electronic	genre---house	mood/theme---summer
+track_1370841	artist_488716	album_161260	41/1370841.mp3	274.4	genre---alternative	genre---alternativerock	genre---rock	mood/theme---travel
+track_1371094	artist_490499	album_160413	94/1371094.mp3	178.3	genre---dance	genre---electronic	genre---house	instrument---piano	instrument---synthesizer	mood/theme---positive	mood/theme---summer
+track_1371868	artist_492897	album_161389	68/1371868.mp3	264.2	genre---experimental	genre---heavymetal	genre---rock
+track_1372055	artist_492919	album_161417	55/1372055.mp3	63.6	genre---orchestral	genre---soundtrack	genre---symphonic	instrument---horn	instrument---strings
+track_1372186	artist_492925	album_161405	86/1372186.mp3	212.5	genre---dance	genre---electropop	genre---pop	genre---poprock	instrument---guitar	mood/theme---powerful
+track_1374348	artist_493111	album_161597	48/1374348.mp3	202.2	genre---chillout	genre---lounge	instrument---bass	instrument---drums	instrument---guitar	instrument---rhodes
+track_1374717	artist_493162	album_161635	17/1374717.mp3	244.5	genre---electronic	genre---industrial	mood/theme---dark	mood/theme---horror	mood/theme---soundscape
+track_1375800	artist_493206	album_161743	00/1375800.mp3	224.5	genre---80s	genre---90s	genre---dance
+track_1375899	artist_490363	album_161752	99/1375899.mp3	413.1	genre---ambient	genre---ethno	genre---newage	mood/theme---documentary	mood/theme---film	mood/theme---meditative
+track_1376239	artist_492893	album_161776	39/1376239.mp3	241.9	genre---deephouse	genre---house	instrument---guitar	instrument---synthesizer
+track_1377078	artist_470787	album_161842	78/1377078.mp3	755.0	genre---ambient	genre---darkambient	genre---experimental	mood/theme---soundscape
+track_1377202	artist_493360	album_161844	02/1377202.mp3	210.3	genre---dance	genre---reggae	genre---world	mood/theme---upbeat
+track_1377584	artist_493403	album_161923	84/1377584.mp3	278.2	genre---90s	genre---dance	genre---disco
+track_1377691	artist_493409	album_161897	91/1377691.mp3	236.0	genre---electronic	genre---gothic
+track_1378035	artist_493445	album_161925	35/1378035.mp3	123.7	genre---indie	genre---lounge	genre---pop	mood/theme---commercial	mood/theme---corporate	mood/theme---inspiring	mood/theme---motivational
+track_1380113	artist_493656	album_162110	13/1380113.mp3	220.5	genre---atmospheric	genre---dub	genre---electronic	instrument---bass	instrument---pad
+track_1380975	artist_475732	album_162198	75/1380975.mp3	300.5	genre---dance	genre---electronic	genre---experimental	genre---house	mood/theme---cool
+track_1381650	artist_493718	album_162268	50/1381650.mp3	132.6	genre---african	genre---ambient	genre---atmospheric	instrument---flute	mood/theme---film
+track_1384401	artist_493872	album_162438	01/1384401.mp3	139.1	genre---ambient	genre---atmospheric	genre---chillout	instrument---pad	instrument---piano	mood/theme---corporate	mood/theme---uplifting
+track_1385117	artist_486606	album_162506	17/1385117.mp3	178.1	genre---ambient	genre---soundtrack	mood/theme---holiday
+track_1386916	artist_494218	album_162677	16/1386916.mp3	256.0	genre---indie	genre---newwave	genre---soundtrack	instrument---guitar
+track_1387167	artist_487189	album_162711	67/1387167.mp3	156.1	genre---orchestral	genre---soundtrack	mood/theme---epic	mood/theme---film	mood/theme---trailer
+track_1388360	artist_494020	album_162844	60/1388360.mp3	372.5	genre---dance	genre---deephouse	genre---house	mood/theme---deep	mood/theme---groovy
+track_1390884	artist_355756	album_163075	84/1390884.mp3	270.1	genre---chillout	genre---newage	instrument---piano	mood/theme---melancholic
+track_1394303	artist_351287	album_163362	03/1394303.mp3	276.0	genre---ambient	genre---easylistening	mood/theme---christmas	mood/theme---holiday
+track_1394779	artist_491763	album_163391	79/1394779.mp3	115.3	genre---electronic	genre---hardrock	genre---heavymetal	mood/theme---dark
+track_1394892	artist_475790	album_163398	92/1394892.mp3	265.3	genre---hiphop	genre---rap	mood/theme---funny
+track_1395224	artist_491533	album_163420	24/1395224.mp3	75.2	genre---groove	genre---rock	genre---soundtrack	instrument---guitar	mood/theme---action	mood/theme---film	mood/theme---funny	mood/theme---sport
+track_1395651	artist_493932	album_162320	51/1395651.mp3	384.1	genre---deephouse	genre---electronic	mood/theme---deep
+track_1396664	artist_495239	album_163579	64/1396664.mp3	170.3	mood/theme---christmas
+track_1397139	artist_439371	album_163630	39/1397139.mp3	186.0	genre---indie	genre---rock	instrument---drums	instrument---guitar	instrument---organ	instrument---synthesizer	mood/theme---fun
+track_1397162	artist_495287	album_163625	62/1397162.mp3	205.0	genre---ambient	genre---minimal	genre---soundtrack	instrument---piano	instrument---strings	mood/theme---positive	mood/theme---soft
+track_1397206	artist_495268	album_163632	06/1397206.mp3	216.6	genre---metal	genre---symphonic	mood/theme---fast
+track_1397719	artist_453289	album_163674	19/1397719.mp3	166.5	genre---orchestral	genre---soundtrack	mood/theme---action	mood/theme---film	mood/theme---movie
+track_1398478	artist_495406	album_163740	78/1398478.mp3	241.8	genre---80s	genre---rocknroll
+track_1399524	artist_495484	album_163819	24/1399524.mp3	154.2	genre---classical	genre---minimal	genre---pop	mood/theme---corporate	mood/theme---deep	mood/theme---inspiring	mood/theme---motivational
+track_1400259	artist_487729	album_163888	59/1400259.mp3	315.2	genre---70s	instrument---drums	instrument---guitar
+track_1401013	artist_495620	album_163952	13/1401013.mp3	110.0	genre---atmospheric	genre---chillout	genre---gothic	genre---soundtrack	mood/theme---soundscape
+track_1402480	artist_491391	album_164071	80/1402480.mp3	159.7	genre---disco	genre---latin	instrument---guitar	mood/theme---christmas
+track_1403235	artist_430269	album_164128	35/1403235.mp3	33.5	genre---electronic	genre---pop	genre---poprock	mood/theme---corporate	mood/theme---inspiring	mood/theme---motivational	mood/theme---positive
+track_1403452	artist_487706	album_164152	52/1403452.mp3	136.5	genre---orchestral	genre---soundtrack	genre---symphonic	mood/theme---adventure	mood/theme---epic	mood/theme---motivational
+track_1403810	artist_491366	album_164174	10/1403810.mp3	215.0	genre---celtic	genre---soundtrack	mood/theme---upbeat
+track_1404897	artist_495922	album_164274	97/1404897.mp3	304.2	genre---chillout	genre---downtempo	genre---electronic	instrument---synthesizer	mood/theme---dream	mood/theme---positive	mood/theme---relaxing
+track_1406215	artist_495919	album_164406	15/1406215.mp3	448.1	genre---deephouse	genre---electronic	mood/theme---calm	mood/theme---dream	mood/theme---mellow
+track_1406563	artist_496074	album_164445	63/1406563.mp3	192.2	genre---ambient	genre---soundtrack	genre---symphonic	mood/theme---dramatic	mood/theme---epic	mood/theme---love
+track_1407161	artist_496129	album_165124	61/1407161.mp3	66.9	genre---atmospheric	genre---downtempo	genre---orchestral	instrument---bell
+track_1408398	artist_496168	album_164580	98/1408398.mp3	213.8	genre---jazz	instrument---flute	instrument---horn
+track_1410655	artist_496234	album_164897	55/1410655.mp3	1824.4	genre---60s	genre---ambient
+track_1412791	artist_496314	album_164976	91/1412791.mp3	1406.3	genre---edm	genre---techno	genre---trance
+track_1413398	artist_496366	album_165025	98/1413398.mp3	413.7	genre---deephouse	genre---electronic	genre---techno
+track_1414001	artist_495921	album_165088	01/1414001.mp3	233.7	genre---electronic	genre---progressive	genre---techno	instrument---horn	instrument---synthesizer
+track_1414368	artist_496485	album_165132	68/1414368.mp3	94.1	genre---ambient	genre---atmospheric	genre---easylistening	instrument---guitar	instrument---pad	instrument---strings
+track_1414419	artist_496480	album_165128	19/1414419.mp3	99.4	genre---ambient	genre---newage	mood/theme---epic	mood/theme---inspiring	mood/theme---trailer
+track_1414506	artist_496499	album_165151	06/1414506.mp3	291.1	genre---fusion	genre---jazz	genre---jazzfunk	genre---lounge	genre---newage
+track_1415105	artist_495779	album_165217	05/1415105.mp3	160.0	genre---dance	genre---pop	genre---poprock	genre---soundtrack	mood/theme---advertising	mood/theme---film	mood/theme---inspiring	mood/theme---motivational
+track_1416334	artist_463893	album_165324	34/1416334.mp3	39.3	genre---ambient	genre---chillout	genre---electronic	mood/theme---corporate	mood/theme---happy	mood/theme---motivational
+track_1417287	artist_484921	album_165416	87/1417287.mp3	301.8	genre---80s	genre---electronic	genre---newwave
+track_1417902	artist_496884	album_165470	02/1417902.mp3	196.7	genre---60s	genre---hiphop	instrument---beat
+track_1418110	artist_486224	album_165487	10/1418110.mp3	91.4	genre---classical	genre---orchestral	mood/theme---action	mood/theme---epic
+track_1419790	artist_497141	album_165639	90/1419790.mp3	160.7	genre---orchestral	genre---soundtrack	instrument---bell	instrument---piano	mood/theme---christmas
+track_1420237	artist_352232	album_165667	37/1420237.mp3	198.7	genre---atmospheric	genre---experimental	mood/theme---positive
+track_1420409	artist_497198	album_165677	09/1420409.mp3	215.5	genre---dance	genre---disco	genre---easylistening	genre---funk	instrument---bass	instrument---drums	instrument---keyboard	instrument---percussion	instrument---synthesizer	mood/theme---happy	mood/theme---summer
+track_1420487	artist_497200	album_165680	87/1420487.mp3	147.7	genre---dance	genre---house	instrument---bass	instrument---drums	instrument---keyboard	instrument---percussion	instrument---synthesizer	mood/theme---deep	mood/theme---summer
+track_1420521	artist_497201	album_165683	21/1420521.mp3	196.0	genre---chillout	genre---dance	genre---house	instrument---bass	instrument---drums	instrument---keyboard	instrument---percussion	instrument---synthesizer	mood/theme---deep	mood/theme---summer
+track_1420529	artist_497202	album_165684	29/1420529.mp3	219.4	genre---chillout	genre---dub	genre---house	instrument---bass	instrument---drums	instrument---keyboard	instrument---percussion	instrument---synthesizer	mood/theme---deep	mood/theme---summer
+track_1420531	artist_496701	album_165685	31/1420531.mp3	91.5	genre---drumnbass	mood/theme---game	mood/theme---retro
+track_1421263	artist_497261	album_165772	63/1421263.mp3	334.7	genre---90s	genre---indie	genre---rock	mood/theme---epic	mood/theme---heavy
