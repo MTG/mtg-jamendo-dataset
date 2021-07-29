@@ -233,7 +233,7 @@ optional arguments:
 
 Please consider citing the following publication when using the dataset:
 
-> Bogdanov, D., Won M., Tovstogan P., Porter A., & Serra X. (2019).  [The MTG-Jamendo Dataset for Automatic Music Tagging](http://mtg.upf.edu/node/3957). Machine Learning for Music Discovery Workshop, International Conference on Machine Learning (ICML 2019).
+> Bogdanov, D., Won M., Tovstogan P., Porter A., & Serra X. (2019).  [The MTG-Jamendo Dataset for Automatic Music Tagging](https://hdl.handle.net/10230/42015). Machine Learning for Music Discovery Workshop, International Conference on Machine Learning (ICML 2019).
 
 ```
 @conference {bogdanov2019mtg,
