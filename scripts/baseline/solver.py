@@ -3,7 +3,7 @@ import os
 import time
 import numpy as np
 import datetime
-import tqdm
+# import tqdm
 from sklearn import metrics
 import pickle
 import csv
@@ -21,9 +21,9 @@ class Solver(object):
         self.valid_loader = valid_loader
 
         # Training settings
-        self.n_epochs = 500
+        self.n_epochs = 100
         self.lr = 1e-4
-        self.log_step = 10
+        self.log_step = 100
         self.is_cuda = torch.cuda.is_available()
         self.model_save_path = config.model_save_path
         self.batch_size = config.batch_size
@@ -127,7 +127,8 @@ class Solver(object):
         ctr = 0
         self.model.eval()
         reconst_loss = nn.BCELoss()
-        for x, y in self.valid_loader:
+        print(len(self.valid_loader))
+        for x, y, _ in self.valid_loader:
             ctr += 1
 
             # variables to cuda
