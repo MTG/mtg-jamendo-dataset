@@ -10,6 +10,7 @@ import csv
 
 import torch
 import torch.nn as nn
+import wandb
 
 from model import CNN
 
@@ -45,8 +46,11 @@ class Solver(object):
         self.roc_auc_fn = 'roc_auc_'+config.subset+'_'+str(config.split)+'.npy'
         self.pr_auc_fn = 'pr_auc_'+config.subset+'_'+str(config.split)+'.npy'
 
+        wandb.init(project='mtg-jamendo-reproduce', config={'subset': config.subset})
+
         # Build model
         self.build_model()
+        wandb.watch(self.model)
 
     def build_model(self):
         # model and optimizer
@@ -104,6 +108,7 @@ class Solver(object):
                             (datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                             epoch+1, self.n_epochs, ctr, len(self.data_loader), loss.item(),
                             datetime.timedelta(seconds=time.time()-start_t)))
+                    wandb.log({'train_loss': loss})
 
             # validation
             roc_auc, _ = self._validation(start_t, epoch)
@@ -144,6 +149,7 @@ class Solver(object):
                         (datetime.datetime.now().strftime('%Y-%m-%d %H:%M:%S'),
                         epoch+1, self.n_epochs, ctr, len(self.valid_loader), loss.item(),
                         datetime.timedelta(seconds=time.time()-start_t)))
+                wandb.log({'valid_loss': loss})
 
             # append prediction
             out = out.detach().cpu()
@@ -155,6 +161,7 @@ class Solver(object):
 
         # get auc
         roc_auc, pr_auc, _, _ = self.get_auc(prd_array, gt_array)
+        wandb.log({'valid_roc_auc': roc_auc, 'valid_pr_auc': pr_auc})
         return roc_auc, pr_auc
 
     def get_tag_list(self, config):
