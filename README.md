@@ -231,7 +231,7 @@ optional arguments:
 
 ## Citing the dataset
 
-Please consider citing the following publication when using the dataset:
+Please consider citing [the following publication](https://repositori.upf.edu/handle/10230/42015) when using the dataset:
 
 > Bogdanov, D., Won M., Tovstogan P., Porter A., & Serra X. (2019).  [The MTG-Jamendo Dataset for Automatic Music Tagging](https://hdl.handle.net/10230/42015). Machine Learning for Music Discovery Workshop, International Conference on Machine Learning (ICML 2019).
 
