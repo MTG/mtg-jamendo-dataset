@@ -44,12 +44,12 @@ def visualize2(directory, n):
         tag_list += list(data['tag'])
         track_list += list(data['tracks'])
 
-    fig = plt.figure(figsize=(12, 2))
+    fig = plt.figure(figsize=(12, 9))
     plt.style.use('seaborn-whitegrid')
 
-    font_manager._rebuild()
+    # font_manager._rebuild()
     rcParams['font.family'] = 'serif'
-    rcParams['font.serif'] = 'Times'
+    rcParams['font.serif'] = 'Times New Roman'
     plt.grid(False)
     plt.ylabel('# of tracks')
     plt.xlim([-1, 56])
@@ -59,7 +59,7 @@ def visualize2(directory, n):
         plt.bar(indices, np.array(track_list)[indices], align='center')
 
     for i in [0, 55]:
-        plt.text(i, track_list[i] + 100, track_list[i], fontsize=8, horizontalalignment='center')
+        plt.text(i, track_list[i] + 30, track_list[i], fontsize=8, horizontalalignment='center')
 
     plt.xticks(np.arange(len(tag_list)), tag_list, rotation='vertical')
     ylabels = np.arange(0, 2000, 500)
@@ -72,7 +72,7 @@ def visualize2(directory, n):
     ax.spines['bottom'].set_visible(False)
     ax.spines['left'].set_visible(False)
 
-    output_file = os.path.join(directory, 'top{}.png'.format(n))
+    output_file = os.path.join(directory, 'top{}.pdf'.format(n))
     plt.savefig(output_file, bbox_inches='tight', dpi=150)
     # plt.show()
     plt.close()
