@@ -11,7 +11,7 @@ A subset of the dataset is used in the [Emotion and Theme Recognition in Music T
 
 ## Structure
 
-### Metadata files in `data`
+### Metadata files in [`data`](data)
 
 Pre-processing
 - `raw.tsv` (56,639) - raw file without postprocessing
@@ -35,24 +35,28 @@ Note: A few tags are discarded in the splits to guarantee the same list of tags 
 
 Splits are generated from `autotagging.tsv`, containing all tags. For each split, the related subsets (top50, genre, instrument, mood/theme) are built filtering out unrelated tags and tracks without any tags.
 
-### Statistics in `stats`
+### Statistics in [`stats`](stats)
+
+![Top 20 tags per category](stats/raw_30s_cleantags_50artists/top20.png)
 
 Statistics of number of tracks, albums and artists per tag sorted by number of artists.
 Each directory has statistics for metadata file with the same name.
-Statistics for subsets based on categories are not kept seperated due to it already included in `autotagging`
+[Here](stats/raw_30s_cleantags_50artists) is the statistics for the `autotagging` set.
+Statistics for subsets based on categories are not kept seperated due to it already included in `autotagging`.
 
 ## Using the dataset
 
 ### Requirements
 
-* Python 3.6+
-* Virtualenv: `pip install virtualenv`
+* Python 3.7+
 * Create virtual environment and install requirements
 ```bash
 python -m venv venv
 source venv/bin/activate
 pip install -r scripts/requirements.txt
 ```
+
+The original requirements are kept in [`reguirements-orig.txt`](scripts/requirements-orig.txt)
 
 ### Downloading the data
 
@@ -254,7 +258,7 @@ An expanded version of the paper describing the dataset and the baselines will b
 * The metadata is licensed under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 * The audio files are licensed under Creative Commons licenses, see individual licenses for details in `audio_licenses.txt`.
 
-Copyright 2019 Music Technology Group
+Copyright 2019-2022 Music Technology Group
 
 ## Acknowledgments
 
