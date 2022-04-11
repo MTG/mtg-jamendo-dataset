@@ -1,4 +1,6 @@
 import csv
+from collections import defaultdict
+
 
 CATEGORIES = ['genre', 'instrument', 'mood/theme']
 TAG_HYPHEN = '---'
@@ -15,7 +17,7 @@ def get_length(values):
 
 def read_file(tsv_file):
     tracks = {}
-    tags = {category: {} for category in CATEGORIES}
+    tags = defaultdict(dict)
 
     # For statistics
     artist_ids = set()
@@ -46,7 +48,10 @@ def read_file(tsv_file):
 
                 tags[category][tag].add(track_id)
 
-                tracks[track_id][category].add(tag)
+                if category not in tracks[track_id]:
+                    tracks[track_id][category] = set()
+
+                tracks[track_id][category].update(set(tag.split(",")))
 
     print("Reading: {} tracks, {} albums, {} artists".format(len(tracks), len(albums_ids), len(artist_ids)))
 
