@@ -232,7 +232,7 @@ The MTG-Jamendo Dataset can be linked to related datasets tailored to specific a
 
 ### Music Classification Annotations
 The [Music Classification Annotations](derived/music-classification-annotations/README.md) contains annotations for the [split-0 test set](data/splits/split-0/autotagging-test.tsv) according to the taxonomies of 15 existing music classification datasets including genres, moods, danceability, voice/instrumental, gender, and tonal/atonal.
-These labels are suitable for training individual classifiers or learning everything in al multi-label setup (auto-tagging).
+These labels are suitable for training individual classifiers or learning everything in a multi-label setup (auto-tagging).
 Most of the taxonomies were annotated by three different annotators.
 We provide the subset of annotations with perfect inter-annotator agreement ranging from 411 to 8756 tracks depending on the taxonomy.
 
