@@ -133,7 +133,7 @@ if __name__ == '__main__':
                         help='dataset to download')
     parser.add_argument('--type', default='audio', choices=['audio', 'melspecs', 'acousticbrainz'],
                         help='type of data to download (audio, mel-spectrograms, AcousticBrainz features)')
-    parser.add_argument('--from', default='gdrive', choices=['gdrive', 'mtg', 'mtg-fast'],
+    parser.add_argument('--from', default='mtg-fast', choices=['gdrive', 'mtg', 'mtg-fast'],
                         dest='download_from',
                         help='download from Google Drive (fast everywhere), MTG (server in Spain, slow), '
                              'or fast MTG mirror (Finland)')

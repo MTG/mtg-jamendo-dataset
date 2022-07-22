@@ -94,7 +94,7 @@ options:
   --from {gdrive,mtg,mtg-fast}
                         download from Google Drive (fast everywhere), MTG
                         (server in Spain, slow), or fast MTG mirror (Finland)
-                        (default: gdrive)
+                        (default: mtg-fast)
   --unpack              unpack tar archives (default: False)
   --remove              remove tar archives while unpacking one by one (use to
                         save disk space) (default: False)
