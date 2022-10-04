@@ -11,7 +11,7 @@ A subset of the dataset is used in the [Emotion and Theme Recognition in Music T
 
 ## Structure
 
-### Metadata files in [`data`](data)
+### Metadata files in [`data`](https://github.com/MTG/mtg-jamendo-dataset/tree/master/data)
 
 Pre-processing
 - `raw.tsv` (56,639) - raw file without postprocessing
@@ -35,7 +35,7 @@ Note: A few tags are discarded in the splits to guarantee the same list of tags 
 
 Splits are generated from `autotagging.tsv`, containing all tags. For each split, the related subsets (top50, genre, instrument, mood/theme) are built filtering out unrelated tags and tracks without any tags.
 
-### Statistics in [`stats`](stats)
+### Statistics in [`stats`](https://github.com/MTG/mtg-jamendo-dataset/tree/master/stats)
 
 ![Top 20 tags per category](stats/raw_30s_cleantags_50artists/top20.png)
 
