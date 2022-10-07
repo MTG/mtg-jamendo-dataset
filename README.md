@@ -35,6 +35,8 @@ Note: A few tags are discarded in the splits to guarantee the same list of tags 
 
 Splits are generated from `autotagging.tsv`, containing all tags. For each split, the related subsets (top50, genre, instrument, mood/theme) are built filtering out unrelated tags and tracks without any tags.
 
+Some additional metadata from Jamendo (artist, album name, track title, release date, track URL) is available in `raw.meta.tsv` (56,693).
+
 ### Statistics in [`stats`](https://github.com/MTG/mtg-jamendo-dataset/tree/master/stats)
 
 ![Top 20 tags per category](stats/raw_30s_cleantags_50artists/top20.png)
