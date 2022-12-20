@@ -6,12 +6,12 @@ We present the MTG-Jamendo Dataset, a new open dataset for music auto-tagging. I
 
 This repository contains metadata, scripts, instructions on how to download and use the dataset and reproduce baseline results.
 
-A subset of the dataset is used in the [Emotion and Theme Recognition in Music Task](https://multimediaeval.github.io/2021-Emotion-and-Theme-Recognition-in-Music-Task/) within [MediaEval 2019-2021](https://multimediaeval.github.io/) (you are welcome to participate).
+A subset of the dataset was used in the [Emotion and Theme Recognition in Music Task](https://multimediaeval.github.io/2021-Emotion-and-Theme-Recognition-in-Music-Task/) within [MediaEval 2019-2021](https://multimediaeval.github.io/).
 
 
 ## Structure
 
-### Metadata files in [`data`](data)
+### Metadata files in [`data`](https://github.com/MTG/mtg-jamendo-dataset/tree/master/data)
 
 Pre-processing
 - `raw.tsv` (56,639) - raw file without postprocessing
@@ -35,7 +35,9 @@ Note: A few tags are discarded in the splits to guarantee the same list of tags 
 
 Splits are generated from `autotagging.tsv`, containing all tags. For each split, the related subsets (top50, genre, instrument, mood/theme) are built filtering out unrelated tags and tracks without any tags.
 
-### Statistics in [`stats`](stats)
+Some additional metadata from Jamendo (artist, album name, track title, release date, track URL) is available in `raw.meta.tsv` (56,693).
+
+### Statistics in [`stats`](https://github.com/MTG/mtg-jamendo-dataset/tree/master/stats)
 
 ![Top 20 tags per category](stats/raw_30s_cleantags_50artists/top20.png)
 
@@ -78,7 +80,7 @@ python scripts/download/download.py -h
 ```
 usage: download.py [-h] [--dataset {raw_30s,autotagging_moodtheme}]
                    [--type {audio,melspecs,acousticbrainz}]
-                   [--from {gdrive,mtg}] [--unpack] [--remove]
+                   [--from {gdrive,mtg,mtg-fast}] [--unpack] [--remove]
                    outputdir
 
 Download the MTG-Jamendo dataset
@@ -86,15 +88,17 @@ Download the MTG-Jamendo dataset
 positional arguments:
   outputdir             directory to store the dataset
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   --dataset {raw_30s,autotagging_moodtheme}
                         dataset to download (default: raw_30s)
   --type {audio,melspecs,acousticbrainz}
                         type of data to download (audio, mel-spectrograms,
                         AcousticBrainz features) (default: audio)
-  --from {gdrive,mtg}   download from Google Drive (fast everywhere) or MTG
-                        (server in Spain, slow) (default: gdrive)
+  --from {gdrive,mtg,mtg-fast}
+                        download from Google Drive (fast everywhere), MTG
+                        (server in Spain, slow), or fast MTG mirror (Finland)
+                        (default: mtg-fast)
   --unpack              unpack tar archives (default: False)
   --remove              remove tar archives while unpacking one by one (use to
                         save disk space) (default: False)
@@ -227,6 +231,17 @@ optional arguments:
 
 * [ML4MD2019](results/ml4md2019): 5 splits, 5 tag sets (3 categories, top50, all)
 * [Mediaeval2019](results/mediaeval2019): split-0, mood/theme category
+
+## Related Datasets
+The MTG-Jamendo Dataset can be linked to related datasets tailored to specific applications.
+
+
+### Music Classification Annotations
+The [Music Classification Annotations](derived/music-classification-annotations/README.md) contains annotations for the [split-0 test set](data/splits/split-0/autotagging-test.tsv) according to the taxonomies of 15 existing music classification datasets including genres, moods, danceability, voice/instrumental, gender, and tonal/atonal.
+These labels are suitable for training individual classifiers or learning everything in a multi-label setup (auto-tagging).
+Most of the taxonomies were annotated by three different annotators.
+We provide the subset of annotations with perfect inter-annotator agreement ranging from 411 to 8756 tracks depending on the taxonomy.
+
 
 ## Research challenges using the dataset
 
