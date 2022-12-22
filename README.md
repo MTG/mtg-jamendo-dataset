@@ -92,9 +92,9 @@ options:
   -h, --help            show this help message and exit
   --dataset {raw_30s,autotagging_moodtheme}
                         dataset to download (default: raw_30s)
-  --type {audio,melspecs,acousticbrainz}
-                        type of data to download (audio, mel-spectrograms,
-                        AcousticBrainz features) (default: audio)
+  --type {audio,audio-low,melspecs,acousticbrainz}
+                        type of data to download (audio, audio in low quality,
+                        mel-spectrograms, AcousticBrainz features) (default: audio)
   --from {gdrive,mtg,mtg-fast}
                         download from Google Drive (fast everywhere), MTG
                         (server in Spain, slow), or fast MTG mirror (Finland)
