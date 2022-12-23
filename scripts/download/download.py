@@ -48,11 +48,12 @@ def download(dataset, data_type, download_from, output_dir, unpack_tars, remove_
     ids = sha256_tars.keys()
 
     # Google IDs to download.
-    gids = {}
-    with open(file_gids, 'r') as f:
-        for line in f:
-            id, filename = line.split(('   '))[:2]
-            gids[filename] = id
+    if download_from == 'gdrive':
+        gids = {}
+        with open(file_gids, 'r') as f:
+            for line in f:
+                id, filename = line.split(('   '))[:2]
+                gids[filename] = id
 
     removed = []
     for filename in ids:
