@@ -72,7 +72,7 @@ We provide the following data subsets:
 - `autotagging-moodtheme/audio-low` - audio for the mood/theme subset `autotagging_moodtheme.tsv` in low quality (46 GB)
 - `autotagging-moodtheme/melspecs` - mel-spectrograms for the `autotagging_moodtheme.tsv` subset (68 GB)
 
-For faster downloads, we host a copy of the dataset on Google Drive. We provide a script to download and validate all files in the dataset. See its help message for more information:
+We provide a script to download and validate all files in the dataset. See its help message for more information:
 
 ```bash
 python scripts/download/download.py -h
@@ -80,7 +80,7 @@ python scripts/download/download.py -h
 ```
 usage: download.py [-h] [--dataset {raw_30s,autotagging_moodtheme}]
                    [--type {audio,melspecs,acousticbrainz}]
-                   [--from {gdrive,mtg,mtg-fast}] [--unpack] [--remove]
+                   [--from {mtg,mtg-fast}] [--unpack] [--remove]
                    outputdir
 
 Download the MTG-Jamendo dataset
@@ -95,10 +95,9 @@ options:
   --type {audio,audio-low,melspecs,acousticbrainz}
                         type of data to download (audio, audio in low quality,
                         mel-spectrograms, AcousticBrainz features) (default: audio)
-  --from {gdrive,mtg,mtg-fast}
-                        download from Google Drive (fast everywhere), MTG
-                        (server in Spain, slow), or fast MTG mirror (Finland)
-                        (default: mtg-fast)
+  --from {mtg,mtg-fast}
+                        download from MTG (server in Spain, slow),
+                        or fast MTG mirror (Finland) (default: mtg-fast)
   --unpack              unpack tar archives (default: False)
   --remove              remove tar archives while unpacking one by one (use to
                         save disk space) (default: False)
