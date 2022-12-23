@@ -44,12 +44,16 @@ def download(dataset, data_type, download_from, output_dir, unpack_tars, remove_
     with open(file_sha256_tracks) as f:
         sha256_tracks = dict([(row[1], row[0]) for row in csv.reader(f, delimiter=' ')])
 
-    # Read filenames and google IDs to download.
-    ids = {}
-    with open(file_gids, 'r') as f:
-        for line in f:
-            id, filename = line.split(('   '))[:2]
-            ids[filename] = id
+    # Filenames to download.
+    ids = sha256_tars.keys()
+
+    # Google IDs to download.
+    if download_from == 'gdrive':
+        gids = {}
+        with open(file_gids, 'r') as f:
+            for line in f:
+                id, filename = line.split(('   '))[:2]
+                gids[filename] = id
 
     removed = []
     for filename in ids:
@@ -61,7 +65,7 @@ def download(dataset, data_type, download_from, output_dir, unpack_tars, remove_
             continue
 
         if download_from == 'gdrive':
-            url = 'https://drive.google.com/uc?id=%s' % ids[filename]
+            url = 'https://drive.google.com/uc?id=%s' % gids[filename]
             gdown.download(url, output, quiet=False)
 
         elif download_from == 'mtg':
@@ -131,8 +135,8 @@ if __name__ == '__main__':
 
     parser.add_argument('--dataset', default='raw_30s', choices=['raw_30s', 'autotagging_moodtheme'],
                         help='dataset to download')
-    parser.add_argument('--type', default='audio', choices=['audio', 'melspecs', 'acousticbrainz'],
-                        help='type of data to download (audio, mel-spectrograms, AcousticBrainz features)')
+    parser.add_argument('--type', default='audio', choices=['audio', 'audio-low', 'melspecs', 'acousticbrainz'],
+                        help='type of data to download (audio, audio in low quality, mel-spectrograms, AcousticBrainz features)')
     parser.add_argument('--from', default='mtg-fast', choices=['gdrive', 'mtg', 'mtg-fast'],
                         dest='download_from',
                         help='download from Google Drive (fast everywhere), MTG (server in Spain, slow), '

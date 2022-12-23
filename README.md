@@ -62,12 +62,14 @@ The original requirements are kept in [`reguirements-orig.txt`](scripts/requirem
 
 ### Downloading the data
 
-All audio is distributed in 320kbps MP3 format. In addition we provide precomputed mel-spectrograms which are distributed as NumPy Arrays in NPY format. We also provide precomputed statistical features from [Essentia](https://essentia.upf.edu) (used in the [AcousticBrainz](https://acousticbrainz.org) music database) in JSON format. The audio files and the NPY/JSON files are split into folders packed into TAR archives. The dataset is hosted [online at MTG UPF](https://essentia.upf.edu/documentation/datasets/mtg-jamendo/).
+All audio is distributed in 320kbps MP3 format. We recommend using this version of audio by default. For smaller download sizes, we also provide a lower-bitrate mono version of the same audio (converted from the full quality version to mono LAME VBR 2 `lame -V 2`). In addition we provide precomputed mel-spectrograms which are distributed as NumPy Arrays in NPY format. We also provide precomputed statistical features from [Essentia](https://essentia.upf.edu) (used in the [AcousticBrainz](https://acousticbrainz.org) music database) in JSON format. The audio files and the NPY/JSON files are split into folders packed into TAR archives. The dataset is hosted [online at MTG UPF](https://essentia.upf.edu/documentation/datasets/mtg-jamendo/).
 
 We provide the following data subsets:
-- `raw_30s/audio` - all available audio for `raw_30s.tsv` (508 GB)
+- `raw_30s/audio` - all available audio for `raw_30s.tsv` in full quality (508 GB)
+- `raw_30s/audio-low` - all available audio for `raw_30s.tsv` in low quality (156 GB)
 - `raw_30s/melspecs` - mel-spectrograms for `raw_30s.tsv` (229 GB)
-- `autotagging-moodtheme/audio` - audio for the mood/theme subset `autotagging_moodtheme.tsv` (152 GB)
+- `autotagging-moodtheme/audio` - audio for the mood/theme subset `autotagging_moodtheme.tsv` in full quality (152 GB)
+- `autotagging-moodtheme/audio-low` - audio for the mood/theme subset `autotagging_moodtheme.tsv` in low quality (46 GB)
 - `autotagging-moodtheme/melspecs` - mel-spectrograms for the `autotagging_moodtheme.tsv` subset (68 GB)
 
 For faster downloads, we host a copy of the dataset on Google Drive. We provide a script to download and validate all files in the dataset. See its help message for more information:
@@ -90,9 +92,9 @@ options:
   -h, --help            show this help message and exit
   --dataset {raw_30s,autotagging_moodtheme}
                         dataset to download (default: raw_30s)
-  --type {audio,melspecs,acousticbrainz}
-                        type of data to download (audio, mel-spectrograms,
-                        AcousticBrainz features) (default: audio)
+  --type {audio,audio-low,melspecs,acousticbrainz}
+                        type of data to download (audio, audio in low quality,
+                        mel-spectrograms, AcousticBrainz features) (default: audio)
   --from {gdrive,mtg,mtg-fast}
                         download from Google Drive (fast everywhere), MTG
                         (server in Spain, slow), or fast MTG mirror (Finland)
