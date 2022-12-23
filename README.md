@@ -79,7 +79,7 @@ python scripts/download/download.py -h
 ```
 ```
 usage: download.py [-h] [--dataset {raw_30s,autotagging_moodtheme}]
-                   [--type {audio,melspecs,acousticbrainz}]
+                   [--type {audio,audio-low,melspecs,acousticbrainz}]
                    [--from {mtg,mtg-fast}] [--unpack] [--remove]
                    outputdir
 
