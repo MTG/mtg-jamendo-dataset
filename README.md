@@ -242,6 +242,10 @@ Most of the taxonomies were annotated by three different annotators.
 We provide the subset of annotations with perfect inter-annotator agreement ranging from 411 to 8756 tracks depending on the taxonomy.
 
 
+### Song Describer
+[Song Describer](https://song-describer.streamlit.app/) is a platform for crowdsourcing music captions (audio-text pairs) for audio tracks in MTG-Jamendo.
+
+
 ## Research challenges using the dataset
 
 - [MediaEval 2019 Emotion and Theme Recognition in Music](https://multimediaeval.github.io/2019-Emotion-and-Theme-Recognition-in-Music-Task/)
