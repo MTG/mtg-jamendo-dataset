@@ -6,8 +6,8 @@ import numpy
 
 
 def load_audio(filename, sampleRate=12000, segment_duration=None):
-    audio = MonoLoader(filename=filename, sampleRate=sampleRate)()
-  
+    audio = MonoLoader(filename=filename, sampleRate=sampleRate, resampleQuality=4)()
+
     if segment_duration:
         segment_duration = round(segment_duration*sampleRate)
         segment_start = (len(audio) - segment_duration) // 2
@@ -22,21 +22,21 @@ def load_audio(filename, sampleRate=12000, segment_duration=None):
     return audio[segment_start:segment_end]
 
 
-def melspectrogram(audio, 
-                   sampleRate=12000, frameSize=512, hopSize=256, 
+def melspectrogram(audio,
+                   sampleRate=12000, frameSize=512, hopSize=256,
                    window='hann', zeroPadding=0, center=True,
                    numberBands=96, lowFrequencyBound=0, highFrequencyBound=None,
-                   weighting='linear', warpingFormula='slaneyMel', 
+                   weighting='linear', warpingFormula='slaneyMel',
                    normalize='unit_tri'):
 
     if highFrequencyBound is None:
         highFrequencyBound = sampleRate/2
-    
+
     windowing = Windowing(type=window, normalized=False, zeroPadding=zeroPadding)
     spectrum = Spectrum()
     melbands = MelBands(numberBands=numberBands,
                         sampleRate=sampleRate,
-                        lowFrequencyBound=lowFrequencyBound, 
+                        lowFrequencyBound=lowFrequencyBound,
                         highFrequencyBound=highFrequencyBound,
                         inputSize=(frameSize+zeroPadding)//2+1,
                         weighting=weighting,
@@ -46,7 +46,7 @@ def melspectrogram(audio,
     amp2db = UnaryOperator(type='lin2db', scale=2)
 
     pool = essentia.Pool()
-    for frame in FrameGenerator(audio, 
+    for frame in FrameGenerator(audio,
                                 frameSize=frameSize, hopSize=hopSize,
                                 startFromZero=not center):
         pool.add('mel', amp2db(melbands(spectrum(windowing(frame)))))
