@@ -248,7 +248,7 @@ We provide the subset of annotations with perfect inter-annotator agreement rang
 
 
 ### Song Describer
-[Song Describer](https://song-describer.streamlit.app/) is a platform for crowdsourcing music captions (audio-text pairs) for audio tracks in MTG-Jamendo.
+[Song Describer Dataset](https://zenodo.org/records/10072001) contains ~1.1k captions for 706 permissively licensed music recordings. It is designed for use in evaluation of models that address music-and-language tasks such as music captioning, text-to-music generation and music-language retrieval. The dataset was built using the [Song Describer](https://song-describer.streamlit.app/) platform for crowdsourcing music captions (audio-text pairs) for audio tracks in MTG-Jamendo.
 
 
 ## Research challenges using the dataset
