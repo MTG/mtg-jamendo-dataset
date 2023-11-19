@@ -85,7 +85,7 @@ python scripts/download/download.py -h
 ```
 usage: download.py [-h] [--dataset {raw_30s,autotagging_moodtheme}]
                    [--type {audio,audio-low,melspecs,acousticbrainz}]
-                   [--from {mtg,mtg-fast}] [--unpack] [--remove]
+                   [--from {gdrive,mtg,mtg-fast}] [--unpack] [--remove]
                    outputdir
 
 Download the MTG-Jamendo dataset
@@ -100,9 +100,10 @@ options:
   --type {audio,audio-low,melspecs,acousticbrainz}
                         type of data to download (audio, audio in low quality,
                         mel-spectrograms, AcousticBrainz features) (default: audio)
-  --from {mtg,mtg-fast}
-                        download from MTG (server in Spain, slow),
-                        or fast MTG mirror (Finland) (default: mtg-fast)
+  --from {gdrive,mtg,mtg-fast}
+                        download from Google Drive (fast everywhere), MTG
+                        (server in Spain, slow), or fast MTG mirror (Finland)
+                        (default: mtg-fast)
   --unpack              unpack tar archives (default: False)
   --remove              remove tar archives while unpacking one by one (use to
                         save disk space) (default: False)
