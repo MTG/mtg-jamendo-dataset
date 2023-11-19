@@ -1,4 +1,4 @@
-gdown==4.2.1
+gdown==4.7.1
 matplotlib==3.5.1
 numpy==1.22.2
 pandas==1.4.0

@@ -1,13 +1,13 @@
 import argparse
-import sys
-import os.path
 import csv
 import hashlib
+import os.path
+import sys
 import tarfile
 from pathlib import Path
+
 import gdown
 import wget
-
 
 base_path = Path(__file__).parent
 ID_FILE_PATH = (base_path / "../../data/download/").resolve()
@@ -137,14 +137,10 @@ if __name__ == '__main__':
                         help='dataset to download')
     parser.add_argument('--type', default='audio', choices=['audio', 'audio-low', 'melspecs', 'acousticbrainz'],
                         help='type of data to download (audio, audio in low quality, mel-spectrograms, AcousticBrainz features)')
-    parser.add_argument('--from', default='mtg-fast', choices=['mtg', 'mtg-fast'],
-                        dest='download_from',
-                        help='download from MTG (server in Spain, slow), '
-                             'or fast MTG mirror (Finland)')
-    #parser.add_argument('--from', default='mtg-fast', choices=['gdrive', 'mtg', 'mtg-fast'],
-    #                    dest='download_from',
-    #                    help='download from Google Drive (fast everywhere), MTG (server in Spain, slow), '
-    #                         'or fast MTG mirror (Finland)')
+    parser.add_argument('--from', default='mtg-fast', choices=['gdrive', 'mtg', 'mtg-fast'],
+                       dest='download_from',
+                       help='download from Google Drive (fast everywhere), MTG (server in Spain, slow), '
+                            'or fast MTG mirror (Finland)')
     parser.add_argument('outputdir', help='directory to store the dataset')
     parser.add_argument('--unpack', action='store_true', help='unpack tar archives')
     parser.add_argument('--remove', action='store_true', help='remove tar archives while unpacking one by one (use to save disk space)')
