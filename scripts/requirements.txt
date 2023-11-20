@@ -6,5 +6,5 @@ requests==2.27.1
 scikit-learn==1.0.2
 scipy==1.8.0
 tqdm==4.62.3
-urllib3==1.26.8
+urllib3==1.26.18
 wget==3.2
