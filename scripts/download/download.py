@@ -25,7 +25,6 @@ def compute_sha256(filename):
         contents = f.read()
         checksum = hashlib.sha256(contents).hexdigest()
         return checksum
-    return None
 
 
 def download_from_mtg(url, output):
