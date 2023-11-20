@@ -108,8 +108,6 @@ def download(dataset, data_type, download_from, output_dir, unpack_tars, remove_
         elif download_from == 'mtg':
             url = 'https://essentia.upf.edu/documentation/datasets/mtg-jamendo/' \
                   '%s/%s/%s' % (dataset, data_type, filename)
-            print('From:', url)
-            print('To:', output)
             download_from_mtg(url, output)
 
         elif download_from == 'mtg-fast':
