@@ -13,7 +13,7 @@ Table of contents:
 * [Structure](#structure)
     + [Metadata files in `data`](#metadata-files-in-data)
     + [Statistics in `stats`](#statistics-in-stats)
- [Using the dataset](#using-the-dataset)
++ [Using the dataset](#using-the-dataset)
     + [Requirements](#requirements)
     + [Downloading the data](#downloading-the-data)
     + [Loading data in python](#loading-data-in-python)
