@@ -8,6 +8,27 @@ This repository contains metadata, scripts, instructions on how to download and 
 
 A subset of the dataset was used in the [Emotion and Theme Recognition in Music Task](https://multimediaeval.github.io/2021-Emotion-and-Theme-Recognition-in-Music-Task/) within [MediaEval 2019-2021](https://multimediaeval.github.io/).
 
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+Table of contents:
+* [Structure](#structure)
+    + [Metadata files in `data`](#metadata-files-in-data)
+    + [Statistics in `stats`](#statistics-in-stats)
+ [Using the dataset](#using-the-dataset)
+    + [Requirements](#requirements)
+    + [Downloading the data](#downloading-the-data)
+    + [Loading data in python](#loading-data-in-python)
+    + [Reproduce postprocessing & statistics](#reproduce-postprocessing--statistics)
+    + [Recreate subsets](#recreate-subsets)
+    + [Reproduce experiments](#reproduce-experiments)
+* [Related Datasets](#related-datasets)
+    + [Music Classification Annotations](#music-classification-annotations)
+    + [Song Describer](#song-describer)
+* [Research challenges using the dataset](#research-challenges-using-the-dataset)
+* [Citing the dataset](#citing-the-dataset)
+* [License](#license)
+* [Acknowledgments](#acknowledgments)
+<!-- TOC end -->
+
 
 ## Structure
 
@@ -276,15 +297,13 @@ Please consider citing [the following publication](https://repositori.upf.edu/ha
 }
 ```
 
-An expanded version of the paper describing the dataset and the baselines will be announced later.
-
 ## License
 
 * The code in this repository is licensed under [Apache 2.0](LICENSE) 
 * The metadata is licensed under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 * The audio files are licensed under Creative Commons licenses, see individual licenses for details in `audio_licenses.txt`.
 
-Copyright 2019-2022 Music Technology Group
+Copyright 2019-2023 Music Technology Group
 
 ## Acknowledgments
 
