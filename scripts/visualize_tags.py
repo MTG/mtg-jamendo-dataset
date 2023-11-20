@@ -47,9 +47,9 @@ def visualize2(directory, n):
     fig = plt.figure(figsize=(12, 2.5))
     plt.style.use('seaborn-whitegrid')
 
-    font_manager._rebuild()
+    # font_manager._rebuild()
     rcParams['font.family'] = 'serif'
-    rcParams['font.serif'] = 'Times'
+    rcParams['font.serif'] = 'Times New Roman'
     plt.grid(False)
     plt.ylabel('# of tracks')
     plt.xlim([-1, 60])
@@ -65,6 +65,12 @@ def visualize2(directory, n):
     ylabels = np.arange(4, 20, 4)
     plt.yticks(ylabels*1000, ['{}k'.format(ylabel) for ylabel in ylabels])
     plt.subplots_adjust(bottom=0.4)
+
+    ax = plt.gca()
+    ax.spines['top'].set_visible(False)
+    ax.spines['right'].set_visible(False)
+    ax.spines['bottom'].set_visible(False)
+    ax.spines['left'].set_visible(False)
 
     output_file = os.path.join(directory, 'top{}.pdf'.format(n))
     plt.savefig(output_file, bbox_inches='tight')

@@ -6,12 +6,33 @@ We present the MTG-Jamendo Dataset, a new open dataset for music auto-tagging. I
 
 This repository contains metadata, scripts, instructions on how to download and use the dataset and reproduce baseline results.
 
-A subset of the dataset is used in the [Emotion and Theme Recognition in Music Task](https://multimediaeval.github.io/2019-Emotion-and-Theme-Recognition-in-Music-Task/) within [MediaEval 2019](http://www.multimediaeval.org/mediaeval2019/) (you are welcome to participate).
+A subset of the dataset was used in the [Emotion and Theme Recognition in Music Task](https://multimediaeval.github.io/2021-Emotion-and-Theme-Recognition-in-Music-Task/) within [MediaEval 2019-2021](https://multimediaeval.github.io/).
+
+<!-- TOC start (generated with https://github.com/derlin/bitdowntoc) -->
+Table of contents:
+* [Structure](#structure)
+    + [Metadata files in `data`](#metadata-files-in-data)
+    + [Statistics in `stats`](#statistics-in-stats)
++ [Using the dataset](#using-the-dataset)
+    + [Requirements](#requirements)
+    + [Downloading the data](#downloading-the-data)
+    + [Loading data in python](#loading-data-in-python)
+    + [Reproduce postprocessing & statistics](#reproduce-postprocessing--statistics)
+    + [Recreate subsets](#recreate-subsets)
+    + [Reproduce experiments](#reproduce-experiments)
+* [Related Datasets](#related-datasets)
+    + [Music Classification Annotations](#music-classification-annotations)
+    + [Song Describer](#song-describer)
+* [Research challenges using the dataset](#research-challenges-using-the-dataset)
+* [Citing the dataset](#citing-the-dataset)
+* [License](#license)
+* [Acknowledgments](#acknowledgments)
+<!-- TOC end -->
 
 
 ## Structure
 
-### Metadata files in `data`
+### Metadata files in [`data`](https://github.com/MTG/mtg-jamendo-dataset/tree/master/data)
 
 Pre-processing
 - `raw.tsv` (56,639) - raw file without postprocessing
@@ -35,44 +56,57 @@ Note: A few tags are discarded in the splits to guarantee the same list of tags 
 
 Splits are generated from `autotagging.tsv`, containing all tags. For each split, the related subsets (top50, genre, instrument, mood/theme) are built filtering out unrelated tags and tracks without any tags.
 
-### Statistics in `stats`
+Some additional metadata from Jamendo (artist, album name, track title, release date, track URL) is available in `raw.meta.tsv` (56,693).
+
+### Statistics in [`stats`](https://github.com/MTG/mtg-jamendo-dataset/tree/master/stats)
+
+![Top 20 tags per category](stats/raw_30s_cleantags_50artists/top20.png)
 
 Statistics of number of tracks, albums and artists per tag sorted by number of artists.
 Each directory has statistics for metadata file with the same name.
-Statistics for subsets based on categories are not kept seperated due to it already included in `autotagging`
+[Here](stats/raw_30s_cleantags_50artists) is the statistics for the `autotagging` set.
+Statistics for subsets based on categories are not kept seperated due to it already included in `autotagging`.
 
 ## Using the dataset
 
 ### Requirements
 
-* Python 3.6+
-* Virtualenv: `pip install virtualenv`
+* Python 3.7+
+* Download dataset repository
+```bash
+git clone https://github.com/MTG/mtg-jamendo-dataset.git
+cd mtg-jamendo-dataset
+```
 * Create virtual environment and install requirements
 ```bash
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 pip install -r scripts/requirements.txt
 ```
 
+The original requirements are kept in [`reguirements-orig.txt`](scripts/requirements-orig.txt)
+
 ### Downloading the data
 
-All audio is distributed in 320kbps MP3 format. In addition we provide precomputed mel-spectrograms which are distributed as NumPy Arrays in NPY format. We also provide precomputed statistical features from [Essentia](https://essentia.upf.edu) (used in the [AcousticBrainz](https://acousticbrainz.org) music database) in JSON format. The audio files and the NPY/JSON files are split into folders packed into TAR archives. The dataset is hosted [online at MTG UPF](https://essentia.upf.edu/documentation/datasets/mtg-jamendo/).
+All audio is distributed in 320kbps MP3 format. We recommend using this version of audio by default. For smaller download sizes, we also provide a lower-bitrate mono version of the same audio (converted from the full quality version to mono LAME VBR 2 `lame -V 2`). In addition we provide precomputed mel-spectrograms which are distributed as NumPy Arrays in NPY format (see computation parameters [in the code](https://github.com/MTG/mtg-jamendo-dataset/blob/master/scripts/melspectrograms.py)). We also provide precomputed statistical features from [Essentia](https://essentia.upf.edu) (used in the [AcousticBrainz](https://acousticbrainz.org) music database) in JSON format. The audio files and the NPY/JSON files are split into folders packed into TAR archives.
 
 We provide the following data subsets:
-- `raw_30s/audio` - all available audio for `raw_30s.tsv` (508 GB)
+- `raw_30s/audio` - all available audio for `raw_30s.tsv` in full quality (508 GB)
+- `raw_30s/audio-low` - all available audio for `raw_30s.tsv` in low quality (156 GB)
 - `raw_30s/melspecs` - mel-spectrograms for `raw_30s.tsv` (229 GB)
-- `autotagging-moodtheme/audio` - audio for the mood/theme subset `autotagging_moodtheme.tsv` (152 GB)
+- `autotagging-moodtheme/audio` - audio for the mood/theme subset `autotagging_moodtheme.tsv` in full quality (152 GB)
+- `autotagging-moodtheme/audio-low` - audio for the mood/theme subset `autotagging_moodtheme.tsv` in low quality (46 GB)
 - `autotagging-moodtheme/melspecs` - mel-spectrograms for the `autotagging_moodtheme.tsv` subset (68 GB)
 
-For faster downloads, we host a copy of the dataset on Google Drive. We provide a script to download and validate all files in the dataset. See its help message for more information:
+We provide a script to download and validate all files in the dataset. See its help message for more information:
 
 ```bash
-python scripts/download/download.py -h
+python3 scripts/download/download.py -h
 ```
 ```
 usage: download.py [-h] [--dataset {raw_30s,autotagging_moodtheme}]
-                   [--type {audio,melspecs,acousticbrainz}]
-                   [--from {gdrive,mtg}] [--unpack] [--remove]
+                   [--type {audio,audio-low,melspecs,acousticbrainz}]
+                   [--from {mtg,mtg-fast}] [--unpack] [--remove]
                    outputdir
 
 Download the MTG-Jamendo dataset
@@ -80,15 +114,16 @@ Download the MTG-Jamendo dataset
 positional arguments:
   outputdir             directory to store the dataset
 
-optional arguments:
+options:
   -h, --help            show this help message and exit
   --dataset {raw_30s,autotagging_moodtheme}
                         dataset to download (default: raw_30s)
-  --type {audio,melspecs,acousticbrainz}
-                        type of data to download (audio, mel-spectrograms,
-                        AcousticBrainz features) (default: audio)
-  --from {gdrive,mtg}   download from Google Drive (fast everywhere) or MTG
-                        (server in Spain, slow) (default: gdrive)
+  --type {audio,audio-low,melspecs,acousticbrainz}
+                        type of data to download (audio, audio in low quality,
+                        mel-spectrograms, AcousticBrainz features) (default: audio)
+  --from {mtg,mtg-fast}
+                        download from MTG (server in Spain, slow),
+                        or fast MTG mirror (Finland) (default: mtg-fast)
   --unpack              unpack tar archives (default: False)
   --remove              remove tar archives while unpacking one by one (use to
                         save disk space) (default: False)
@@ -158,53 +193,54 @@ tracks, tags, extra = commons.read_file(input_file)
 
 * Recompute statistics for `raw` and `raw_30s`
 ```bash
-python scripts/get_statistics.py data/raw.tsv stats/raw
-python scripts/get_statistics.py data/raw_30s.tsv stats/raw_30s
+python3 scripts/get_statistics.py data/raw.tsv stats/raw
+python3 scripts/get_statistics.py data/raw_30s.tsv stats/raw_30s
 ```
 
 * Clean tags and recompute statistics (`raw_30s_cleantags`)
 ```bash
-python scripts/clean_tags.py data/raw_30s.tsv data/tag_map.json data/raw_30s_cleantags.tsv
-python scripts/get_statistics.py data/raw_30s_cleantags.tsv stats/raw_30s_cleantags
+python3 scripts/clean_tags.py data/raw_30s.tsv data/tag_map.json data/raw_30s_cleantags.tsv
+python3 scripts/get_statistics.py data/raw_30s_cleantags.tsv stats/raw_30s_cleantags
 ```
 
 * Filter out tags with low number of unique artists and recompute statistics (`raw_30s_cleantags_50artists`)
 ```bash
-python scripts/filter_fewartists.py data/raw_30s_cleantags.tsv 50 data/raw_30s_cleantags_50artists.tsv --stats-directory stats/raw_30s_cleantags_50artists
+python3 scripts/filter_fewartists.py data/raw_30s_cleantags.tsv 50 data/raw_30s_cleantags_50artists.tsv --stats-directory stats/raw_30s_cleantags_50artists
 ```
 
 * `autotagging` file in `data` and folder in `stats` is a symbolic link to `raw_30s_cleantags_50artists`
 
 * Visualize top 20 tags per category
 ```bash
-python scripts/visualize_tags.py stats/autotagging 20  # generates top20.pdf figure
+python3 scripts/visualize_tags.py stats/autotagging 20  # generates top20.pdf figure
 ```
 
 ### Recreate subsets
 * Create subset with only top50 tags by number of tracks
 ```bash
-python scripts/filter_toptags.py data/autotagging.tsv 50 data/autotagging_top50tags.tsv --stats-directory stats/autotagging_top50tags --tag-list data/tags/tags_top50.txt
-python scripts/split_filter_subset.py data/splits autotagging autotagging_top50tags --subset-file data/tags/top50.txt
+python3 scripts/filter_toptags.py data/autotagging.tsv 50 data/autotagging_top50tags.tsv --stats-directory stats/autotagging_top50tags --tag-list data/tags/tags_top50.txt
+python3 scripts/split_filter_subset.py data/splits autotagging autotagging_top50tags --subset-file data/tags/top50.txt
 ```
 
 * Create subset with only mood/theme tags (or other category: genre, instrument)
 ```bash
-python scripts/filter_category.py data/autotagging.tsv mood/theme data/autotagging_moodtheme.tsv --tag-list data/tags/moodtheme.txt
-python scripts/split_filter_subset.py data/splits autotagging autotagging_moodtheme --category mood/theme 
+python3 scripts/filter_category.py data/autotagging.tsv mood/theme data/autotagging_moodtheme.tsv --tag-list data/tags/moodtheme.txt
+python3 scripts/split_filter_subset.py data/splits autotagging autotagging_moodtheme --category mood/theme
 ```
+
 ### Reproduce experiments
 * Preprocessing
 ```bash
-python scripts/baseline/get_npy.py run 'your_path_to_spectrogram_npy'
+python3 scripts/baseline/get_npy.py run 'your_path_to_spectrogram_npy'
 ```
 
 * Train
 ```bash
-python scripts/baseline/main.py --mode 'TRAIN' 
+python3 scripts/baseline/main.py --mode 'TRAIN'
 ```
 * Test
 ```bash
-python scripts/baseline/main.py --mode 'TEST' 
+python3 scripts/baseline/main.py --mode 'TEST'
 ```
 ```
 optional arguments:
@@ -222,15 +258,33 @@ optional arguments:
 * [ML4MD2019](results/ml4md2019): 5 splits, 5 tag sets (3 categories, top50, all)
 * [Mediaeval2019](results/mediaeval2019): split-0, mood/theme category
 
+## Related Datasets
+The MTG-Jamendo Dataset can be linked to related datasets tailored to specific applications.
+
+
+### Music Classification Annotations
+The [Music Classification Annotations](derived/music-classification-annotations/README.md) contains annotations for the [split-0 test set](data/splits/split-0/autotagging-test.tsv) according to the taxonomies of 15 existing music classification datasets including genres, moods, danceability, voice/instrumental, gender, and tonal/atonal.
+These labels are suitable for training individual classifiers or learning everything in a multi-label setup (auto-tagging).
+Most of the taxonomies were annotated by three different annotators.
+We provide the subset of annotations with perfect inter-annotator agreement ranging from 411 to 8756 tracks depending on the taxonomy.
+
+
+### Song Describer
+[Song Describer Dataset](https://zenodo.org/records/10072001) contains ~1.1k captions for 706 permissively licensed music recordings. It is designed for use in evaluation of models that address music-and-language tasks such as music captioning, text-to-music generation and music-language retrieval. The dataset was built using the [Song Describer](https://song-describer.streamlit.app/) platform for crowdsourcing music captions (audio-text pairs) for audio tracks in MTG-Jamendo.
+
+
 ## Research challenges using the dataset
 
-[MediaEval 2019 Emotion and Theme Recognition in Music](https://multimediaeval.github.io/2019-Emotion-and-Theme-Recognition-in-Music-Task/)
+- [MediaEval 2019 Emotion and Theme Recognition in Music](https://multimediaeval.github.io/2019-Emotion-and-Theme-Recognition-in-Music-Task/)
+- [MediaEval 2020 Emotion and Theme Recognition in Music](https://multimediaeval.github.io/2020-Emotion-and-Theme-Recognition-in-Music-Task/)
+- [MediaEval 2021 Emotion and Theme Recognition in Music](https://multimediaeval.github.io/2021-Emotion-and-Theme-Recognition-in-Music-Task/)
+
 
 ## Citing the dataset
 
-Please consider citing the following publication when using the dataset:
+Please consider citing [the following publication](https://repositori.upf.edu/handle/10230/42015) when using the dataset:
 
-> Bogdanov, D., Won M., Tovstogan P., Porter A., & Serra X. (2019).  [The MTG-Jamendo Dataset for Automatic Music Tagging](http://mtg.upf.edu/node/3957). Machine Learning for Music Discovery Workshop, International Conference on Machine Learning (ICML 2019).
+> Bogdanov, D., Won M., Tovstogan P., Porter A., & Serra X. (2019). The MTG-Jamendo Dataset for Automatic Music Tagging. Machine Learning for Music Discovery Workshop, International Conference on Machine Learning (ICML 2019).
 
 ```
 @conference {bogdanov2019mtg,
@@ -243,15 +297,13 @@ Please consider citing the following publication when using the dataset:
 }
 ```
 
-An expanded version of the paper describing the dataset and the baselines will be announced later.
-
 ## License
 
 * The code in this repository is licensed under [Apache 2.0](LICENSE) 
 * The metadata is licensed under a [CC BY-NC-SA 4.0](https://creativecommons.org/licenses/by-nc-sa/4.0/).
 * The audio files are licensed under Creative Commons licenses, see individual licenses for details in `audio_licenses.txt`.
 
-Copyright 2019 Music Technology Group
+Copyright 2019-2023 Music Technology Group
 
 ## Acknowledgments
 

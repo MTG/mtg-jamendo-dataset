@@ -38,7 +38,7 @@ class Split:
         for row in rows:
             temp_dict = {}
             temp_dict['path'] = row[3]
-            temp_dict['duration'] = (float(row[4]) * 16000 - 512) // 256
+            temp_dict['duration'] = (float(row[4]) * 12000 - 512) // 256
             if option == 'all':
                 temp_dict['tags'] = np.zeros(183)
             elif option == 'genre':
