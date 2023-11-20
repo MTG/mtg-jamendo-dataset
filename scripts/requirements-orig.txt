@@ -12,7 +12,7 @@ pandas==0.24.2
 pyparsing==2.4.2
 python-dateutil==2.8.0
 pytz==2019.2
-requests==2.25.0
+requests==2.31.0
 scikit-learn==0.21.3
 scipy==1.10.0
 six==1.12.0
