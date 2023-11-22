@@ -79,7 +79,7 @@ cd mtg-jamendo-dataset
 ```
 * Create virtual environment and install requirements
 ```bash
-python -m venv venv
+python3 -m venv venv
 source venv/bin/activate
 pip install -r scripts/requirements.txt
 ```
@@ -101,7 +101,7 @@ We provide the following data subsets:
 We provide a script to download and validate all files in the dataset. See its help message for more information:
 
 ```bash
-python scripts/download/download.py -h
+python3 scripts/download/download.py -h
 ```
 ```
 usage: download.py [-h] [--dataset {raw_30s,autotagging_moodtheme}]
@@ -193,54 +193,54 @@ tracks, tags, extra = commons.read_file(input_file)
 
 * Recompute statistics for `raw` and `raw_30s`
 ```bash
-python scripts/get_statistics.py data/raw.tsv stats/raw
-python scripts/get_statistics.py data/raw_30s.tsv stats/raw_30s
+python3 scripts/get_statistics.py data/raw.tsv stats/raw
+python3 scripts/get_statistics.py data/raw_30s.tsv stats/raw_30s
 ```
 
 * Clean tags and recompute statistics (`raw_30s_cleantags`)
 ```bash
-python scripts/clean_tags.py data/raw_30s.tsv data/tag_map.json data/raw_30s_cleantags.tsv
-python scripts/get_statistics.py data/raw_30s_cleantags.tsv stats/raw_30s_cleantags
+python3 scripts/clean_tags.py data/raw_30s.tsv data/tag_map.json data/raw_30s_cleantags.tsv
+python3 scripts/get_statistics.py data/raw_30s_cleantags.tsv stats/raw_30s_cleantags
 ```
 
 * Filter out tags with low number of unique artists and recompute statistics (`raw_30s_cleantags_50artists`)
 ```bash
-python scripts/filter_fewartists.py data/raw_30s_cleantags.tsv 50 data/raw_30s_cleantags_50artists.tsv --stats-directory stats/raw_30s_cleantags_50artists
+python3 scripts/filter_fewartists.py data/raw_30s_cleantags.tsv 50 data/raw_30s_cleantags_50artists.tsv --stats-directory stats/raw_30s_cleantags_50artists
 ```
 
 * `autotagging` file in `data` and folder in `stats` is a symbolic link to `raw_30s_cleantags_50artists`
 
 * Visualize top 20 tags per category
 ```bash
-python scripts/visualize_tags.py stats/autotagging 20  # generates top20.pdf figure
+python3 scripts/visualize_tags.py stats/autotagging 20  # generates top20.pdf figure
 ```
 
 ### Recreate subsets
 * Create subset with only top50 tags by number of tracks
 ```bash
-python scripts/filter_toptags.py data/autotagging.tsv 50 data/autotagging_top50tags.tsv --stats-directory stats/autotagging_top50tags --tag-list data/tags/tags_top50.txt
-python scripts/split_filter_subset.py data/splits autotagging autotagging_top50tags --subset-file data/tags/top50.txt
+python3 scripts/filter_toptags.py data/autotagging.tsv 50 data/autotagging_top50tags.tsv --stats-directory stats/autotagging_top50tags --tag-list data/tags/tags_top50.txt
+python3 scripts/split_filter_subset.py data/splits autotagging autotagging_top50tags --subset-file data/tags/top50.txt
 ```
 
 * Create subset with only mood/theme tags (or other category: genre, instrument)
 ```bash
-python scripts/filter_category.py data/autotagging.tsv mood/theme data/autotagging_moodtheme.tsv --tag-list data/tags/moodtheme.txt
-python scripts/split_filter_subset.py data/splits autotagging autotagging_moodtheme --category mood/theme 
+python3 scripts/filter_category.py data/autotagging.tsv mood/theme data/autotagging_moodtheme.tsv --tag-list data/tags/moodtheme.txt
+python3 scripts/split_filter_subset.py data/splits autotagging autotagging_moodtheme --category mood/theme
 ```
 
 ### Reproduce experiments
 * Preprocessing
 ```bash
-python scripts/baseline/get_npy.py run 'your_path_to_spectrogram_npy'
+python3 scripts/baseline/get_npy.py run 'your_path_to_spectrogram_npy'
 ```
 
 * Train
 ```bash
-python scripts/baseline/main.py --mode 'TRAIN' 
+python3 scripts/baseline/main.py --mode 'TRAIN'
 ```
 * Test
 ```bash
-python scripts/baseline/main.py --mode 'TEST' 
+python3 scripts/baseline/main.py --mode 'TEST'
 ```
 ```
 optional arguments:
