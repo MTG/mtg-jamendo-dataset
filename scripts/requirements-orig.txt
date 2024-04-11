@@ -3,7 +3,7 @@ chardet==3.0.4
 cycler==0.10.0
 filelock==3.0.12
 gdown==3.8.1
-idna==2.8
+idna==3.7
 joblib==1.2.0
 kiwisolver==1.1.0
 matplotlib==3.1.1
