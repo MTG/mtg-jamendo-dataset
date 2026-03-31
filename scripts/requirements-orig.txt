@@ -1,7 +1,7 @@
 certifi==2024.7.4
 chardet==3.0.4
 cycler==0.10.0
-filelock==3.0.12
+filelock==3.20.3
 gdown==3.8.1
 idna==3.7
 joblib==1.2.0
