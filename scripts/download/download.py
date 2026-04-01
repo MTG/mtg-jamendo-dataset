@@ -19,13 +19,15 @@ download_from_names = {'gdrive': 'GDrive', 'mtg': 'MTG', 'mtg-fast': 'MTG Fast m
 
 CHUNK_SIZE = 512 * 1024  # 512KB
 
-
-def compute_sha256(filename):
+def compute_sha256(filename, chunk_size=8192):
+    sha256_hash = hashlib.sha256()
     with open(filename, 'rb') as f:
-        contents = f.read()
-        checksum = hashlib.sha256(contents).hexdigest()
-        return checksum
-
+        while True:
+            data = f.read(chunk_size)
+            if not data:
+                break
+            sha256_hash.update(data)
+    return sha256_hash.hexdigest()
 
 def download_from_mtg(url, output):
     output_path = Path(output)
@@ -116,7 +118,7 @@ def download(dataset, data_type, download_from, output_dir, unpack_tars, remove_
             download_from_mtg(url, output)
 
         # Validate the checksum.
-        if compute_sha256(output) != sha256_tars[filename]:
+        if compute_sha256(output, CHUNK_SIZE) != sha256_tars[filename]:
             print('%s does not match the checksum, removing the file' % output, file=sys.stderr)
             removed.append(filename)
             os.remove(output)
