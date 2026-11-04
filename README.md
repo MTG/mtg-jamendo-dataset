@@ -109,6 +109,8 @@ python3 scripts/download/download.py -h
 usage: download.py [-h] [--dataset {raw_30s,autotagging_moodtheme}]
                    [--type {audio,audio-low,melspecs,acousticbrainz}]
                    [--from {mtg,mtg-fast}] [--unpack] [--remove]
+                   [--retries RETRIES] [--connect-timeout CONNECT_TIMEOUT]
+                   [--read-timeout READ_TIMEOUT] [--skip-file SKIP_FILE]
                    outputdir
 
 Download the MTG-Jamendo dataset
@@ -122,13 +124,25 @@ options:
                         dataset to download (default: raw_30s)
   --type {audio,audio-low,melspecs,acousticbrainz}
                         type of data to download (audio, audio in low quality,
-                        mel-spectrograms, AcousticBrainz features) (default: audio)
+                        mel-spectrograms, AcousticBrainz features) (default:
+                        audio)
   --from {mtg,mtg-fast}
-                        download from MTG (server in Spain, slow),
-                        or fast MTG mirror (Finland) (default: mtg-fast)
+                        download from MTG (server in Spain, slow), or fast MTG
+                        mirror (Finland) (default: mtg-fast)
   --unpack              unpack tar archives (default: False)
   --remove              remove tar archives while unpacking one by one (use to
                         save disk space) (default: False)
+  --retries RETRIES     maximum number of download retry attempts per file
+                        (default: 5)
+  --connect-timeout CONNECT_TIMEOUT
+                        connection timeout in seconds (default: 30)
+  --read-timeout READ_TIMEOUT
+                        read timeout in seconds (max gap between data chunks)
+                        (default: 60)
+  --skip-file SKIP_FILE
+                        path to a text file listing already-completed tar
+                        files to skip (one filename per line, # for comments)
+                        (default: None)
 
 ```
 
@@ -143,6 +157,31 @@ python3 scripts/download/download.py --dataset autotagging_moodtheme --type audi
 Unpacking process is run after tar archive downloads are complete and validated. In the case of download errors, re-run the script to download missing files.
 
 Due to the large size of the dataset, it can be useful to include the `--remove` flag to save disk space: in this case, tar archive are unpacked and immediately removed one by one.
+
+The download script is designed to be resilient to unreliable network conditions. It provides the following features:
+
+- **Resume:** Interrupted downloads are saved as `.part` files and automatically resumed on the next run using HTTP Range requests. This allows you to stop and restart the download at any time without losing progress.
+- **Timeouts:** The `--connect-timeout` (default: 30s) and `--read-timeout` (default: 60s) flags prevent the script from hanging indefinitely on stalled connections.
+- **Retries:** Failed downloads are automatically retried with exponential backoff (5 attempts by default, configurable via `--retries`). If all retries are exhausted, the `.part` file is preserved for future resume.
+- **Integrity verification:** After each download completes, the SHA-256 checksum is verified against the expected value. Corrupt files are automatically deleted and re-downloaded on the next run.
+
+If you have already downloaded some tar files and transferred them to another machine (so they no longer exist locally), you can use the `--skip-file` option to tell the script to skip those files and continue downloading only the remaining ones. Create a text file listing the completed tar filenames (one per line, lines starting with `#` are treated as comments):
+
+```
+# completed_downloads.txt
+# Files already downloaded and moved elsewhere
+raw_30s_audio-00.tar
+raw_30s_audio-01.tar
+raw_30s_audio-02.tar
+```
+
+Then run the script with `--skip-file`:
+
+```bash
+python3 scripts/download/download.py /path/to/download --skip-file completed_downloads.txt
+```
+
+An example skip file is provided at [`scripts/download/skip_files_example.txt`](scripts/download/skip_files_example.txt).
 
 
 ### Loading data in python
